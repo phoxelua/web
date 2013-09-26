@@ -1,0 +1,190 @@
+/*
+Author: Howard Nguyen
+Version: 1.0
+Last Update:
+*/
+
+html, body {
+  height: 100%;
+  background-image: url(images/gallery/Howard-36-2.jpg);  
+  background-repeat: no-repeat;
+  background-position: right;
+  background-color:#181818;
+  background-attachment: scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size:cover;
+  z-index:-999;
+}
+
+#container {
+  min-height: 100%;
+}
+
+#main{
+  padding-bottom: 40px;
+}
+
+h1, h2, h3, h4 {
+  font-family:"Myriad Pro", "Trebuchet MS", sans-serif;
+}
+
+h1 {
+  color:#069;
+  text-transform:uppercase;
+}
+
+h3 {
+  display:inline;
+}
+
+
+hgroup {
+  position:relative;
+  width:450px;
+  z-index:3;
+  left:100px;
+  top:200px;
+  padding:10px;
+  background:url(images/fs_img_g_bg.png);
+  color:#FFF;
+  font-family:"Myriad Pro", "Trebuchet MS", sans-serif;
+  font-size:20px;
+  font-weight: bold;
+  letter-spacing:1px;
+  text-shadow:rgba(0, 0, 0, 0.70) 0 1px 1px;
+}
+
+#portrait{
+  position:absolute;
+  top: 90px;
+  left:70px;
+  width:200px;
+  height:300px;
+  background: url(images/gallery/portait1.jpg) no-repeat;
+  background-size: 100%;
+  border:1px solid #021a40;
+  background-position: center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#nametag {
+  position:absolute;
+  z-index:3;
+  left:300px;
+  top:70px;
+  color:#FFF;
+  font-family:"Myriad Pro", "Trebuchet MS", sans-serif;
+  font-size:30px;
+  letter-spacing:1px;
+  text-shadow:rgba(0, 0, 0, 0.60) 0 1px 1px;
+  text-transform:uppercase;
+  line-height: 120%;
+}
+
+#nametag .blue {
+  color:#069;
+  display:block;
+}
+
+#menu-wrap {
+  position:absolute; 
+  width: 100%;
+  float: left;
+  padding: 0;
+  top:0px;
+  background-color: #202020;
+  font-family:"Myriad Pro", "Trebuchet MS", sans-serif;
+  text-transform:uppercase;
+  text-align:center;
+  margin:0 auto;
+}
+
+#here {
+  background-color: #000;
+}
+
+#menu-wrap ul {
+  list-style: none;
+  width:780px;
+  margin: auto;
+  padding: 0; 
+  display: inline-block;
+}
+
+#menu-wrap li {
+  float: left; 
+  width:130px;
+  height:52px;
+}
+
+#menu-wrap li a {
+  display: block;
+  padding: 13px 15px;
+  text-decoration: none;
+  font-weight: bold;
+  color: #069;
+  border-right: 1px solid #ccc; 
+  font-size: 109%;
+}
+
+#menu-wrap .descr {
+  font-size:75%;
+  display:block;
+  text-transform: none;
+  color:#FFF;
+}
+
+#menu-wrap li:first-child a {
+  border-left: 1px solid #ccc;
+}
+
+#menu-wrap li a:hover {
+  color: #c00;
+  background-color: #FFF; 
+}
+
+#date{
+  float:right;
+}
+
+#body{
+  padding-bottom:40px;
+  margin:0px;
+  padding:0px;
+  font-family:"Century Gothic", arial, serif;
+}
+
+#footer {
+  position:relative;
+  bottom:0;
+  height:40px;
+  margin-top:-40px;
+  width:100%;
+  padding-bottom: 20px;
+  padding-top:0px;
+  background:#000;
+  text-align: center;
+  line-height:80%;
+}
+
+p.copyright {
+  color:#FFF;
+}
+
+.footer-links li {
+  display: inline;
+  padding: 0 6px;
+}
+
+#footer li a{
+  color:#069;
+}
+
+#footer li a:hover {
+  color: #c00;
+}
