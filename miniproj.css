@@ -16,6 +16,7 @@ center {
 }
 
 #bulk {
+  display:none;
   margin:200px 50px 30px 10px;
   height:80%;
 
