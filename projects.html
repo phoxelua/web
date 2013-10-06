@@ -13,16 +13,23 @@ Update: The Isotope effects were cheaply taken and not built from scratch (it wa
 <meta name="keywords" content="howard, nguyen, electrical, engineer, computer, science, EECS">
 <meta name="author" content="Howard Nguyen">
 <title>Howard Nguyen - Projects</title>
+
 <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.10.2.min.js"></script>
- <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
- <script src="jquery.isotope.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+<script src="jquery.isotope.min.js"></script>
 <script src="isotope.js"></script>
-<!-- ENDS Isotope -->
+
 <script type="text/javascript" src="cpanels.js"></script>
 <link rel="stylesheet" type="text/css" href="mainstyle.css" media="screen">
 <link rel="stylesheet" type="text/css" href="miniport.css" media="screen">
 <link rel="stylesheet" type="text/css" href="miniproj.css" media="screen">
 <link rel="stylesheet" type="text/css" href="panel.css" media="screen">
+<script type="text/javascript">
+$(window).load(function() {
+  $("#bulk").fadeIn(2000);
+  $("#bulk").isotope('reLayout');
+});
+</script>
 </div> 
 <!-- end head -->
 
