@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE HTML>
 <!-- Note: This webpage was built from scratch without any static generators, templates, or copying/pasting. I did it mainly as a learning experience in HTML/CSS/JS.As such there maybe (correction: are) a lot of bugs. In fact, if you're reading this you should probably stop and not look at the source code anymore. Pls. Everything is a huge, ugly mess down there. It's seriously terrible coding. I will cry. You will cry. It will be very embarassing. Wait for version 2.0. Seriously. End rant/plea.
 
@@ -267,4 +268,330 @@ $(window).load(function() {
   <!-- end footer -->
 
 
+=======
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Projects</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Bootstrap -->
+        <link href="css/bootstrap.min.css" rel="stylesheet"> 
+        <link href="css/custom.css" rel="stylesheet">   
+        <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.10.2.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+        <script src="js/jquery.isotope.min.js"></script>
+        <script src="js/isotope.js"></script>
+
+    </head>
+    <body>
+        <div class="navbar-wrapper">
+            <div class="container">
+
+                <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div>
+                        <div class="navbar-collapse collapse">
+                                <ul class="nav navbar-nav">
+                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="portfolio.html">Portfolio</a></li>
+                                    <li class="active"><a href="projects.html">Projects</a></li>
+                                    <li><a href="contact.html">Contact</a></li>
+                                </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="jumbotron">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Howard Anh Hao Nguyen</h2>
+                    <h3>howardanguyen AT berkeley DOT edu</h3>
+                    <hr>
+                    <p style="margin-bottom:0%;"> Here are all of the projects I've worked on. Some are still being implemented and some I am still in the process of writing the documentation for all of the projects so most of the links / repos are not ready yet. But feel free to contact or email me if you have any questions. Individual project pages will be up soon!</p>
+                </div>
+            </div>
+        </div>
+        </div>
+
+<center><a href="" class="button" rel="all">Everything</a><a href="" class="button" rel="personal">Personal</a><a href="" class="button" rel="school">School</a><a href="" class="button" rel="other">Other</a></center>
+
+
+        <div id="bulk">
+            <div class="box school">
+                <a href="http://inst.cs.berkeley.edu/~cs184-an/as1.html"><img src="img/toon.PNG"></a>
+                <div class="box-descript">
+                <h1><a href="http://inst.cs.berkeley.edu/~cs184-an/as1.html">Phong Shading</a></h1> 
+                <p>
+                    Implemented a Phong shading program in OpenGL by incorporating ambient, Lambertian, and Phong specularities into pixel color calculations. Also, incorporated toon shading for fun.
+                </p>
+                </div>
+            </div>             
+            <div class="box personal">
+                <a href="#"><img src="img/tron.jpg"></a>
+                <div class="box-descript">
+                <h1><a href="#">Tron Wannabe</a></h1>
+                <p>
+                  A simple TRON-inspired, pure javascript single player game with music from the movie. Very basic computer AI. 
+                </p>
+                </div>
+            </div>
+            <div class="box school">
+                <a href="#"><img src="img/sfsim2.jpg"></a>
+                <div class="box-descript">
+                <h1><a href="#">Sharks and Fish</a></h1>
+                <p>
+                    Data structures CS course. Simulated an ocean full of sharks and fish. Also implemented a run-length encoding representation of the ocean.
+                </p>
+                </div>
+            </div>
+            <div class="box personal">
+                <a href="http://viewfinder.herokuapp.com/"><img src="img/viewfinder.PNG" width="400"></a>
+                <div class="box-descript">
+                <h1><a href="http://viewfinder.herokuapp.com/">View Finder</a></h1> 
+                <p>
+                    Built for FB Hackathon. ViewFinder is a geography-based image viewer that pulls images from Instagram in real-time and displays them in an river / carousel-like fashion. Just pick a location and it will show you all the pictures tagged from that location!
+                </p>
+                </div>
+            </div>  
+            <div class="box personal">
+                <a href="#"><img src="img/logo.jpg"></a>
+                <div class="box-descript">
+                <h1><a href="#">Yelp Wannabe</a></h1>
+                <p>
+                  Too lazy to go all the way to your browser and lookup Yelp reviews? No? Oh well I was. So, I built a command prompt application that scrapes Yelp for restaurant reviews. It also reads the reviews and tries to analyze them for the overall attituded.
+                </p>
+                </div>
+            </div>
+            <div class="box personal">
+                <a href="#"><img src="img/dict.jpg"></a>
+                <div class="box-descript">
+                <h1><a href="#">Lame Dictionary</a></h1>
+                <p>
+                First project with web scraping! Looks up definitions and parts of speech from the command prompt. Very basic, nothing special. Currently implementing an enhanced thesaurus function.
+                </p>
+                </div>
+            </div>
+            <div class="box school">
+                <a href="http://inst.cs.berkeley.edu/~cs184-an/as2.html"><img src="img/raytracer.jpg"></a>
+                <div class="box-descript">
+                <h1><a href="http://inst.cs.berkeley.edu/~cs184-an/as2.html">Ray Tracer</a></h1> 
+                <p>
+                    Built a ray tracer in C++ from scratch. Implemented a raytracer that can render spheres and triangles and handle reflections, Phong shading, shadows, and geometric transformations. Depth of field effects, anti-aliasing, refraction, and environment mapping was added for fun!
+                </p>
+                </div>
+            </div> 
+  
+            <div class="box personal">
+                <a href="#"><img src="img/rc.JPG"></a>
+                <div class="box-descript">
+                <h1><a href="#">Remote Controlled Laptop</a></h1>
+                <p>
+                Uses simple batch programming with basic VBA scripts to control my laptop with SMS messages. Currently has basic modes such as opening the browser to my favorite tabs and playing music.
+                </p>
+                </div>
+            </div>
+            <div class="box personal">
+                <a href="#"><img src="img/ecg3.jpg"></a>
+                <div class="box-descript">
+                <h1><a href="#">ECG</a></h1>
+                <p>
+                Working electrocardiogram (ECG) that accurately measures heart rate. Utilizes chains of low pass filters and op-amps to clean up the signal but addional open source software was used to get a better-looking reading. 
+                </p>
+                </div>
+            </div>
+            <div class="box personal">
+                <a href="#"><img src="img/cssf.gif"></a>
+                <div class="box-descript">
+                <h1><a href="#">Biofilters</a></h1>
+                <p>
+              Cheap biofilters made of woodchips, gravel, and compost to filter nitrates and phosphates out of agricultural run-off. Varying ratios of these three biomedia were tested to determine the optimal ratio for run-off reduction. Pictures coming soon!
+                </p>
+                </div>
+            </div>
+            <div class="box other">
+                <a href="#"><img src="img/shoe.jpg"></a>
+                <div class="box-descript">
+                <h1><a href="#">Shoe Rack</a></h1> 
+                <p>
+                  Challenge (self-imposed): build a shoe rack under $30 using as much scavenged materials as possible. Take at most 2 weeks.
+                </p>
+                </div>
+            </div>
+            <div class="box personal">
+                <a href="#"><img src="img/captcha.gif"></a>
+                <div class="box-descript">
+                <h1><a href="#">Captch Me Not</a></h1>
+                <p>
+                    Built using MATLAB to read very simple Captchas for HackJam, another 24 hackathon hosted at UC Berkeley. It identifies characters by projecting samples into a histogram that can then be mapped to a dictionary of candidates.
+                </p>
+                </div>
+            </div>
+            <div class="box other">
+                <a href="#"><img src="img/no_image.jpg"></a>
+                <div class="box-descript">
+                <h1><a href="#">Uncle's House</a></h1> 
+                <p>
+                I helped my uncle build his house by installing the foundation and floor for the catwalk in the attic as well as installing the roof rafters and shingles. I also cut and created the header frames for the arches in the living room and kitchen door.
+                </p>
+                </div>
+            </div>
+
+            <div class="box school">
+                <a href="#"><img src="img/hog.jpg"></a>
+                <div class="box-descript">
+                <h1><a href="#">The Game of Hog</a></h1> 
+                <p>
+                    Introductory CS course. Developed a simulator and multiple strategies for the dice game Hog. Practice with higher order functions and probability analysis (self-imposed criteria).
+                </p>
+                </div>
+            </div>
+            <div class="box school">
+                <a href="#"><img src="img/trends.jpg"></a>
+                <div class="box-descript">
+                <h1><a href="#">Twitter Trends</a></h1> 
+                <p>
+                    Introductory CS course. Developed a geographic visualization of Twitter data across the US. Practice with dictionaries, lists, abstraction, and modular programming.
+                </p>
+                </div>
+            </div>
+            <div class="box other">
+                <a href="#"><img src="img/catapult.jpg"></a>
+                <div class="box-descript">
+                <h1><a href="#">"Catapult" Thing</a></h1> 
+                <p>
+                  Bored? Have the afternoon free? Then why not build a catapult? But what happens when a MechE and EECs amateur try to build a catapult on the spur of the moment? Hint: a very, very jank catapult.
+                </p>
+                </div>
+            </div>
+            <div class="box school">
+                <a href="#"><img src="img/ants2.jpg"></a>
+                <div class="box-descript">
+                <h1><a href="#">Ants vs. SomeBees</a></h1> 
+                <p>
+                    Introductory CS course. Created a tower defense game. Practice with OOP and inheritance. Most skeleton code provided.
+                </p>
+                </div>
+            </div>
+            <div class="box school">
+                <a href="#"><img src="img/scheme.jpg"></a>
+                <div class="box-descript">
+                <h1><a href="#">Scheme Interpreter</a></h1> 
+                <p>
+                    Introductory CS course. Implemented a scheme interpreter for the Scheme language. Practice with parsing, tokenizing, and evaluating Scheme functions.
+                </p>
+                </div>
+            </div>
+
+            <div class="box school">
+                <a href="#"><img src="img/network.jpg"></a>
+                <div class="box-descript">
+                <h1><a href="#">Network (The Game)</a></h1> 
+                <p>
+                    Data structures CS course. Implemented a program that plays the game Network against a human player and another computer program. Practice with game strategies and alpha-beta pruning. Honestly, the hardest project for me ever (so far).
+                </p>
+                </div>
+            </div>
+            <div class="box school">
+                <a href="#"><img src="img/kruskal.jpg"></a>
+                <div class="box-descript">
+                <h1><a href="#">WUGs and Trees</a></h1> 
+                <p>
+                    Data structures CS course. Augmented a variety of data structures to achieve faster performance with representations of weighted directed graphs and min span trees. Practice with Kruskal's algorithm.
+                </p>
+                </div>
+            </div>
+            <div class="box school">
+                <a href="#"><img src="img/mr2.jpg"></a>
+                <div class="box-descript">
+                <h1><a href="#">MapReduce in EC2</a></h1> 
+                <p>
+                    Machine structures CS course. Used EC2 to calculate co-occurence rates of various words in large text files.
+                </p>
+                </div>
+            </div>
+            <div class="box personal">
+                <a href="#"><img src="img/finger.PNG"></a>
+                <div class="box-descript">
+                <h1><a href="#">Das Typing Game</a></h1> 
+                <p>
+                    Some friends and I made a 2 player typing game for BearHack, a 24 hour hackathon. Made using node.js, socket.io, and angular.js.
+                </p>
+                </div>
+            </div>            
+            <div class="box personal">
+                <a href="#"><img src="img/mail.jpg"></a>
+                <div class="box-descript">
+                <h1><a href="#">Lame Mail</a></h1>
+                <p>
+                Just another command prompt email checker (a Mutt rip-off). One of my first python programs. Mainly implemented to replace Outook and have RC Laptop run independently.
+                </p>
+                </div>
+            </div>
+            <div class="box other">
+                <a href="#"><img src="img/no_image.jpg"></a>
+                <div class="box-descript">
+                <h1><a href="#">Desk</a></h1> 
+                <p>
+                    Built a very cheap (and very jank) side desk for a friend. Couldn't scavenge my way out of this one since there were no large pieces of wood to be found. 
+                </p>
+                </div>
+            </div>
+            <div class="box school">
+                <a href="#"><img src="img/mips.gif"></a>
+                <div class="box-descript">
+                <h1><a href="#">MIPS Simulator</a></h1> 
+                <p>
+                    Created an instruction interpreter for a subset of MIPS assembly code. This included 18 R-Types, 2 J-types, and 17 I-type instructions.
+                </p>
+                </div>
+            </div>            
+            <div class="box school">
+                <a href="#"><img src="img/ajay.PNG"></a>
+                <div class="box-descript">
+                <h1><a href="#">Image Processing and Optimization</a></h1> 
+                <p>
+                    Optimized 2D image convolution by implementing SSE intrinsics, loop unrolling, cache blocking, register blocking, and OpenMP. Was able to achieve an average of 68 Gflop/s for images ranging from 240 x 240 to 1200 x 1200. Credits of image goes to Ajay Tripathi.
+                </p>
+                </div>
+            </div>   
+            <div class="box school">
+                <a href="#"><img src="img/logisim.PNG"></a>
+                <div class="box-descript">
+                <h1><a href="#">Processor Design</a></h1> 
+                <p>
+                    Used Logism to implement a 16-bit, 2-stage pipelined processor that executes MIPS assembly. Deliverables included register files, ALU, processor, memory, and output devices.
+                </p>
+                </div>
+            </div>   
+            <div class="box school">
+                <a href="#"><img src="img/pacman.PNG"></a>
+                <div class="box-descript">
+                <h1><a href="#">Pacman AI</a></h1> 
+                <p>
+                    A 5 part project that implemented a Pacman AI using: heuristics, search and Markov decision making, reinforcement learning, and probability.  
+                </p>
+                </div>
+            </div>   
+
+
+
+            <!-- ADD MORE PROJECTS HERE -->
+        </div>
+
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="js/bootstrap.min.js"></script>
+    </body>
+>>>>>>> origin/master
 </html>
