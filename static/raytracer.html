@@ -1,0 +1,138 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Portfolio</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- Bootstrap -->
+		<link href="../css/bootstrap.min.css" rel="stylesheet">
+		
+		<link href="../css/custom.css" rel="stylesheet">	
+		<style type="text/css">
+p {
+   font-size: 16px;
+}
+</style>
+	</head>
+	<body>
+		<div class="navbar-wrapper">
+			<div class="container">
+
+				<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+					<div class="container">
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+						</div>
+						<div class="navbar-collapse collapse">
+								<ul class="nav navbar-nav">
+									<li><a href="index.html">Home</a></li>
+									<li><a href="portfolio.html">Portfolio</a></li>
+									<li class="active"><a href="projects.html">Projects</a></li>
+									<li><a href="contact.html">Contact</a></li>
+								</ul>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+		<div class="jumbotron">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<h2>Ray Tracer</h2>
+					<h3>CS184 Graphics</h3>
+					<hr>
+					<p> This was built for project 2 in CS184 at UC Berkeley. You can take a look a the project specs <a href="../pdfs/raytracer.pdf"> here</a>. However, a lot of features where implemented just for fun so don't expect to find them there! </p>
+					<h3>Intro</h3>
+						<p> So what is ray tracing? Ray tracing, in a nutshell, is a recursive technique used to color an image and make pretty pictures. The basic algorithm goes like this: for every pixel, shoot out an "eye ray" and let it bounce around your virtual scene- once the eye ray is done bouncing, color the pixel according to the colors the eye ray picks up along the way. If that doesn't make sense, think of the eye ray as a snowball. For every pixel, you throw a snowball. This is a elastic snowball so it'll bounce around the scene- whenever it hits something the snowball gets slightly stained by the objects color. For example, if the snowball hits a red object and then a blue object- it should be colored magenta. Once the snowball finishes bouncing- that's the color I decide to color my pixel. This is a really rough analogy- there are many caveats but many simplifications were made for explanation purposes. You might notice that this is actually "backwards" to how real life works: 
+							<ul>
+							<li>In real life, light strikes an object and bounces around a scene until it reaches your eye. </li>
+							<li>In ray tracing, your eye sends out a pretend ray and <em>it</em> bounces around until it reaches a light source.</li>
+							</ul>
+						</p>
+					<h3>What I did</h3>
+					<p> The project specs only demanded that ray tracing, linear transformations, and reflections be implemented. Since this project was so fun I (along with my partner) ended implementing anti-aliasing, refraction, environment mapping, and depth of field. Samples of those can be seen below.
+					</p>
+
+			<div class="row">
+				<div class="col-md-6">
+					<h3>Reflective Sphere, Environment Map, No Anti-Aliasing</h3>
+					<img src="img/scenes/image-01.jpg" class="img-rounded" width="90%">			
+				</div>
+				<div class="col-md-6">
+					<h3>Reflective Sphere, Environment Map, 3x3 Anti-Aliasing</h3>
+					<img src="img/scenes/image-02.jpg" class="img-rounded" width="90%">		
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-6">
+					<h3>Reflective Sphere, Environment Map, 3x3 Anti-Aliasing</h3>
+					<img src="img/scenes/image-03.jpg" class="img-rounded" width="90%">			
+				</div>
+				<div class="col-md-6">
+					<h3>Reflective Spheres, No Anti-Aliasing</h3>
+					<img src="img/scenes/image-04.jpg" class="img-rounded" width="90%">		
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6">
+					<h3>Reflective Sphere, aperture=50, sample size=16 </h3>
+					<img src="img/scenes/image-05.jpg" class="img-rounded" width="90%">			
+				</div>
+				<div class="col-md-6">
+					<h3>Reflective Spheres, aperture=110, sample size=16</h3>
+					<img src="img/scenes/image-06.jpg" class="img-rounded" width="90%">		
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-6">
+					<h3>Escher, Environment Map, 2x2 Anti-Aliasing</h3>
+					<img src="img/scenes/image-07.jpg" class="img-rounded" width="90%">			
+				</div>
+				<div class="col-md-6">
+					<h3>Refraction, 3x3 Anti-Aliasing</h3>
+					<img src="img/scenes/image-08.jpg" class="img-rounded" width="90%">	
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-6">
+					<h3>Reflection and Refraction, 3x3 Anti-Aliasing</h3>
+					<img src="img/scenes/image-09.jpg" class="img-rounded" width="90%">			
+				</div>
+				<div class="col-md-6">
+					<h3>Do you want to build a snowman?, 4x4 Anti-Aliasing</h3>
+					<img src="img/scenes/image-10.jpg" class="img-rounded" width="90%">
+				</div>
+			</div>
+
+
+			<div class="row">
+				<div class="col-md-6">
+					<h3>Table</h3>
+					<img src="img/scenes/image-11.jpg" class="img-rounded" width="90%">	
+				</div>
+			</div>
+
+
+				</div>
+			</div>
+    	</div>
+    	</div>
+
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<script src="../js/jquery-1.10.2.min.js"></script>
+		<!-- Include all compiled plugins (below), or include individual files as needed -->
+		<script src="../js/bootstrap.min.js"></script>
+	</body>
+</html>
+
+					
