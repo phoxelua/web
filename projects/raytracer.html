@@ -48,7 +48,7 @@ p {
 					<h2>Ray Tracer</h2>
 					<h3>CS184 Graphics</h3>
 					<hr>
-					<p> This was built for project 2 in CS184 at UC Berkeley. You can take a look a the project specs <a href="../pdfs/raytracer.pdf"> here</a>. However, a lot of features where implemented just for fun so don't expect to find them there! </p>
+					<p> This was built for project 2 in CS184 at UC Berkeley. You can take a look a the project specs <a href="../pdfs/raytracer.pdf"> here</a>. However, a lot of features where implemented just for fun so don't expect to find them there! <u>Built using:</u> C++ </p>
 					<h3>Intro</h3>
 						<p> So what is ray tracing? Ray tracing, in a nutshell, is a recursive technique used to color an image and make pretty pictures. The basic algorithm goes like this: for every pixel, shoot out an "eye ray" and let it bounce around your virtual scene- once the eye ray is done bouncing, color the pixel according to the colors the eye ray picks up along the way. If that doesn't make sense, think of the eye ray as a snowball. For every pixel, you throw a snowball. This is a elastic snowball so it'll bounce around the scene- whenever it hits something the snowball gets slightly stained by the objects color. For example, if the snowball hits a red object and then a blue object- it should be colored magenta. Once the snowball finishes bouncing- that's the color I decide to color my pixel. This is a really rough analogy- there are many caveats but many simplifications were made for explanation purposes. You might notice that this is actually "backwards" to how real life works: 
 							<ul>
