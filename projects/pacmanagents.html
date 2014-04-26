@@ -13,10 +13,6 @@ p {
    font-size: 16px;
 }
 
-IMG.displayed {
-    display: block;
-    margin-left: auto;
-    margin-right: auto }
 
 </style>
 	</head>
@@ -51,35 +47,29 @@ IMG.displayed {
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
-					<h2>Sphinx</h2>
-					<h3>Personal Project</h3>
+					<h2>Pacman: Multiple Agents</h2>
+					<h3>CS188 AI</h3>
 					<hr>
-					<p> This was built for Big Hack and LA Hacks 2014 with my partner Jacqueline Xu. <u>Built using:</u> Python, d3.js, Heroku, Flask, HTML/CSS </p>
-					<h3>What it does </h3>
-					<p>
-						Sphinx is a data analysis and visualizing tool. Given any two queries (usually given as a noun / pronoun), it finds the corresponding data sets on the web and performs analysis on them (only regression implemented now).
-					</p>
-					<h3> How it Works</h3>
+					<p> Made for project 2 in CS188 Spring 2014. <u>Built using:</u> Python </p>
+					<h3> Goal </h3>
 						<p>
-							First, it parses the search box by simply looking for "tag" phrases - we did not implement any NLP since this was for a hackathon. These tags are then mapped to sources (BEA, Census, etc) which then map to actual datasets. Once these datasets are pulled they are cached in our own "database" (kinda) to avoid max API requests and to increase plot speed. The data is given to Python scipy to do the actual analysis. The results are passed to Flask which gives it to d3 for pretty plotting.
+							The goal of this project was to have Pacman make "rational" decisions when there is are adversaries that are out to kill him (ghosts). Optimality was decided based on Pacman's model of the world. For example, if Pacman assumed that he was always playing against an evil mastermind- a minimax agent- then he should choose to also play as a minimax agent. However, if the ghost is just randomly moving around, minimax is a poor choice since he would be excessively scared and always choose to hide instead of taking risks and going for food. Expectimax is a better choice, in this case. In these examples, Pacman does not know whether the ghosts are random or not. Decision making models used are: minimax with alpha beta pruning, expectimax, and greedy evaluation functions. 
 						</p>
-				</div>
-			</div>
-			<div class="row">
+						<p>
+							The left shows Pacman running minimax with alpha beta pruning against two ghosts that are also running minimax. Note how they cooperate to trap and kill Pacman without any explicit code that tells them to cooperate. The right shows a custom evaluation function that weights all the features I deemed important: ghost distance, food distance, etc. Check out them moves!
+						</p> 
 				<div class="col-md-6">
-				<h3>Screenshots</h3>
-					<IMG class="displayed" src="../img/sphinx.png" width="100%">
+				<h3>Example Runs</h3>
+					<IMG class="displayed" src="../img/abnop.gif" width="100%">
 				</div>
 				<div class="col-md-6">
 					<br>
 					<br>
 					<br> 
 					<!-- lol cheapness -->
-					<IMG class="displayed" src="../img/results.png" width="100%">
+					<IMG class="displayed" src="../img/customeval.gif" width="100%">
 				</div>
 			</div>
-			<br>
-			<p>If you want to see a video of Sphinx in clumsy action, check out this <a href="http://youtu.be/bDrKYkw1R3U">youtube link</a>.</p>
     	</div>
     	</div>
 
