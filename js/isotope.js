@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(window).load(function() {
 	$('#bulk').isotope();
 	
 	$('a.button').click(function(e) {
