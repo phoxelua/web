@@ -1,0 +1,20 @@
+---
+title: Yelp Wannabe
+subtitle: Rank food purely on written reviews
+layout: default
+modal-id: yelp
+project-date: March 2013
+technologies: [Python]
+topics: [Web scraping, sentiment analysis]
+description: Made an app that reads Yelp reviews and ranks businesses purely on their written reviews- that is disregarding the 5-star rank, cost, location, etc.
+date: 2013-04-14
+thumbnail: yelp/yelp.jpg
+---
+
+Yelp Wannabe was the first personal project I did outside of school and outside of a hackathon. I wanted to see if it was possible to rank businesses, specifically restaurants, based on their written reviews. I was curious to see if they matched up with Yelp's top 10 ranking that weighs the star score, location, and cost.
+
+I do not remember my motivation for using Python's Beautiful Soup module to manually scrape the website food reviews but it was probably due to the fact that I didn't have access to the Yelp API at the time. Or I was just an idiot- which probably the actual reason. Anyways, for every businesses (up to a total of 200, I think), I parsed all their reviews and outputed a ranking based on the written review. My first attempt was the simplest- map every word to a sentiment score from a massive sentiment dicitonary I found online.
+
+This naiive approach actually didn't do that badly but it got easly confused by words of neutral or nuanced connotation. For example, words such as "sloppy" could indicate that a restaurant was messy or unclean but if the business specialized in sloppy Joe's they would get unfairly penalized. Basically, the naiive method sucks for obvious reasons- it didn't look at context, parts of speech, or structure. Pretty much, it didn't perform sentiment analysis at all.
+
+At this point, I was really lazy so I decided to use Python NLTK for sentiment analysis. Python NLTK utilizes Twitter sentiment and movie reviews in order to train a Bayes' classifier. At the time, I didn't know anything about ML so it boiled down to me reading learning a lot of new concepts. Python NLTK turned out to be quite powerful out of the box and pretty much negated all the effort I put into find and stiching together massive sentiment dictionaries. At the end of the day, Yelp Wannabe actually was able to match 6 out of 10 Yelp's top 10 list. Though this is not that impressive, it was pretty fun to learn about classifiers and scraping in the process.

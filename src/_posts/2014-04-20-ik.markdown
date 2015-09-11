@@ -1,0 +1,21 @@
+---
+title: Inverse Kinematics Solver
+subtitle: A virtual arm that uses IK
+layout: default
+modal-id: ik
+project-date: April 2014
+technologies: [C++, OpenGL]
+topics: [Graphics, Jacobian, psueudo inverse]
+description: Created, from scratch, a program that utilizes solves inverse kinematics system of equations to move a virtual arm to arbitrary points in space.
+date: 2014-04-20
+thumbnail: ik/ik1.gif
+teaser:
+gallery:
+- src: ik/demo1.mp4
+  alt: demo1.mp4
+- src: ik/demo2.mp4
+  alt: demo2.mp4
+---
+
+         
+I animated a virtual skeleton arm to move along a path using C++ and inverse kinematics. Inverse kinematics basically takes in a point in space and calcuates the rotations neeeded to move the all the joints in an arm to the given point (as opposed to forward kinematics which uses user specified angles to move a joint). The rotations were calculated using a numerical method consisting of calculating the pseudo inverse of the Jacobian matrix. Out of range targets were also handled along with arbitrary number of joints and length.

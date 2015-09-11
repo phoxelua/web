@@ -1,0 +1,17 @@
+---
+title: Smaug
+subtitle: A customer invoice system
+layout: default
+modal-id: smaug
+project-date: December 2014
+technologies: [Ruby on Rails, Postgesql, Pdftk]
+topics: [Web development]
+description: Created a customer relationship manager that stores invoices for quick retrieval.
+date: 2014-12-30
+thumbnail: smaug/smaug.png
+gallery-col: 12
+gallery:
+- src: smaug/web.png
+  alt: web.png
+---
+Smaug was built over winter break of my senior year for my uncle who own's a smog check business (hence the pun). It takes scanned pdf images and extracts the fields into a database for easy retrieval. My uncle was having a hard time remembering which customer's visited and what they came in for so he requested that I make Smaug to help replace his room full of cabinents and paper invoices.

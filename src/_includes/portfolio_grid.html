@@ -1,0 +1,63 @@
+<!-- Portfolio Grid Section -->
+    <section id="portfolio" class="bg-light-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Portfolio</h2>
+                    <h3 class="section-subheading text-muted">Here are some projects from school, hackathons, and other side applications I've worked on. I enjoy mostly working on projects involving graphics, imaging, and machine learning though I also doing web apps. If you'd like here is <a href="Resume.pdf"> my resume. </a> </h3>
+                </div>
+            </div>
+            {% for post in site.posts %}
+            {% assign loopindex = forloop.index | modulo: 3 %}
+                {% if loopindex == 1 %}
+                    <div class="row">
+                        <div class="col-md-4 col-sm-6 portfolio-item">
+                            <a href="#{{ post.modal-id }}" class="portfolio-link" data-toggle="modal">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content">
+                                        <i class="fa fa-plus fa-3x"></i>
+                                    </div>
+                                </div>
+                                <img src="img/portfolio/{{ post.thumbnail }}" class="img-responsive" alt="" >
+                            </a>
+                            <div class="portfolio-caption">
+                                <h4>{{ post.title }}</h4>
+                                <p class="text-muted">{{ post.subtitle }}</p>
+                            </div>
+                        </div>
+                {% elsif loopindex == 0 %}
+                        <div class="col-md-4 col-sm-6 portfolio-item">
+                            <a href="#{{ post.modal-id }}" class="portfolio-link" data-toggle="modal">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content">
+                                        <i class="fa fa-plus fa-3x"></i>
+                                    </div>
+                                </div>
+                                <img src="img/portfolio/{{ post.thumbnail }}" class="img-responsive" alt="" >
+                            </a>
+                            <div class="portfolio-caption">
+                                <h4>{{ post.title }}</h4>
+                                <p class="text-muted">{{ post.subtitle }}</p>
+                            </div>
+                        </div>
+                    </div>
+                {% else %}
+                        <div class="col-md-4 col-sm-6 portfolio-item">
+                            <a href="#{{ post.modal-id }}" class="portfolio-link" data-toggle="modal">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content">
+                                        <i class="fa fa-plus fa-3x"></i>
+                                    </div>
+                                </div>
+                                <img src="img/portfolio/{{ post.thumbnail }}" class="img-responsive" alt="" >
+                            </a>
+                            <div class="portfolio-caption">
+                                <h4>{{ post.title }}</h4>
+                                <p class="text-muted">{{ post.subtitle }}</p>
+                            </div>
+                        </div>
+                {% endif %}
+
+            {% endfor %}
+        </div>
+    </section>

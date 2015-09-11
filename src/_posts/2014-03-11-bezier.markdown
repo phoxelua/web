@@ -1,0 +1,38 @@
+---
+title: Bezier Surfaces
+subtitle: Render objects using subdivision
+layout: default
+modal-id: bezier
+project-date: March 2014
+technologies: [C++, OpenGL]
+topics: [Graphics, uniform subdivision, adaptive tessalation, Bezier surfaces]
+description: Created, from scratch, a program that rendered vertex dumps as Bezier surfaces that where subdivided to create smooth surfaces.
+date: 2014-03-11
+thumbnail: bez/image-12.png
+teaser-col: 3
+gallery-col: 4
+teaser:
+- src: bez/image-00.png
+  alt: image-00.png
+- src: bez/image-12.png
+  alt: image-12.png
+- src: bez/image-04.png
+  alt: image-04.png
+- src: bez/image-02.png
+  alt: image-02.png
+gallery:
+- src: bez/image-09.png
+  alt: image-09.png
+- src: bez/image-10.png
+  alt: image-10.png
+- src: bez/image-11.png
+  alt: image-11.png
+
+---         
+The goal was to take a given set of vertices, specified as a .obj or .bez file, and render it as an object via subdivision. Two subdivision techniques are supported: adaptive tessalation and uniform subdivision. Basically, the vertices specified by the input are grouped as control points for Bezier curves which are in turn grouped into Bezier surfaces. 4 control points specify a Bezier curve and 4 Bezier curves specify a Bezier surface. 
+
+The challenging part was making these surfaces look smooth and continuous. If we are given round, curve objects we should make it look smooth by breaking each Bezier surface into smaller Bezier surfaces. This is called subdivision. The more we subdivide the smoother and prettier the rendered object is. The catch is that the more we subdivide the more expensive it becomes (exponential, actually). The two techniques we used were:
+<ul>
+  <li><strong>Uniform subdivision:</strong> break surfaces into same size patches regardless input curvature, basically split the object into a mesh/grid-like fashion</li>
+  <li><strong>Adaptive tessalation: </strong> recursively break surfaces into smaller and smaller triangles untill the each triangle passes the flatness test (flatness testing is to ensure there is no cracking between adjacent surfaces) </li>
+</ul>
