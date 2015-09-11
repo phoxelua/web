@@ -38,6 +38,6 @@ social:
 markdown: kramdown
 permalink: pretty
 
-source: "src"
+
 destination: "site"
 exclude: ["Rakefile", "LICENSE", "readme.markdown", "vendor", .git, .gitignore, sass, .sass-cache, package.json, gruntfile.js, node_modules, README.md]
