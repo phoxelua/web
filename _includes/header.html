@@ -19,9 +19,6 @@
                         <a href="#page-top"></a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#about">About</a>
-                    </li>
-                    <li>
                         <a class="page-scroll" href="#career">Career</a>
                     </li>
                     <li>
@@ -39,15 +36,20 @@
         <div class="container">
             <div class="intro-text">
                 <div class="intro-lead-in">Hi, I'm Howard.</div>
+                <br>
                 <div class="intro-subtitle">Software engineer with 10+ years of experience scaling high performance distributed systems and AI/ML infrastructure</div>
                 <br>
+                <div class="row text-center">
+                    <p>I work primarily work on scaling distributed systems and AI/ML infrastructure in both the startup and large company space. But I've work on all sorts of topics including web development, optical character recognition (OCR), graphics, ray tracing, feature streaming, real-time inference, and serving GenAI/LLM models. If you'd like, here's <a href="Howard-Nguyen-Resume.pdf"> my resume. </a> </p>
+
+                    <p>Outside of this nerdy stuff, I enjoy traveling, boxing, and dog walking- though I have a cat :). Feel free to reach out to my socials below- maybe we can build something together!</p>
                 <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
+                    <ul class="list-inline social-buttons">
+                        {% for network in site.social %}
+                        <li><a href="{{ network.url }}"><i class="fa fa-{{ network.title }}"></i></a>
+                        </li>
+                        {% endfor %}
+                    </ul>
             </div>
         </div>
     </header>

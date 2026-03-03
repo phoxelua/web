@@ -5,20 +5,21 @@ Agency theme based on [Agency bootstrap theme ](https://startbootstrap.com/templ
 
 # How to use
 
-###Portfolio 
+All files are built via `jeklyll` in `sites/`.
 
-Portfolio projects are in '/_posts'
+### Portfolio 
 
-Images are in '/img/portfolio'
+Portfolio projects are in `/_posts`
 
-###About
+Images are in `/img/portfolio`
 
-Images are in '/img/about/'
+### About
+
+Images are in `/img/about/` (deprecated)
 
 
 # Demo
 
 View this jekyll theme in action [here](https://y7kim.github.io/agency-jekyll-theme)
 
-=========
 For more details, read [documentation](https://jekyllrb.com/)

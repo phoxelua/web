@@ -1,11 +1,11 @@
-url: https://howardanguyen.com1
+url: https://howardanguyen.com
 
 # Site settings
 title: "Howard Nguyen"
 subtitle: "#!/howard/nguyen"
 email: howardanguyen@gmail.com
 description: "howard's personal portfolio"
-keywords: "howard, nguyen, howard nguyen, hao, computer science, programming, Berkeley, Cal, Captricity, Instagram, Facebook, Meta, ML, AI, Pinterest, LLM, GenAI"
+keywords: "howard, nguyen, howard nguyen, hao, computer science, programming, Berkeley, Cal, Instagram, Facebook, Meta, ML, AI, Pinterest, LLM, GenAI"
 favicon: "/favicon.ico?v=2"
 google-tracking-id: "UA-35880426-3"
 disqus-shortname: False
