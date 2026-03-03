@@ -35,3 +35,9 @@ $('div.modal').on('show.bs.modal', function() {
 		}
 	}
 });
+
+$(document).on('keyup', function(event) {
+	if (event.which === 27) {
+		$('.modal.in').modal('hide');
+	}
+});
