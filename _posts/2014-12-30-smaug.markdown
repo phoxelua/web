@@ -9,7 +9,6 @@ topics: [Web development]
 description: Created a customer relationship manager that stores invoices for quick retrieval.
 date: 2014-12-30
 thumbnail: smaug/smaug.png
-gallery-col: 12
 gallery:
 - src: smaug/web.png
   alt: web.png

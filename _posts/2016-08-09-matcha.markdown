@@ -1,0 +1,13 @@
+---
+title: Matcha
+subtitle: A personal budgeting website
+layout: default
+modal-id: matcha
+project-date: August 2016
+technologies: [Flask, Postgesql, Plaid]
+topics: [Web development]
+description: A personal budgeting website
+date: 2016-08-09
+thumbnail: matcha/matcha.jpg
+---
+Matcha is a personal budgeting webite built with my friend to track our finances. We created this when we noticed that the alternatives like Mint were difficult to use and slow.
