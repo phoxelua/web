@@ -15,12 +15,6 @@ Images are in '/img/portfolio'
 
 Images are in '/img/about/'
 
-###Team
-
-Team members and info are in '_config.yml'
-
-Images are in '/img/team/'
-
 
 # Demo
 

@@ -4,8 +4,8 @@ url: https://howardanguyen.com1
 title: "Howard Nguyen"
 subtitle: "#!/howard/nguyen"
 email: howardanguyen@gmail.com
-description: "Personal website to host projects and portfolio for Howard Nguyen. Also a portfolio, maybe."
-keywords: "howard, nguyen, howard nguyen, hao, computer science, programming, Berkeley, Cal, Captricity, Natero"
+description: "howard's personal portfolio"
+keywords: "howard, nguyen, howard nguyen, hao, computer science, programming, Berkeley, Cal, Captricity, Instagram, Facebook, Meta, ML, AI, Pinterest, LLM, GenAI"
 favicon: "/favicon.ico?v=2"
 google-tracking-id: "UA-35880426-3"
 disqus-shortname: False
@@ -24,13 +24,9 @@ me-img: "/img/me.jpg"
 # Social networks usernames (many more available: google-plus, flickr, dribbble, pinterest, instagram, tumblr, linkedin, etc.)
 social:
   - title: facebook
-    url: https://www.facebook.com/howard.nguyen.94
-  - title: google-plus
-    url: https://plus.google.com/u/0/115660727961849929716/posts
+    url: https://www.facebook.com/howardanguyen
   - title: linkedin
     url: http://www.linkedin.com/in/howardanguyen
-  - title: stack-overflow
-    url: http://stackoverflow.com/users/4493215/howard-nguyen
   - title: github
     url: http://github.com/phoxelua
 
