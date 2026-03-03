@@ -36,8 +36,23 @@ $('div.modal').on('show.bs.modal', function() {
 	}
 });
 
-$(document).on('keyup', function(event) {
-	if (event.which === 27) {
+function closeOpenModalOnEsc(event) {
+	var key = event.key || event.keyCode || event.which;
+	if (key === 'Escape' || key === 'Esc' || key === 27) {
 		$('.modal.in').modal('hide');
 	}
+}
+
+window.addEventListener('keydown', closeOpenModalOnEsc, true);
+
+$(document).on('hide.bs.modal', '.modal', function() {
+	var active = document.activeElement;
+	if (active && this.contains(active)) {
+		active.blur();
+	}
+});
+
+$(document).on('hidden.bs.modal', '.modal', function() {
+	if (document.activeElement === document.body) return;
+	document.body.focus();
 });
