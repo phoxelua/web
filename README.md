@@ -1,7 +1,7 @@
 Agency Jekyll theme
 ====================
 
-Agency theme based on [Agency bootstrap theme ](http://startbootstrap.com/templates/agency/)
+Agency theme based on [Agency bootstrap theme ](https://startbootstrap.com/templates/agency/)
 
 # How to use
 
@@ -21,4 +21,4 @@ Images are in '/img/about/'
 View this jekyll theme in action [here](https://y7kim.github.io/agency-jekyll-theme)
 
 =========
-For more details, read [documentation](http://jekyllrb.com/)
+For more details, read [documentation](https://jekyllrb.com/)

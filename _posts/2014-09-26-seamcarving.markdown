@@ -6,7 +6,7 @@ modal-id: seamcarving
 project-date: Sept 2014
 technologies: [MATLAB]
 topics: [Computational photography, dynamic programming, entropy]
-description: The goal was to resize images by removing seams in the images that contain the least amount of "energy". Here "energy" is an function that maps pixel locations to values that we define based on what we want to remove from the image. This technique allows us to avoid sacrifice detail when we scale the image. It can also be done automatically, unlike cropping. This method is presented in this paper <a href="http://inst.eecs.berkeley.edu/~cs194-26/fa14/hw/proj4-seamcarving/imret.pdf">Seam Carving for Content-Aware Image Resizing</a>.
+description: The goal was to resize images by removing seams in the images that contain the least amount of "energy". Here "energy" is an function that maps pixel locations to values that we define based on what we want to remove from the image. This technique allows us to avoid sacrifice detail when we scale the image. It can also be done automatically, unlike cropping. This method is presented in this paper <a href="https://inst.eecs.berkeley.edu/~cs194-26/fa14/hw/proj4-seamcarving/imret.pdf">Seam Carving for Content-Aware Image Resizing</a>.
 date: 2014-09-26
 thumbnail: seamcarving/street-reds.gif
 teaser-col: 3
