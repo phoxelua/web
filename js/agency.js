@@ -56,3 +56,9 @@ $(document).on('hidden.bs.modal', '.modal', function() {
 	if (document.activeElement === document.body) return;
 	document.body.focus();
 });
+
+$(document).on('hidden.bs.modal', '.modal', function() {
+	if (location.hash === '#' + this.id) {
+		history.replaceState(null, '', location.pathname + location.search);
+	}
+});
