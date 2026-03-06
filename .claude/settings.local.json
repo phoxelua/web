@@ -1,7 +1,9 @@
 {
   "permissions": {
     "allow": [
-      "Bash(ls -lh /Users/hnguyen/Documents/code/web/js/*.js)"
+      "Bash(ls -lh /Users/hnguyen/Documents/code/web/js/*.js)",
+      "Bash(sips:*)",
+      "Bash(ls:*)"
     ]
   }
 }
