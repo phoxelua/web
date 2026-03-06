@@ -29,7 +29,7 @@
                 <div class="row">
                     {% for media in post.teaser %}
                         <div class="col-md-{{ post.teaser-col }}">
-                            <img src="img/portfolio/{{ media.src }}" class="img-responsive" alt="{{ media.alt }}">
+                            <img src="img/portfolio/{{ media.src }}" class="img-responsive" alt="{{ media.alt }}" loading="lazy">
                         </div>
                     {% endfor %}
                 </div>
@@ -50,12 +50,12 @@
                         </div>
                     </div>
                 {% endif %}
-                <div class="row">  
+                <div class="row">
                     {% for media in post.gallery %}
                             {% if media.src contains '.mp4' %}
                                 <div class="col-md-6">
                                     <div class="embed-responsive embed-responsive-16by9">
-                                        <video autoplay loop class="embed-responsive-item">
+                                        <video loop class="embed-responsive-item" preload="none">
                                             <source src="img/portfolio/{{ media.src }}" type="video/mp4">
                                         </video>
                                     </div>
@@ -63,9 +63,9 @@
                             {% else %}
                                 <div class="col-md-{{ post.gallery-col }}">
                                 {% if post.gallery-col > 6 %}
-                                    <img src="img/portfolio/{{ media.src }}" class="img-responsive" alt="{{ media.alt }}">
+                                    <img src="img/portfolio/{{ media.src }}" class="img-responsive" alt="{{ media.alt }}" loading="lazy">
                                 {% else %}
-                                    <img src="img/portfolio/{{ media.src }}" class="img-responsive" alt="{{ media.alt }}" style="max-height:210px">
+                                    <img src="img/portfolio/{{ media.src }}" class="img-responsive" alt="{{ media.alt }}" style="max-height:210px" loading="lazy">
                                 {% endif %}
                                 </div>
                             {% endif %}

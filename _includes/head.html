@@ -6,16 +6,18 @@
     <meta name="description" content="{{ site.description }}">
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
 
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
 
     <!-- Custom CSS & Bootstrap Core CSS - Uses Bootswatch Flatly Theme: https://bootswatch.com/flatly/ -->
     <link rel="stylesheet" href="{{ "/style.css" | prepend: site.baseurl }}">
 
-    <!-- Custom Fonts -->
+    <!-- Custom Fonts - Combined and preloaded -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Kaushan+Script&family=Lato:ital,wght@0,400;0,700;1,400;1,700&family=Droid+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Slab:wght@100;300;400;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Kaushan+Script&family=Lato:ital,wght@0,400;0,700;1,400;1,700&family=Droid+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Slab:wght@100;300;400;700&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Kaushan+Script&family=Lato:ital,wght@0,400;0,700;1,400;1,700&family=Droid+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Slab:wght@100;300;400;700&display=swap"></noscript>
     <link rel="stylesheet" href="{{ "/css/font-awesome/css/font-awesome.min.css" | prepend: site.baseurl }}">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
 
 </head>
