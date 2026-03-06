@@ -6,6 +6,30 @@
 
     <body id="page-top" class="index">
 
+    <!-- Structured Data (JSON-LD) for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Howard Nguyen",
+      "url": "{{ site.url }}",
+      "email": "{{ site.email }}",
+      "jobTitle": "Senior Software Engineer",
+      "description": "{{ site.description }}",
+      "alumniOf": {
+        "@type": "Organization",
+        "name": "UC Berkeley"
+      },
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Pinterest"
+      },
+      "sameAs": [
+        {% for network in site.social %}"{{ network.url }}"{% unless forloop.last %},{% endunless %}{% endfor %}
+      ]
+    }
+    </script>
+
     <!-- Loading Screen -->
     <div id="page-loader">
         <div class="loader-content">

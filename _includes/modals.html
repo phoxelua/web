@@ -29,7 +29,7 @@
                 <div class="row">
                     {% for media in post.teaser %}
                         <div class="col-md-{{ post.teaser-col }}">
-                            <img src="img/portfolio/{{ media.src }}" class="img-responsive" alt="{{ media.alt }}" loading="lazy">
+                            <img src="img/portfolio/{{ media.src }}" class="img-responsive" alt="{% if media.alt %}{{ media.alt }}{% else %}{{ post.title }} project image{% endif %}" loading="lazy">
                         </div>
                     {% endfor %}
                 </div>
@@ -63,9 +63,9 @@
                             {% else %}
                                 <div class="col-md-{{ post.gallery-col }}">
                                 {% if post.gallery-col > 6 %}
-                                    <img src="img/portfolio/{{ media.src }}" class="img-responsive" alt="{{ media.alt }}" loading="lazy">
+                                    <img src="img/portfolio/{{ media.src }}" class="img-responsive" alt="{% if media.alt %}{{ media.alt }}{% else %}{{ post.title }} project image{% endif %}" loading="lazy">
                                 {% else %}
-                                    <img src="img/portfolio/{{ media.src }}" class="img-responsive" alt="{{ media.alt }}" style="max-height:210px" loading="lazy">
+                                    <img src="img/portfolio/{{ media.src }}" class="img-responsive" alt="{% if media.alt %}{{ media.alt }}{% else %}{{ post.title }} project image{% endif %}" style="max-height:210px" loading="lazy">
                                 {% endif %}
                                 </div>
                             {% endif %}

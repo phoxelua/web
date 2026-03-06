@@ -173,6 +173,54 @@ This site includes several performance optimizations:
 - ✅ **Preload hints**: Critical resources prioritized
 - ✅ **Video optimization**: `preload="none"` for modal videos
 
+## SEO Optimizations
+
+This site is optimized for search engines with:
+
+### Technical SEO
+- ✅ **Sitemap.xml**: Auto-generated sitemap for search engines
+- ✅ **Robots.txt**: Proper crawler instructions
+- ✅ **Canonical URLs**: Prevents duplicate content issues
+- ✅ **Structured Data**: JSON-LD schema markup for rich results
+- ✅ **Mobile-friendly**: Responsive design with proper viewport meta
+
+### Meta Tags
+- ✅ **SEO-optimized titles**: Descriptive page titles with keywords
+- ✅ **Meta descriptions**: Compelling descriptions for search results
+- ✅ **Meta keywords**: Relevant keywords for indexing
+- ✅ **Open Graph tags**: Optimized social media sharing (Facebook, LinkedIn)
+- ✅ **Twitter Cards**: Rich previews on Twitter
+
+### Content SEO
+- ✅ **Semantic HTML**: Proper heading hierarchy (h1, h2, h3)
+- ✅ **Alt text on images**: Descriptive alt tags for accessibility & SEO
+- ✅ **Fast load times**: Performance optimizations help SEO rankings
+- ✅ **HTTPS**: Secure connection (GitHub Pages default)
+
+### Submit to Search Engines
+
+After deploying, submit your sitemap to search engines:
+
+**Google Search Console:**
+1. Go to [Google Search Console](https://search.google.com/search-console)
+2. Add property: `https://howardanguyen.com`
+3. Submit sitemap: `https://howardanguyen.com/sitemap.xml`
+
+**Bing Webmaster Tools:**
+1. Go to [Bing Webmaster Tools](https://www.bing.com/webmasters)
+2. Add site: `https://howardanguyen.com`
+3. Submit sitemap: `https://howardanguyen.com/sitemap.xml`
+
+### SEO Best Practices
+
+To maintain good SEO rankings:
+- ✅ Keep content updated and relevant
+- ✅ Use descriptive project titles and descriptions
+- ✅ Add alt text to all new images
+- ✅ Maintain fast load times
+- ✅ Build backlinks (share on LinkedIn, GitHub, etc.)
+- ✅ Monitor with Google Analytics and Search Console
+
 ## Deployment
 
 Site is hosted on **GitHub Pages** from the `gh-pages` branch.
