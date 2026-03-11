@@ -9,7 +9,10 @@
     <meta name="theme-color" content="#fed136">
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
 
-    <!-- Open Graph / Facebook -->
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="{{ site.favicon | prepend: site.baseurl }}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ site.favicon | prepend: site.baseurl }}">    <!-- Open Graph / Facebook -->
+
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
     <meta property="og:title" content="{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }} - Software Engineer{% endif %}">
