@@ -21,6 +21,7 @@
             if (href === '#page-top') {
                 e.preventDefault();
                 window.scrollTo({ top: 0, behavior: 'smooth' });
+                history.replaceState(null, '', location.pathname);
                 closeMobileNav();
                 return;
             }
@@ -28,6 +29,7 @@
             if (target) {
                 e.preventDefault();
                 target.scrollIntoView({ behavior: 'smooth' });
+                history.replaceState(null, '', href);
                 closeMobileNav();
             }
         });
