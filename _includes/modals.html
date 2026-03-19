@@ -1,5 +1,6 @@
 <!-- Portfolio Modals -->
 {% for post in site.posts %}
+{% assign content_stripped = post.content | strip %}
 <div class="modal-overlay" id="{{ post.modal-id }}">
     <div class="modal-body">
         <button class="modal-close" aria-label="Close">ESC</button>
@@ -19,7 +20,7 @@
         </div>
         {% endif %}
 
-        {% if post.content != '' %}
+        {% if content_stripped != '' %}
         <div class="modal-details">
             <h3>Details</h3>
             {{ post.content }}
@@ -31,7 +32,7 @@
         <div class="modal-media-grid">
             {% for media in post.gallery %}
                 {% if media.src contains '.mp4' %}
-                <video loop preload="none" controls>
+                <video loop muted autoplay playsinline preload="none">
                     <source src="img/portfolio/{{ media.src }}" type="video/mp4">
                 </video>
                 {% else %}

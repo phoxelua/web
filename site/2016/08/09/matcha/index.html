@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+<script>
+(function(){var t=localStorage.getItem('theme');if(t==='dark')document.documentElement.setAttribute('data-theme','dark');})();
+</script>
 
   <head>
     <meta charset="utf-8">
@@ -9,8 +12,8 @@
     <meta name="description" content="howard's personal portfolio">
     <meta name="keywords" content="howard, nguyen, howard nguyen, hao, computer science, programming, Berkeley, Cal, Instagram, Facebook, Meta, ML, AI, Pinterest, LLM, GenAI">
     <meta name="author" content="Howard Nguyen">
-    <meta name="theme-color" content="#0a0a0a">
-    <link rel="canonical" href="http://localhost:4000/2016/08/09/matcha/">
+    <meta name="theme-color" content="#ffffff" id="theme-color-meta">
+    <link rel="canonical" href="https://howardanguyen.com/2016/08/09/matcha/">
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico?v=2">
@@ -18,17 +21,17 @@
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="http://localhost:4000/2016/08/09/matcha/">
+    <meta property="og:url" content="https://howardanguyen.com/2016/08/09/matcha/">
     <meta property="og:title" content="Matcha | Howard Nguyen">
     <meta property="og:description" content="howard's personal portfolio">
-    <meta property="og:image" content="http://localhost:4000/img/header-bg.jpg">
+    <meta property="og:image" content="https://howardanguyen.com/img/header-bg.jpg">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="http://localhost:4000/2016/08/09/matcha/">
+    <meta property="twitter:url" content="https://howardanguyen.com/2016/08/09/matcha/">
     <meta property="twitter:title" content="Matcha | Howard Nguyen">
     <meta property="twitter:description" content="howard's personal portfolio">
-    <meta property="twitter:image" content="http://localhost:4000/img/header-bg.jpg">
+    <meta property="twitter:image" content="https://howardanguyen.com/img/header-bg.jpg">
 
     <!-- Preconnect -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -66,7 +69,7 @@
       "@context": "https://schema.org",
       "@type": "Person",
       "name": "Howard Nguyen",
-      "url": "http://localhost:4000",
+      "url": "https://howardanguyen.com",
       "email": "howardanguyen@gmail.com",
       "jobTitle": "Senior Software Engineer",
       "description": "howard's personal portfolio",
@@ -97,9 +100,12 @@
             <span></span><span></span>
         </button>
         <div class="nav-links">
-            <a href="#career">Career</a>
-            <a href="#portfolio">Portfolio</a>
-            <a href="Howard-Nguyen-Resume.pdf" class="nav-resume">Resume</a>
+            <a href="#career" data-section="career">Career</a>
+            <a href="#portfolio" data-section="portfolio">Portfolio</a>
+            <button class="theme-toggle" aria-label="Toggle theme">
+                <i class="fa fa-moon-o"></i>
+                <i class="fa fa-sun-o"></i>
+            </button>
         </div>
     </div>
 </nav>
@@ -111,9 +117,9 @@
         <h1 class="hero-title reveal" style="--delay: 0.1s">Software Engineer</h1>
         <p class="hero-subtitle reveal" style="--delay: 0.2s">10+ years scaling distributed systems and AI/ML infrastructure</p>
         <div class="hero-about reveal" style="--delay: 0.3s">
-            <p>I've worked on all sorts of topics including web development, optical character recognition (OCR), graphics, ray tracing, feature streaming, real-time inference, and serving GenAI/LLM models — for both startups and large companies.</p>
-            <p>Outside of this nerdy stuff, I enjoy traveling, boxing, basketball, and dog walking — though I have a cat :)</p>
-            <p>Feel free to reach out — maybe we can build something together!</p>
+            <p>I've worked on all sorts of topics including web development, optical character recognition (OCR), graphics, ray tracing, feature streaming, real-time inference, and serving GenAI/LLM models- for both startups and large companies.</p>
+            <p>Outside of this nerdy stuff, I enjoy traveling, boxing, basketball, and dog walking- though I have a cat :)</p>
+            <p>Feel free to reach out- maybe we can build something together!</p>
         </div>
         <div class="hero-actions reveal" style="--delay: 0.4s">
             <ul class="social-links">
@@ -125,7 +131,7 @@
                 <li><a href="https://github.com/phoxelua" aria-label="github"><i class="fa fa-github"></i></a></li>
                 
             </ul>
-            <a href="Howard-Nguyen-Resume.pdf" class="btn-resume">View Resume &#8594;</a>
+            <a href="Howard-Nguyen-Resume.pdf" class="btn-resume">Resume &#8594;</a>
         </div>
     </div>
 </header>
@@ -137,7 +143,7 @@
         <div class="timeline">
             <div class="timeline-item reveal">
                 <div class="timeline-dot"></div>
-                <div class="timeline-date">2021 — Present</div>
+                <div class="timeline-date">2021 - Present</div>
                 <div class="timeline-content">
                     <div class="timeline-header">
                         <a href="https://www.pinterest.com">
@@ -146,13 +152,13 @@
                         </a>
                     </div>
                     <div class="timeline-role">Senior Software Engineer, AI/ML Serving</div>
-                    <p>Architected the company's paved path for ML inference and GenAI on Kubernetes. Pioneered a CRD with automated CICD, topology-based deployment, and distributed GPU model partitioning — enabling the launch of the largest model in Pinterest history.</p>
+                    <p>Architected the company's paved path for ML inference and GenAI on Kubernetes. Pioneered a CRD with automated CICD, topology-based deployment, and distributed GPU model partitioning - enabling the launch of the largest model in Pinterest history.</p>
                 </div>
             </div>
 
             <div class="timeline-item reveal">
                 <div class="timeline-dot"></div>
-                <div class="timeline-date">2018 — 2021</div>
+                <div class="timeline-date">2018 - 2021</div>
                 <div class="timeline-content">
                     <div class="timeline-header">
                         <a href="https://www.instagram.com">
@@ -167,7 +173,7 @@
 
             <div class="timeline-item reveal">
                 <div class="timeline-dot"></div>
-                <div class="timeline-date">2017 — 2018</div>
+                <div class="timeline-date">2017 - 2018</div>
                 <div class="timeline-content">
                     <div class="timeline-header">
                         <a href="https://www.modsy.com">
@@ -182,7 +188,7 @@
 
             <div class="timeline-item reveal">
                 <div class="timeline-dot"></div>
-                <div class="timeline-date">2015 — 2017</div>
+                <div class="timeline-date">2015 - 2017</div>
                 <div class="timeline-content">
                     <div class="timeline-header">
                         <a href="https://www.captricity.com">
@@ -197,7 +203,7 @@
 
             <div class="timeline-item reveal">
                 <div class="timeline-dot"></div>
-                <div class="timeline-date">2011 — 2015</div>
+                <div class="timeline-date">2011 - 2015</div>
                 <div class="timeline-content">
                     <div class="timeline-header">
                         <a href="https://www.berkeley.edu">
@@ -372,6 +378,7 @@
 
     <!-- Portfolio Modals -->
 
+
 <div class="modal-overlay" id="steetsahead">
     <div class="modal-body">
         <button class="modal-close" aria-label="Close">ESC</button>
@@ -390,6 +397,7 @@
         
     </div>
 </div>
+
 
 <div class="modal-overlay" id="matcha">
     <div class="modal-body">
@@ -415,6 +423,7 @@
         
     </div>
 </div>
+
 
 <div class="modal-overlay" id="smaug">
     <div class="modal-body">
@@ -449,6 +458,7 @@
         
     </div>
 </div>
+
 
 <div class="modal-overlay" id="facemorphing">
     <div class="modal-body">
@@ -521,6 +531,7 @@
     </div>
 </div>
 
+
 <div class="modal-overlay" id="seamcarving">
     <div class="modal-body">
         <button class="modal-close" aria-label="Close">ESC</button>
@@ -581,6 +592,7 @@
     </div>
 </div>
 
+
 <div class="modal-overlay" id="ik">
     <div class="modal-body">
         <button class="modal-close" aria-label="Close">ESC</button>
@@ -607,13 +619,13 @@
         <div class="modal-media-grid">
             
                 
-                <video loop preload="none" controls>
+                <video loop muted autoplay playsinline preload="none">
                     <source src="img/portfolio/ik/demo1.mp4" type="video/mp4">
                 </video>
                 
             
                 
-                <video loop preload="none" controls>
+                <video loop muted autoplay playsinline preload="none">
                     <source src="img/portfolio/ik/demo2.mp4" type="video/mp4">
                 </video>
                 
@@ -622,6 +634,7 @@
         
     </div>
 </div>
+
 
 <div class="modal-overlay" id="bezier">
     <div class="modal-body">
@@ -682,6 +695,7 @@
         
     </div>
 </div>
+
 
 <div class="modal-overlay" id="raytracer">
     <div class="modal-body">
@@ -746,6 +760,7 @@
     </div>
 </div>
 
+
 <div class="modal-overlay" id="yelp">
     <div class="modal-body">
         <button class="modal-close" aria-label="Close">ESC</button>
@@ -776,6 +791,7 @@
         
     </div>
 </div>
+
 
 <div class="modal-overlay" id="viewfinder">
     <div class="modal-body">

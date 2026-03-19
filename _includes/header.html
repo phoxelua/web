@@ -6,9 +6,12 @@
             <span></span><span></span>
         </button>
         <div class="nav-links">
-            <a href="#career">Career</a>
-            <a href="#portfolio">Portfolio</a>
-            <a href="Howard-Nguyen-Resume.pdf" class="nav-resume">Resume</a>
+            <a href="#career" data-section="career">Career</a>
+            <a href="#portfolio" data-section="portfolio">Portfolio</a>
+            <button class="theme-toggle" aria-label="Toggle theme">
+                <i class="fa fa-moon-o"></i>
+                <i class="fa fa-sun-o"></i>
+            </button>
         </div>
     </div>
 </nav>
@@ -20,9 +23,9 @@
         <h1 class="hero-title reveal" style="--delay: 0.1s">Software Engineer</h1>
         <p class="hero-subtitle reveal" style="--delay: 0.2s">10+ years scaling distributed systems and AI/ML infrastructure</p>
         <div class="hero-about reveal" style="--delay: 0.3s">
-            <p>I've worked on all sorts of topics including web development, optical character recognition (OCR), graphics, ray tracing, feature streaming, real-time inference, and serving GenAI/LLM models — for both startups and large companies.</p>
-            <p>Outside of this nerdy stuff, I enjoy traveling, boxing, basketball, and dog walking — though I have a cat :)</p>
-            <p>Feel free to reach out — maybe we can build something together!</p>
+            <p>I've worked on all sorts of topics including web development, optical character recognition (OCR), graphics, ray tracing, feature streaming, real-time inference, and serving GenAI/LLM models- for both startups and large companies.</p>
+            <p>Outside of this nerdy stuff, I enjoy traveling, boxing, basketball, and dog walking- though I have a cat :)</p>
+            <p>Feel free to reach out- maybe we can build something together!</p>
         </div>
         <div class="hero-actions reveal" style="--delay: 0.4s">
             <ul class="social-links">
@@ -30,7 +33,7 @@
                 <li><a href="{{ network.url }}" aria-label="{{ network.title }}"><i class="fa fa-{{ network.title }}"></i></a></li>
                 {% endfor %}
             </ul>
-            <a href="Howard-Nguyen-Resume.pdf" class="btn-resume">View Resume &#8594;</a>
+            <a href="Howard-Nguyen-Resume.pdf" class="btn-resume">Resume &#8594;</a>
         </div>
     </div>
 </header>
