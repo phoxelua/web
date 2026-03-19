@@ -2,7 +2,6 @@
 title: Matcha
 subtitle: A personal budgeting website
 layout: project
-modal-id: matcha
 project-date: August 2016
 technologies: [Flask, Postgesql, Plaid]
 topics: [Web development]

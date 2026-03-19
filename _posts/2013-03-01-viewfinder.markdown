@@ -2,14 +2,12 @@
 title: Viewfinder
 subtitle: See IG photos taken at any location 
 layout: project
-modal-id: viewfinder
 project-date: March 2013
 technologies: [Python, Flask, HTML/CSS]
 topics: [Web development]
 description: Created a website that takes any geographic location and returns the Instagram photos taken at that location in real-time.
 date: 2013-03-01
 thumbnail: viewfinder/viewfinder.png
-gallery-col: 12
 teaser:
 gallery:
 - src: viewfinder/sample.png

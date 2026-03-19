@@ -2,7 +2,6 @@
 title: Smaug
 subtitle: A customer invoice system
 layout: project
-modal-id: smaug
 project-date: December 2014
 technologies: [Ruby on Rails, Postgesql, Pdftk]
 topics: [Web development]

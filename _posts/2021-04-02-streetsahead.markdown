@@ -2,7 +2,6 @@
 title: Streets Ahead
 subtitle: An apartment scoring system based off points of interest
 layout: project
-modal-id: steetsahead
 project-date: April 2021
 technologies: [Python, Google Maps APIs]
 topics: [Web development]

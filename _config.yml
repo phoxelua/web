@@ -36,4 +36,4 @@ permalink: /portfolio/:slug/
 
 
 destination: "site"
-exclude: ["Rakefile", "LICENSE", "readme.markdown", "vendor", .git, .gitignore, sass, .sass-cache, package.json, gruntfile.js, node_modules, README.md]
+exclude: ["LICENSE", .git, .gitignore, node_modules, README.md]

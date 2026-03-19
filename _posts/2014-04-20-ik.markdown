@@ -2,7 +2,6 @@
 title: Inverse Kinematics Solver
 subtitle: A virtual arm that uses IK
 layout: project
-modal-id: ik
 project-date: April 2014
 technologies: [C++, OpenGL]
 topics: [Graphics, Jacobian, psueudo inverse]

@@ -2,14 +2,11 @@
 title: Ray Tracer
 subtitle: Generate images of virtual objects
 layout: project
-modal-id: raytracer
 project-date: February 2014
 technologies: [C++, OpenGL]
 topics: [Graphics, environment mapping, aliasing, depth of field]
 description: Implemented a recursive, parallel ray tracer from scratch with full production level features that included anti-aliasing, reflection, refraction, environment mapping, and depth of field.
 date: 2014-02-11
-teaser-col: 3
-gallery-col: 3
 teaser:
 - src: raytracer/image-02.jpg
   alt: image-02.jpg

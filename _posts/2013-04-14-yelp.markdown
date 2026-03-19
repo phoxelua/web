@@ -2,7 +2,6 @@
 title: Yelp Wannabe
 subtitle: Rank food purely on written reviews
 layout: project
-modal-id: yelp
 project-date: March 2013
 technologies: [Python]
 topics: [Web scraping, sentiment analysis]

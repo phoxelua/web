@@ -2,15 +2,12 @@
 title: Face Morphing
 subtitle: Seamlessly morph between faces  
 layout: project
-modal-id: facemorphing
 project-date: Oct 2014
 technologies: [MATLAB]
 topics: [Computational photography,  Delaunay triangulation, inverse warping]
 description: Morphed faces from using inverse warping, created "average" faces, extrapolated faces to make caricatures
 date: 2014-10-03
 thumbnail: facemorph/karp2fish.gif
-teaser-col: 2
-gallery-col: 3
 teaser:
 - src: facemorph/avg_chinese.jpg
   alt: avg_chinese.jpg

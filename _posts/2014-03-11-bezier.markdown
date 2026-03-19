@@ -2,15 +2,12 @@
 title: Bezier Surfaces
 subtitle: Render objects using subdivision
 layout: project
-modal-id: bezier
 project-date: March 2014
 technologies: [C++, OpenGL]
 topics: [Graphics, uniform subdivision, adaptive tessalation, Bezier surfaces]
 description: Created, from scratch, a program that rendered vertex dumps as Bezier surfaces that where subdivided to create smooth surfaces.
 date: 2014-03-11
 thumbnail: bez/image-12.png
-teaser-col: 3
-gallery-col: 4
 teaser:
 - src: bez/image-00.png
   alt: image-00.png
