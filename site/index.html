@@ -38,6 +38,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="dns-prefetch" href="https://www.google-analytics.com">
 
+    <!-- Preload hero background -->
+    
+    <link rel="preload" as="image" href="/img/header-bg.jpg">
+    
+
     <!-- Fonts: Inter (display=swap renders text immediately with system font) -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
 
@@ -111,8 +116,13 @@ a:active,
 a:focus {
     color: var(--accent-text);
     text-decoration: none;
-    outline: 0;
     transition: color var(--transition);
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--accent-text);
+    outline-offset: 2px;
 }
 
 a:hover {
@@ -206,8 +216,8 @@ img {
     background: none;
     border: none;
     cursor: pointer;
-    width: 32px;
-    height: 32px;
+    width: 44px;
+    height: 44px;
     position: relative;
     flex-direction: column;
     justify-content: center;
@@ -343,8 +353,8 @@ img {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 40px;
-    height: 40px;
+    width: 44px;
+    height: 44px;
     border-radius: 10px;
     background: var(--bg-surface);
     border: 1px solid var(--border);
@@ -931,6 +941,7 @@ img[loading="lazy"] {
     </div>
 </header>
 
+    <main>
     <!-- Career Section -->
 <section id="career">
     <div class="section-container">
@@ -942,7 +953,7 @@ img[loading="lazy"] {
                 <div class="timeline-content">
                     <div class="timeline-header">
                         <a href="https://www.pinterest.com">
-                            <img src="img/career/pinterest.png" alt="Pinterest" class="timeline-logo" loading="lazy">
+                            <img src="img/career/pinterest.png" alt="Pinterest logo" class="timeline-logo" width="36" height="36" loading="lazy">
                             <h3>Pinterest</h3>
                         </a>
                     </div>
@@ -957,7 +968,7 @@ img[loading="lazy"] {
                 <div class="timeline-content">
                     <div class="timeline-header">
                         <a href="https://www.instagram.com">
-                            <img src="img/career/instagram.jpeg" alt="Meta (Instagram)" class="timeline-logo" loading="lazy">
+                            <img src="img/career/instagram.jpeg" alt="Meta (Instagram) logo" class="timeline-logo" width="36" height="36" loading="lazy">
                             <h3>Meta (Instagram)</h3>
                         </a>
                     </div>
@@ -972,7 +983,7 @@ img[loading="lazy"] {
                 <div class="timeline-content">
                     <div class="timeline-header">
                         <a href="https://www.modsy.com">
-                            <img src="img/career/modsy.png" alt="Modsy" class="timeline-logo" loading="lazy">
+                            <img src="img/career/modsy.png" alt="Modsy logo" class="timeline-logo" width="36" height="36" loading="lazy">
                             <h3>Modsy</h3>
                         </a>
                     </div>
@@ -987,7 +998,7 @@ img[loading="lazy"] {
                 <div class="timeline-content">
                     <div class="timeline-header">
                         <a href="https://www.captricity.com">
-                            <img src="img/career/captricity.jpg" alt="Captricity" class="timeline-logo" loading="lazy">
+                            <img src="img/career/captricity.jpg" alt="Captricity logo" class="timeline-logo" width="36" height="36" loading="lazy">
                             <h3>Captricity</h3>
                         </a>
                     </div>
@@ -1002,7 +1013,7 @@ img[loading="lazy"] {
                 <div class="timeline-content">
                     <div class="timeline-header">
                         <a href="https://www.berkeley.edu">
-                            <img src="img/career/cal.png" alt="UC Berkeley" class="timeline-logo" loading="lazy">
+                            <img src="img/career/cal.png" alt="UC Berkeley logo" class="timeline-logo" width="36" height="36" loading="lazy">
                             <h3>UC Berkeley</h3>
                         </a>
                     </div>
@@ -1017,7 +1028,7 @@ img[loading="lazy"] {
                 <div class="timeline-content">
                     <div class="timeline-header">
                         <a href="https://www.crunchbase.com/organization/natero">
-                            <img src="img/career/natero.jpg" alt="Natero" class="timeline-logo" loading="lazy">
+                            <img src="img/career/natero.jpg" alt="Natero logo" class="timeline-logo" width="36" height="36" loading="lazy">
                             <h3>Natero</h3>
                         </a>
                     </div>
@@ -1032,7 +1043,7 @@ img[loading="lazy"] {
                 <div class="timeline-content">
                     <div class="timeline-header">
                         <a href="https://angel.co/flbt">
-                            <img src="img/career/flowbit.png" alt="Flowbit" class="timeline-logo" loading="lazy">
+                            <img src="img/career/flowbit.png" alt="Flowbit logo" class="timeline-logo" width="36" height="36" loading="lazy">
                             <h3>Flowbit</h3>
                         </a>
                     </div>
@@ -1052,7 +1063,7 @@ img[loading="lazy"] {
             
             <div class="portfolio-item reveal" style="--delay: 0.05s">
                 <a href="/portfolio/streetsahead/" class="portfolio-link">
-                    <img src="/img/portfolio/streetsahead/streets.jpg" alt="Streets Ahead — An apartment scoring system based off points of interest" loading="lazy">
+                    <img src="/img/portfolio/streetsahead/streets.jpg" alt="Streets Ahead — An apartment scoring system based off points of interest" width="400" height="300" loading="lazy">
                     <div class="portfolio-overlay">
                         <h3>Streets Ahead</h3>
                         <p>An apartment scoring system based off points of interest</p>
@@ -1062,7 +1073,7 @@ img[loading="lazy"] {
             
             <div class="portfolio-item reveal" style="--delay: 0.1s">
                 <a href="/portfolio/matcha/" class="portfolio-link">
-                    <img src="/img/portfolio/matcha/matcha.jpg" alt="Matcha — A personal budgeting website" loading="lazy">
+                    <img src="/img/portfolio/matcha/matcha.jpg" alt="Matcha — A personal budgeting website" width="400" height="300" loading="lazy">
                     <div class="portfolio-overlay">
                         <h3>Matcha</h3>
                         <p>A personal budgeting website</p>
@@ -1072,7 +1083,7 @@ img[loading="lazy"] {
             
             <div class="portfolio-item reveal" style="--delay: 0.15s">
                 <a href="/portfolio/smaug/" class="portfolio-link">
-                    <img src="/img/portfolio/smaug/smaug.png" alt="Smaug — A customer invoice system" loading="lazy">
+                    <img src="/img/portfolio/smaug/smaug.png" alt="Smaug — A customer invoice system" width="400" height="300" loading="lazy">
                     <div class="portfolio-overlay">
                         <h3>Smaug</h3>
                         <p>A customer invoice system</p>
@@ -1082,7 +1093,7 @@ img[loading="lazy"] {
             
             <div class="portfolio-item reveal" style="--delay: 0.2s">
                 <a href="/portfolio/facemorph/" class="portfolio-link">
-                    <img src="/img/portfolio/facemorph/karp2fish.gif" alt="Face Morphing — Seamlessly morph between faces" loading="lazy">
+                    <img src="/img/portfolio/facemorph/karp2fish.gif" alt="Face Morphing — Seamlessly morph between faces" width="400" height="300" loading="lazy">
                     <div class="portfolio-overlay">
                         <h3>Face Morphing</h3>
                         <p>Seamlessly morph between faces</p>
@@ -1092,7 +1103,7 @@ img[loading="lazy"] {
             
             <div class="portfolio-item reveal" style="--delay: 0.25s">
                 <a href="/portfolio/seamcarving/" class="portfolio-link">
-                    <img src="/img/portfolio/seamcarving/street-reds.gif" alt="Seam Carving — Content aware image resizing" loading="lazy">
+                    <img src="/img/portfolio/seamcarving/street-reds.gif" alt="Seam Carving — Content aware image resizing" width="400" height="300" loading="lazy">
                     <div class="portfolio-overlay">
                         <h3>Seam Carving</h3>
                         <p>Content aware image resizing</p>
@@ -1102,7 +1113,7 @@ img[loading="lazy"] {
             
             <div class="portfolio-item reveal" style="--delay: 0.3s">
                 <a href="/portfolio/ik/" class="portfolio-link">
-                    <img src="/img/portfolio/ik/ik1.gif" alt="Inverse Kinematics Solver — A virtual arm that uses IK" loading="lazy">
+                    <img src="/img/portfolio/ik/ik1.gif" alt="Inverse Kinematics Solver — A virtual arm that uses IK" width="400" height="300" loading="lazy">
                     <div class="portfolio-overlay">
                         <h3>Inverse Kinematics Solver</h3>
                         <p>A virtual arm that uses IK</p>
@@ -1112,7 +1123,7 @@ img[loading="lazy"] {
             
             <div class="portfolio-item reveal" style="--delay: 0.35s">
                 <a href="/portfolio/bezier/" class="portfolio-link">
-                    <img src="/img/portfolio/bez/image-12.png" alt="Bezier Surfaces — Render objects using subdivision" loading="lazy">
+                    <img src="/img/portfolio/bez/image-12.png" alt="Bezier Surfaces — Render objects using subdivision" width="400" height="300" loading="lazy">
                     <div class="portfolio-overlay">
                         <h3>Bezier Surfaces</h3>
                         <p>Render objects using subdivision</p>
@@ -1122,7 +1133,7 @@ img[loading="lazy"] {
             
             <div class="portfolio-item reveal" style="--delay: 0.4s">
                 <a href="/portfolio/raytracer/" class="portfolio-link">
-                    <img src="/img/portfolio/raytracer/image-01.jpg" alt="Ray Tracer — Generate images of virtual objects" loading="lazy">
+                    <img src="/img/portfolio/raytracer/image-01.jpg" alt="Ray Tracer — Generate images of virtual objects" width="400" height="300" loading="lazy">
                     <div class="portfolio-overlay">
                         <h3>Ray Tracer</h3>
                         <p>Generate images of virtual objects</p>
@@ -1132,7 +1143,7 @@ img[loading="lazy"] {
             
             <div class="portfolio-item reveal" style="--delay: 0.45s">
                 <a href="/portfolio/yelp/" class="portfolio-link">
-                    <img src="/img/portfolio/yelp/yelp.jpg" alt="Yelp Wannabe — Rank food purely on written reviews" loading="lazy">
+                    <img src="/img/portfolio/yelp/yelp.jpg" alt="Yelp Wannabe — Rank food purely on written reviews" width="400" height="300" loading="lazy">
                     <div class="portfolio-overlay">
                         <h3>Yelp Wannabe</h3>
                         <p>Rank food purely on written reviews</p>
@@ -1142,7 +1153,7 @@ img[loading="lazy"] {
             
             <div class="portfolio-item reveal" style="--delay: 0.5s">
                 <a href="/portfolio/viewfinder/" class="portfolio-link">
-                    <img src="/img/portfolio/viewfinder/viewfinder.png" alt="Viewfinder — See IG photos taken at any location" loading="lazy">
+                    <img src="/img/portfolio/viewfinder/viewfinder.png" alt="Viewfinder — See IG photos taken at any location" width="400" height="300" loading="lazy">
                     <div class="portfolio-overlay">
                         <h3>Viewfinder</h3>
                         <p>See IG photos taken at any location</p>
@@ -1154,6 +1165,7 @@ img[loading="lazy"] {
     </div>
 </section>
 
+    </main>
     <footer>
     <div class="footer-content">
         <span class="footer-copyright">Copyright &copy; Howard Nguyen 2026</span>
@@ -1172,7 +1184,7 @@ img[loading="lazy"] {
 </footer>
 
     <!-- Page Loader -->
-<script src="/js/loader.js"></script>
+<script src="/js/loader.js" defer></script>
 <!-- Site JavaScript -->
 <script src="/js/agency.js" defer></script>
 

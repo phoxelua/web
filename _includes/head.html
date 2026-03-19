@@ -32,6 +32,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="dns-prefetch" href="https://www.google-analytics.com">
 
+    <!-- Preload hero background -->
+    {% unless page.layout == 'project' %}
+    <link rel="preload" as="image" href="/img/header-bg.jpg">
+    {% endunless %}
+
     <!-- Fonts: Inter (display=swap renders text immediately with system font) -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
 

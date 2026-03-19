@@ -6,7 +6,7 @@
             {% for post in site.posts %}
             <div class="portfolio-item reveal" style="--delay: {{ forloop.index | times: 0.05 }}s">
                 <a href="{{ post.url }}" class="portfolio-link">
-                    <img src="/img/portfolio/{{ post.thumbnail }}" alt="{{ post.title }} — {{ post.subtitle }}" loading="lazy">
+                    <img src="/img/portfolio/{{ post.thumbnail }}" alt="{{ post.title }} — {{ post.subtitle }}" width="400" height="300" loading="lazy">
                     <div class="portfolio-overlay">
                         <h3>{{ post.title }}</h3>
                         <p>{{ post.subtitle }}</p>

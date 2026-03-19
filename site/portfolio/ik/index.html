@@ -35,6 +35,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="dns-prefetch" href="https://www.google-analytics.com">
 
+    <!-- Preload hero background -->
+    
+
     <!-- Fonts: Inter (display=swap renders text immediately with system font) -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
 
@@ -108,8 +111,13 @@ a:active,
 a:focus {
     color: var(--accent-text);
     text-decoration: none;
-    outline: 0;
     transition: color var(--transition);
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--accent-text);
+    outline-offset: 2px;
 }
 
 a:hover {
@@ -203,8 +211,8 @@ img {
     background: none;
     border: none;
     cursor: pointer;
-    width: 32px;
-    height: 32px;
+    width: 44px;
+    height: 44px;
     position: relative;
     flex-direction: column;
     justify-content: center;
@@ -340,8 +348,8 @@ img {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 40px;
-    height: 40px;
+    width: 44px;
+    height: 44px;
     border-radius: 10px;
     background: var(--bg-surface);
     border: 1px solid var(--border);
@@ -891,7 +899,7 @@ img[loading="lazy"] {
         </div>
     </nav>
 
-    <div class="project-page">
+    <main class="project-page">
         <div class="project-container">
             <a href="/#portfolio" class="project-back">&larr; Portfolio</a>
             <h1 class="project-title">Inverse Kinematics Solver</h1>
@@ -932,7 +940,7 @@ img[loading="lazy"] {
             </div>
             
         </div>
-    </div>
+    </main>
 
     <footer>
     <div class="footer-content">
@@ -952,7 +960,7 @@ img[loading="lazy"] {
 </footer>
 
     <!-- Page Loader -->
-<script src="/js/loader.js"></script>
+<script src="/js/loader.js" defer></script>
 <!-- Site JavaScript -->
 <script src="/js/agency.js" defer></script>
 
