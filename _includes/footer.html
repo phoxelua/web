@@ -1,22 +1,12 @@
-  <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <span class="copyright">Copyright &copy; Howard Nguyen 2026</span>
-                </div>
-                <div class="col-md-4">
-                    <ul class="list-inline social-buttons">
-                        {% for network in site.social %}
-                        <li><a href="{{ network.url }}"><i class="fa fa-{{ network.title }}"></i></a>
-                        </li>
-                        {% endfor %}
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <ul class="list-inline quicklinks">
-                        <li><a href="#page-top" class="page-scroll">Home</a></li>
-                    </ul>
-                </div>
-            </div>
+<footer>
+    <div class="footer-content">
+        <span class="footer-copyright">Copyright &copy; Howard Nguyen 2026</span>
+        <div class="footer-links">
+            <ul class="social-links">
+                {% for network in site.social %}
+                <li><a href="{{ network.url }}" aria-label="{{ network.title }}"><i class="fa fa-{{ network.title }}"></i></a></li>
+                {% endfor %}
+            </ul>
         </div>
-    </footer>
+    </div>
+</footer>

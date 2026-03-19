@@ -1,80 +1,45 @@
- <!-- Portfolio Modals -->
- {% for post in site.posts %}
-    <div class="portfolio-modal modal fade" id="{{ post.modal-id }}" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal" aria-label="Close">
-                <span class="close-modal-text">ESC</span>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                            <h2>{{ post.title }}</h2>
-                            <hr class="star-primary">
-                            <p style="text-align:left;margin-bottom:15px"> 
-                                {{ post.description }}
-                            </p>
-                            <ul class="list-inline item-details" style="text-align:left">
-                                <li><strong>Date:</strong>
-                                    {{ post.project-date }}
-                                </li>
-                                <li><strong>Technologies:</strong>
-                                    {{ post.technologies | join: ', ' }}
-                                </li>
-                                <li><strong>Topics:</strong>
-                                    {{ post.topics | join: ', ' }}
-                                </li>
-                            </ul>
-                    </div>
-                </div>    
-                <div class="row">
-                    {% for media in post.teaser %}
-                        <div class="col-md-{{ post.teaser-col }}">
-                            <img src="img/portfolio/{{ media.src }}" class="img-responsive" alt="{% if media.alt %}{{ media.alt }}{% else %}{{ post.title }} project image{% endif %}" loading="lazy">
-                        </div>
-                    {% endfor %}
-                </div>
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="details">
-                            <h3 >Details</h3>   
-                            <p>{{post.content}}</p>
-                        </div>
-                    </div>
-                </div>
-                {% if post.gallery.size > 0 %}
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="details">
-                                <h3 >Gallery</h3>
-                            </div>
-                        </div>
-                    </div>
-                {% endif %}
-                <div class="row">
-                    {% for media in post.gallery %}
-                            {% if media.src contains '.mp4' %}
-                                <div class="col-md-6">
-                                    <div class="embed-responsive embed-responsive-16by9">
-                                        <video loop class="embed-responsive-item" preload="none">
-                                            <source src="img/portfolio/{{ media.src }}" type="video/mp4">
-                                        </video>
-                                    </div>
-                                </div>
-                            {% else %}
-                                <div class="col-md-{{ post.gallery-col }}">
-                                {% if post.gallery-col > 6 %}
-                                    <img src="img/portfolio/{{ media.src }}" class="img-responsive" alt="{% if media.alt %}{{ media.alt }}{% else %}{{ post.title }} project image{% endif %}" loading="lazy">
-                                {% else %}
-                                    <img src="img/portfolio/{{ media.src }}" class="img-responsive" alt="{% if media.alt %}{{ media.alt }}{% else %}{{ post.title }} project image{% endif %}" style="max-height:210px" loading="lazy">
-                                {% endif %}
-                                </div>
-                            {% endif %}
-                    {% endfor %}
-                </div>
-            </div>
-            <button type="button" class="btn btn-default" data-dismiss="modal">
-                <i class="fa fa-times"></i> Close
-            </button>
+<!-- Portfolio Modals -->
+{% for post in site.posts %}
+<div class="modal-overlay" id="{{ post.modal-id }}">
+    <div class="modal-body">
+        <button class="modal-close" aria-label="Close">ESC</button>
+        <h2 class="modal-title">{{ post.title }}</h2>
+        <p class="modal-description">{{ post.description }}</p>
+        <div class="modal-meta">
+            <span class="modal-meta-item"><strong>Date:</strong> {{ post.project-date }}</span>
+            <span class="modal-meta-item"><strong>Tech:</strong> {{ post.technologies | join: ', ' }}</span>
+            <span class="modal-meta-item"><strong>Topics:</strong> {{ post.topics | join: ', ' }}</span>
         </div>
+
+        {% if post.teaser.size > 0 %}
+        <div class="modal-media-grid">
+            {% for media in post.teaser %}
+            <img src="img/portfolio/{{ media.src }}" alt="{% if media.alt %}{{ media.alt }}{% else %}{{ post.title }}{% endif %}" loading="lazy">
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        {% if post.content != '' %}
+        <div class="modal-details">
+            <h3>Details</h3>
+            {{ post.content }}
+        </div>
+        {% endif %}
+
+        {% if post.gallery.size > 0 %}
+        <h3 class="modal-gallery-heading">Gallery</h3>
+        <div class="modal-media-grid">
+            {% for media in post.gallery %}
+                {% if media.src contains '.mp4' %}
+                <video loop preload="none" controls>
+                    <source src="img/portfolio/{{ media.src }}" type="video/mp4">
+                </video>
+                {% else %}
+                <img src="img/portfolio/{{ media.src }}" alt="{% if media.alt %}{{ media.alt }}{% else %}{{ post.title }}{% endif %}" loading="lazy">
+                {% endif %}
+            {% endfor %}
+        </div>
+        {% endif %}
     </div>
+</div>
 {% endfor %}

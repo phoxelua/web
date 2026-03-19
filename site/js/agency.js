@@ -1,64 +1,127 @@
 /*!
- * Start Bootstrap - Agnecy Bootstrap Theme (https://startbootstrap.com)
- * Code licensed under the Apache License v2.0.
- * For details, see https://www.apache.org/licenses/LICENSE-2.0.
+ * Modern Portfolio — Vanilla JS
+ * Smooth scroll, scroll reveals, modals, mobile nav
  */
+(function() {
+    'use strict';
 
-// jQuery for page scrolling feature - requires jQuery Easing plugin
-$(function() {
-    $('a.page-scroll').bind('click', function(event) {
-        var $anchor = $(this);
-        $('html, body').stop().animate({
-            scrollTop: $($anchor.attr('href')).offset().top
-        }, 1500, 'easeInOutExpo');
-        event.preventDefault();
+    // ——— Smooth scroll for anchor links ———
+    document.querySelectorAll('a[href^="#"]').forEach(function(link) {
+        link.addEventListener('click', function(e) {
+            var href = this.getAttribute('href');
+            if (href === '#page-top') {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                closeMobileNav();
+                return;
+            }
+            var target = document.querySelector(href);
+            if (target && !this.hasAttribute('data-modal')) {
+                e.preventDefault();
+                target.scrollIntoView({ behavior: 'smooth' });
+                closeMobileNav();
+            }
+        });
     });
-});
 
-// Highlight the top nav as scrolling occurs
-$('body').scrollspy({
-    target: '.navbar-fixed-top'
-})
+    // ——— Mobile nav toggle ———
+    var toggle = document.querySelector('.nav-toggle');
+    var navLinks = document.querySelector('.nav-links');
 
-// Closes the Responsive Menu on Menu Item Click
-$('.navbar-collapse ul li a').click(function() {
-    $('.navbar-toggle:visible').click();
-});
+    function closeMobileNav() {
+        if (navLinks) navLinks.classList.remove('open');
+        if (toggle) toggle.classList.remove('active');
+    }
 
-$('div.modal').on('show.bs.modal', function() {
-	var modal = this;
-	var hash = modal.id;
-	window.location.hash = hash;
-	window.onhashchange = function() {
-		if (!location.hash){
-			$(modal).modal('hide');
-		}
-	}
-});
+    if (toggle && navLinks) {
+        toggle.addEventListener('click', function() {
+            toggle.classList.toggle('active');
+            navLinks.classList.toggle('open');
+        });
+    }
 
-function closeOpenModalOnEsc(event) {
-	var key = event.key || event.keyCode || event.which;
-	if (key === 'Escape' || key === 'Esc' || key === 27) {
-		$('.modal.in').modal('hide');
-	}
-}
+    // ——— Scroll reveal (Intersection Observer) ———
+    var reveals = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+        var observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    var delay = entry.target.style.getPropertyValue('--delay') || '0s';
+                    entry.target.style.transitionDelay = delay;
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
-window.addEventListener('keydown', closeOpenModalOnEsc, true);
+        reveals.forEach(function(el) { observer.observe(el); });
+    } else {
+        // Fallback: just show everything
+        reveals.forEach(function(el) { el.classList.add('visible'); });
+    }
 
-$(document).on('hide.bs.modal', '.modal', function() {
-	var active = document.activeElement;
-	if (active && this.contains(active)) {
-		active.blur();
-	}
-});
+    // ——— Modal system ———
+    function openModal(modal) {
+        if (!modal) return;
+        modal.classList.add('active');
+        document.body.classList.add('modal-open');
+        window.location.hash = modal.id;
+    }
 
-$(document).on('hidden.bs.modal', '.modal', function() {
-	if (document.activeElement === document.body) return;
-	document.body.focus();
-});
+    function closeModal(modal) {
+        if (!modal) return;
+        modal.classList.remove('active');
+        document.body.classList.remove('modal-open');
+        if (location.hash === '#' + modal.id) {
+            history.replaceState(null, '', location.pathname + location.search);
+        }
+    }
 
-$(document).on('hidden.bs.modal', '.modal', function() {
-	if (location.hash === '#' + this.id) {
-		history.replaceState(null, '', location.pathname + location.search);
-	}
-});
+    // Open modal on click
+    document.querySelectorAll('[data-modal]').forEach(function(trigger) {
+        trigger.addEventListener('click', function(e) {
+            e.preventDefault();
+            var modalId = this.getAttribute('data-modal');
+            var modal = document.getElementById(modalId);
+            openModal(modal);
+        });
+    });
+
+    // Close on overlay click (not content)
+    document.querySelectorAll('.modal-overlay').forEach(function(modal) {
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) closeModal(modal);
+        });
+
+        var closeBtn = modal.querySelector('.modal-close');
+        if (closeBtn) {
+            closeBtn.addEventListener('click', function() {
+                closeModal(modal);
+            });
+        }
+    });
+
+    // ESC to close
+    window.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            var active = document.querySelector('.modal-overlay.active');
+            if (active) closeModal(active);
+        }
+    });
+
+    // Back button closes modal
+    window.addEventListener('hashchange', function() {
+        if (!location.hash) {
+            var active = document.querySelector('.modal-overlay.active');
+            if (active) closeModal(active);
+        }
+    });
+
+    // Open modal from URL hash on page load
+    if (location.hash) {
+        var hashModal = document.querySelector(location.hash);
+        if (hashModal && hashModal.classList.contains('modal-overlay')) {
+            openModal(hashModal);
+        }
+    }
+})();
