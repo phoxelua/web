@@ -1,6 +1,6 @@
 /*!
  * Modern Portfolio — Vanilla JS
- * Theme toggle, smooth scroll, scroll reveals, scrollspy, mobile nav
+ * Smooth scroll, scroll reveals, scrollspy, mobile nav
  */
 (function() {
     'use strict';
@@ -11,27 +11,6 @@
             requestAnimationFrame(function() {
                 document.documentElement.style.scrollBehavior = '';
             });
-        });
-    }
-
-    // ——— Theme toggle ———
-    var root = document.documentElement;
-    var stored = localStorage.getItem('theme');
-    if (stored) {
-        root.setAttribute('data-theme', stored);
-    }
-
-    var themeBtn = document.querySelector('.theme-toggle');
-    if (themeBtn) {
-        themeBtn.addEventListener('click', function() {
-            var current = root.getAttribute('data-theme');
-            var next = current === 'dark' ? 'light' : 'dark';
-            if (next === 'light') {
-                root.removeAttribute('data-theme');
-            } else {
-                root.setAttribute('data-theme', next);
-            }
-            localStorage.setItem('theme', next);
         });
     }
 

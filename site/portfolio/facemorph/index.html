@@ -1,8 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<script>
-(function(){var t=localStorage.getItem('theme');if(t==='dark')document.documentElement.setAttribute('data-theme','dark');})();
-</script>
 
   <head>
     <meta charset="utf-8">
@@ -12,7 +9,7 @@
     <meta name="description" content="Morphed faces from using inverse warping, created "average" faces, extrapolated faces to make caricatures">
     <meta name="keywords" content="howard, nguyen, howard nguyen, hao, computer science, programming, Berkeley, Cal, Instagram, Facebook, Meta, ML, AI, Pinterest, LLM, GenAI">
     <meta name="author" content="Howard Nguyen">
-    <meta name="theme-color" content="#ffffff" id="theme-color-meta">
+    <meta name="theme-color" content="#0a0a0a">
     <link rel="canonical" href="https://howardanguyen.com/portfolio/facemorph/">
 
     <!-- Favicon -->
@@ -45,32 +42,6 @@
     <style>/* Modern Portfolio — Themeable */
 
 :root {
-    /* Light theme (default) */
-    --bg: #ffffff;
-    --bg-surface: #f7f7f7;
-    --bg-surface-hover: #efefef;
-    --border: rgba(0, 0, 0, 0.08);
-    --border-strong: rgba(0, 0, 0, 0.15);
-    --text: #1a1a1a;
-    --text-secondary: #666;
-    --accent: #fed136;
-    --accent-hover: #fec503;
-    --accent-rgb: 254, 209, 54;
-    --accent-text: #9a7b00;
-    --nav-bg: rgba(255, 255, 255, 0.8);
-    --nav-mobile-bg: rgba(255, 255, 255, 0.95);
-    --hero-fallback: #f0f0f0;
-    --hero-overlay-start: rgba(255, 255, 255, 0.6);
-    --hero-overlay-end: rgba(255, 255, 255, 0.8);
-    --portfolio-shadow: rgba(0, 0, 0, 0.1);
-    --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    --max-width: 1100px;
-    --nav-height: 64px;
-    --radius: 12px;
-    --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-[data-theme="dark"] {
     --bg: #0a0a0a;
     --bg-surface: #141414;
     --bg-surface-hover: #1c1c1c;
@@ -78,6 +49,9 @@
     --border-strong: rgba(255, 255, 255, 0.15);
     --text: #f0f0f0;
     --text-secondary: #999;
+    --accent: #fed136;
+    --accent-hover: #fec503;
+    --accent-rgb: 254, 209, 54;
     --accent-text: #fed136;
     --nav-bg: rgba(10, 10, 10, 0.8);
     --nav-mobile-bg: rgba(10, 10, 10, 0.95);
@@ -85,6 +59,11 @@
     --hero-overlay-start: rgba(10, 10, 10, 0.6);
     --hero-overlay-end: rgba(10, 10, 10, 0.8);
     --portfolio-shadow: rgba(0, 0, 0, 0.4);
+    --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --max-width: 1100px;
+    --nav-height: 64px;
+    --radius: 12px;
+    --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Reset */
@@ -217,33 +196,6 @@ img {
     border-color: var(--accent);
     color: var(--accent-text) !important;
 }
-
-/* Theme toggle */
-.theme-toggle {
-    background: none;
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    cursor: pointer;
-    width: 36px;
-    height: 36px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--text-secondary);
-    font-size: 15px;
-    transition: all var(--transition);
-    flex-shrink: 0;
-}
-
-.theme-toggle:hover {
-    border-color: var(--border-strong);
-    color: var(--text);
-}
-
-.theme-toggle .icon-moon { display: inline; }
-.theme-toggle .icon-sun { display: none; }
-[data-theme="dark"] .theme-toggle .icon-moon { display: none; }
-[data-theme="dark"] .theme-toggle .icon-sun { display: inline; }
 
 /* Mobile nav toggle */
 .nav-toggle {
@@ -871,10 +823,6 @@ img[loading="lazy"] {
             <div class="nav-links">
                 <a href="/#career">Career</a>
                 <a href="/#portfolio">Portfolio</a>
-                <button class="theme-toggle" aria-label="Toggle theme">
-                    <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-                    <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-                </button>
             </div>
         </div>
     </nav>
