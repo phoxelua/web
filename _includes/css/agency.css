@@ -7,7 +7,7 @@
     --border: rgba(255, 255, 255, 0.08);
     --border-strong: rgba(255, 255, 255, 0.15);
     --text: #f0f0f0;
-    --text-secondary: #999;
+    --text-secondary: #b0b0b0;
     --accent: #{{ site.color.primary }};
     --accent-hover: #{{ site.color.secondary }};
     --accent-rgb: {{ site.color.primary | hex_to_rgb | join: ', ' }};
@@ -283,8 +283,7 @@ img {
 }
 
 .hero-about p {
-    margin-bottom: 12px;
-    font-size: 15px;
+    margin-bottom: 16px;
 }
 
 .hero-actions {
@@ -389,7 +388,7 @@ section {
 }
 
 .timeline-date {
-    font-size: 13px;
+    font-size: 15px;
     color: var(--text-secondary);
     margin-bottom: 8px;
     font-variant-numeric: tabular-nums;
@@ -429,15 +428,13 @@ section {
 }
 
 .timeline-role {
-    font-size: 14px;
+    font-size: 15px;
     color: var(--accent-text);
     font-weight: 500;
     margin-bottom: 8px;
 }
 
 .timeline-content p {
-    font-size: 14px;
-    line-height: 1.65;
     color: var(--text-secondary);
 }
 
@@ -505,8 +502,7 @@ section {
 }
 
 .portfolio-overlay p {
-    font-size: 13px;
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255, 0.8);
 }
 
 @media (max-width: 768px) {
@@ -549,7 +545,6 @@ section {
 }
 
 .project-description {
-    font-size: 15px;
     line-height: 1.7;
     color: var(--text-secondary);
     margin-bottom: 24px;
@@ -565,7 +560,7 @@ section {
 }
 
 .project-meta-item {
-    font-size: 13px;
+    font-size: 15px;
     color: var(--text-secondary);
 }
 
@@ -606,7 +601,6 @@ section {
 }
 
 .project-details p {
-    font-size: 14px;
     line-height: 1.7;
     margin-bottom: 12px;
 }
@@ -617,7 +611,6 @@ section {
 }
 
 .project-details li {
-    font-size: 14px;
     line-height: 1.7;
     color: var(--text-secondary);
     margin-bottom: 4px;
@@ -647,7 +640,7 @@ footer {
 }
 
 .footer-copyright {
-    font-size: 13px;
+    font-size: 14px;
     color: var(--text-secondary);
 }
 
