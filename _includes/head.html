@@ -32,13 +32,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="dns-prefetch" href="https://www.google-analytics.com">
 
-    <!-- Preload critical assets -->
-    <link rel="preload" as="image" href="{{ "/img/header-bg.jpg" | prepend: site.baseurl }}">
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
-
     <!-- Fonts: Inter -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="{{ "/style.css" | prepend: site.baseurl }}">
+    <!-- Inline CSS (eliminates stylesheet request) -->
+    <style>{% include css/agency.css %}</style>
 </head>
