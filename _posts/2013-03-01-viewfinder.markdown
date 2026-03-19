@@ -1,7 +1,7 @@
 ---
 title: Viewfinder
 subtitle: See IG photos taken at any location 
-layout: default
+layout: project
 modal-id: viewfinder
 project-date: March 2013
 technologies: [Python, Flask, HTML/CSS]

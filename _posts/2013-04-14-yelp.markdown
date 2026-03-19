@@ -1,7 +1,7 @@
 ---
 title: Yelp Wannabe
 subtitle: Rank food purely on written reviews
-layout: default
+layout: project
 modal-id: yelp
 project-date: March 2013
 technologies: [Python]

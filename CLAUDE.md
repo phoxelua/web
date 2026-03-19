@@ -26,15 +26,17 @@ Modern single-page portfolio. No jQuery or Bootstrap — vanilla JS + CSS custom
 - `_includes/css/agency.css` — full stylesheet; uses **Liquid variables** for accent colors from `_config.yml` and **CSS custom properties** for theming (light/dark via `[data-theme="dark"]`)
 - `_plugins/hex_to_rgb.rb` — Jekyll filter converting hex → RGB for `rgba()` usage in CSS
 - `_includes/head.html` — SEO/meta tags (Open Graph, Twitter Cards, JSON-LD)
-- `js/agency.js` — vanilla JS: theme toggle (localStorage), smooth scroll, scrollspy, IntersectionObserver scroll reveals, custom modal system (no Bootstrap)
+- `_layouts/project.html` — dedicated project page layout with nav, back link, content sections
+- `js/agency.js` — vanilla JS: theme toggle (localStorage), smooth scroll, scrollspy, IntersectionObserver scroll reveals
 - `js/loader.js` — page load spinner fade-out
 
 ## Key Files for Common Changes
 
 - **Colors/theme**: `_config.yml` (`color.primary`, `color.secondary`) → Liquid into `agency.css`. Light/dark variants in `:root` vs `[data-theme="dark"]` blocks
 - **Career timeline**: `_includes/career.html` — compact left-rail layout
-- **Portfolio grid**: `_includes/portfolio_grid.html` — CSS Grid, data from `_posts/*.markdown`
-- **Portfolio modals**: `_includes/modals.html` — custom modal system (no Bootstrap), uses `data-modal` attributes
+- **Portfolio grid**: `_includes/portfolio_grid.html` — CSS Grid, links to `/portfolio/<slug>/` pages
+- **Project pages**: `_layouts/project.html` + `_posts/*.markdown` (layout: project) — dedicated pages at `/portfolio/<slug>/`
+- **Section redirects**: `career/index.html` and `portfolio/index.html` — meta-refresh redirects to `/#career` and `/#portfolio`
 - **Navigation**: `_includes/header.html` — glassmorphism nav + hero section
 - **Custom domain**: `CNAME` file
 

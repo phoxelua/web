@@ -1,7 +1,7 @@
 ---
 title: Face Morphing
 subtitle: Seamlessly morph between faces  
-layout: default
+layout: project
 modal-id: facemorphing
 project-date: Oct 2014
 technologies: [MATLAB]

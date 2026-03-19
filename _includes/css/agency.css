@@ -18,7 +18,6 @@
     --hero-fallback: #f0f0f0;
     --hero-overlay-start: rgba(255, 255, 255, 0.6);
     --hero-overlay-end: rgba(255, 255, 255, 0.8);
-    --modal-backdrop: rgba(0, 0, 0, 0.5);
     --portfolio-shadow: rgba(0, 0, 0, 0.1);
     --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     --max-width: 1100px;
@@ -41,7 +40,6 @@
     --hero-fallback: #0a0a0a;
     --hero-overlay-start: rgba(10, 10, 10, 0.6);
     --hero-overlay-end: rgba(10, 10, 10, 0.8);
-    --modal-backdrop: rgba(0, 0, 0, 0.85);
     --portfolio-shadow: rgba(0, 0, 0, 0.4);
 }
 
@@ -511,53 +509,11 @@ section {
     position: relative;
 }
 
-.portfolio-placeholder {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 20px;
-    gap: 8px;
-    z-index: 0;
-}
-
-.portfolio-placeholder h3 {
-    font-size: 15px;
-    font-weight: 600;
-    color: var(--text);
-    text-transform: none;
-}
-
-.portfolio-placeholder p {
-    font-size: 13px;
-    color: var(--text-secondary);
-}
-
-.placeholder-spinner {
-    width: 16px;
-    height: 16px;
-    border: 2px solid var(--border);
-    border-top-color: var(--accent);
-    border-radius: 50%;
-    animation: spin 0.8s linear infinite;
-    margin-top: 8px;
-}
-
 .portfolio-item img {
-    position: relative;
-    z-index: 1;
     width: 100%;
     aspect-ratio: 4/3;
     object-fit: cover;
-    opacity: 0;
-    transition: opacity 0.4s ease, transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.portfolio-item img.loaded {
-    opacity: 1;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-item:hover img {
@@ -606,82 +562,42 @@ section {
     }
 }
 
-/* ——— Modals ——— */
-.modal-overlay {
-    position: fixed;
-    inset: 0;
-    background: var(--modal-backdrop);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    z-index: 2000;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s, visibility 0.3s;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-}
-
-.modal-overlay.active {
-    opacity: 1;
-    visibility: visible;
-}
-
-.modal-body {
+/* ——— Project Page ——— */
+.project-page {
     max-width: 900px;
-    margin: 60px auto;
-    padding: 48px;
-    background: var(--bg);
-    border-radius: 16px;
-    border: 1px solid var(--border);
-    position: relative;
-    transform: translateY(20px);
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    margin: 0 auto;
+    padding: calc(var(--nav-height) + 48px) 24px 64px;
 }
 
-.modal-overlay.active .modal-body {
-    transform: translateY(0);
-}
-
-.modal-close {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background: var(--bg-surface-hover);
-    border: 1px solid var(--border);
-    border-radius: 8px;
+.project-back {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 500;
     color: var(--text-secondary);
-    cursor: pointer;
-    font-size: 12px;
-    font-weight: 600;
-    padding: 6px 12px;
-    letter-spacing: 0.05em;
-    transition: all var(--transition);
-    font-family: var(--font);
+    margin-bottom: 24px;
 }
 
-.modal-close:hover {
-    color: var(--text);
-    border-color: var(--border-strong);
+.project-back:hover {
+    color: var(--accent-text);
 }
 
-.modal-title {
+.project-title {
     font-size: 28px;
     font-weight: 700;
     letter-spacing: -0.02em;
     margin-bottom: 16px;
     color: var(--text);
     text-transform: none;
-    padding-right: 60px;
 }
 
-.modal-description {
+.project-description {
     font-size: 15px;
     line-height: 1.7;
     color: var(--text-secondary);
     margin-bottom: 24px;
 }
 
-.modal-meta {
+.project-meta {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
@@ -690,67 +606,67 @@ section {
     border-bottom: 1px solid var(--border);
 }
 
-.modal-meta-item {
+.project-meta-item {
     font-size: 13px;
     color: var(--text-secondary);
 }
 
-.modal-meta-item strong {
+.project-meta-item strong {
     color: var(--text);
     font-weight: 600;
     margin-right: 4px;
 }
 
-.modal-media-grid {
+.project-media-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 16px;
     margin-bottom: 32px;
 }
 
-.modal-media-grid img {
+.project-media-grid img {
     border-radius: 8px;
     border: 1px solid var(--border);
     width: 100%;
 }
 
-.modal-media-grid video {
+.project-media-grid video {
     width: 100%;
     border-radius: 8px;
     aspect-ratio: 16/9;
     background: var(--bg-surface);
 }
 
-.modal-details {
+.project-details {
     padding-top: 0;
 }
 
-.modal-details h3 {
+.project-details h3 {
     font-size: 18px;
     margin-bottom: 12px;
     text-transform: none;
     color: var(--text);
 }
 
-.modal-details p {
+.project-details p {
     font-size: 14px;
     line-height: 1.7;
     margin-bottom: 12px;
 }
 
-.modal-details ul, .modal-details ol {
+.project-details ul, .project-details ol {
     padding-left: 20px;
     margin-bottom: 12px;
 }
 
-.modal-details li {
+.project-details li {
     font-size: 14px;
     line-height: 1.7;
     color: var(--text-secondary);
     margin-bottom: 4px;
 }
 
-.modal-gallery-heading {
+.project-gallery-heading {
     font-size: 18px;
     font-weight: 600;
     margin-bottom: 16px;
@@ -850,11 +766,6 @@ img[loading="lazy"] {
     background: var(--bg-surface);
 }
 
-/* ——— Body scroll lock ——— */
-body.modal-open {
-    overflow: hidden;
-}
-
 /* ——— Responsive ——— */
 @media (max-width: 768px) {
     section {
@@ -869,19 +780,17 @@ body.modal-open {
         padding: calc(var(--nav-height) + 40px) 24px 40px;
     }
 
-    .modal-body {
-        margin: 16px;
-        padding: 24px;
+    .project-page {
+        padding-top: calc(var(--nav-height) + 24px);
     }
 
-    .modal-meta {
+    .project-title {
+        font-size: 22px;
+    }
+
+    .project-meta {
         flex-direction: column;
         gap: 8px;
-    }
-
-    .modal-title {
-        font-size: 22px;
-        padding-right: 40px;
     }
 
     .footer-content {

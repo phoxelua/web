@@ -1,7 +1,7 @@
 ---
 title: Ray Tracer
 subtitle: Generate images of virtual objects
-layout: default
+layout: project
 modal-id: raytracer
 project-date: February 2014
 technologies: [C++, OpenGL]

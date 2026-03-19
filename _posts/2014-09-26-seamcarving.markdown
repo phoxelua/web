@@ -1,7 +1,7 @@
 ---
 title: Seam Carving
 subtitle: Content aware image resizing
-layout: default
+layout: project
 modal-id: seamcarving
 project-date: Sept 2014
 technologies: [MATLAB]
