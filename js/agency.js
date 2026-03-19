@@ -109,6 +109,21 @@
         reveals.forEach(function(el) { el.classList.add('visible'); });
     }
 
+    // ——— Portfolio image load ———
+    document.querySelectorAll('.portfolio-item img').forEach(function(img) {
+        function onLoad() {
+            img.classList.add('loaded');
+            var placeholder = img.closest('.portfolio-link').querySelector('.portfolio-placeholder');
+            if (placeholder) placeholder.style.display = 'none';
+        }
+        if (img.complete) {
+            onLoad();
+        } else {
+            img.addEventListener('load', onLoad);
+            img.addEventListener('error', onLoad);
+        }
+    });
+
     // ——— Modal system ———
     function openModal(modal) {
         if (!modal) return;

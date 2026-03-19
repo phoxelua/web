@@ -38,14 +38,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="dns-prefetch" href="https://www.google-analytics.com">
 
-    <!-- Fonts: Inter -->
+    <!-- Preload critical assets -->
+    <link rel="preload" as="image" href="/img/header-bg.jpg">
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"></noscript>
+
+    <!-- Fonts: Inter -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
 
     <!-- CSS -->
     <link rel="stylesheet" href="/style.css">
-    <link rel="stylesheet" href="/css/font-awesome/css/font-awesome.min.css">
 </head>
 
   
@@ -103,8 +104,8 @@
             <a href="#career" data-section="career">Career</a>
             <a href="#portfolio" data-section="portfolio">Portfolio</a>
             <button class="theme-toggle" aria-label="Toggle theme">
-                <i class="fa fa-moon-o"></i>
-                <i class="fa fa-sun-o"></i>
+                <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
             </button>
         </div>
     </div>
@@ -124,11 +125,11 @@
         <div class="hero-actions reveal" style="--delay: 0.4s">
             <ul class="social-links">
                 
-                <li><a href="https://www.facebook.com/howardanguyen" aria-label="facebook"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="https://www.facebook.com/howardanguyen" aria-label="facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a></li>
                 
-                <li><a href="https://www.linkedin.com/in/howardanguyen" aria-label="linkedin"><i class="fa fa-linkedin"></i></a></li>
+                <li><a href="https://www.linkedin.com/in/howardanguyen" aria-label="linkedin"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a></li>
                 
-                <li><a href="https://github.com/phoxelua" aria-label="github"><i class="fa fa-github"></i></a></li>
+                <li><a href="https://github.com/phoxelua" aria-label="github"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg></a></li>
                 
                 <li><a href="Howard-Nguyen-Resume.pdf" class="btn-resume">Resume</a></li>
             </ul>
@@ -147,7 +148,7 @@
                 <div class="timeline-content">
                     <div class="timeline-header">
                         <a href="https://www.pinterest.com">
-                            <img src="img/career/pinterest.png" alt="Pinterest" class="timeline-logo">
+                            <img src="img/career/pinterest.png" alt="Pinterest" class="timeline-logo" loading="lazy">
                             <h3>Pinterest</h3>
                         </a>
                     </div>
@@ -162,7 +163,7 @@
                 <div class="timeline-content">
                     <div class="timeline-header">
                         <a href="https://www.instagram.com">
-                            <img src="img/career/instagram.jpeg" alt="Meta (Instagram)" class="timeline-logo">
+                            <img src="img/career/instagram.jpeg" alt="Meta (Instagram)" class="timeline-logo" loading="lazy">
                             <h3>Meta (Instagram)</h3>
                         </a>
                     </div>
@@ -177,7 +178,7 @@
                 <div class="timeline-content">
                     <div class="timeline-header">
                         <a href="https://www.modsy.com">
-                            <img src="img/career/modsy.png" alt="Modsy" class="timeline-logo">
+                            <img src="img/career/modsy.png" alt="Modsy" class="timeline-logo" loading="lazy">
                             <h3>Modsy</h3>
                         </a>
                     </div>
@@ -192,7 +193,7 @@
                 <div class="timeline-content">
                     <div class="timeline-header">
                         <a href="https://www.captricity.com">
-                            <img src="img/career/captricity.jpg" alt="Captricity" class="timeline-logo">
+                            <img src="img/career/captricity.jpg" alt="Captricity" class="timeline-logo" loading="lazy">
                             <h3>Captricity</h3>
                         </a>
                     </div>
@@ -207,7 +208,7 @@
                 <div class="timeline-content">
                     <div class="timeline-header">
                         <a href="https://www.berkeley.edu">
-                            <img src="img/career/cal.png" alt="UC Berkeley" class="timeline-logo">
+                            <img src="img/career/cal.png" alt="UC Berkeley" class="timeline-logo" loading="lazy">
                             <h3>UC Berkeley</h3>
                         </a>
                     </div>
@@ -222,7 +223,7 @@
                 <div class="timeline-content">
                     <div class="timeline-header">
                         <a href="https://www.crunchbase.com/organization/natero">
-                            <img src="img/career/natero.jpg" alt="Natero" class="timeline-logo">
+                            <img src="img/career/natero.jpg" alt="Natero" class="timeline-logo" loading="lazy">
                             <h3>Natero</h3>
                         </a>
                     </div>
@@ -237,7 +238,7 @@
                 <div class="timeline-content">
                     <div class="timeline-header">
                         <a href="https://angel.co/flbt">
-                            <img src="img/career/flowbit.png" alt="Flowbit" class="timeline-logo">
+                            <img src="img/career/flowbit.png" alt="Flowbit" class="timeline-logo" loading="lazy">
                             <h3>Flowbit</h3>
                         </a>
                     </div>
@@ -257,6 +258,11 @@
             
             <div class="portfolio-item reveal" style="--delay: 0.05s">
                 <a href="#steetsahead" class="portfolio-link" data-modal="steetsahead">
+                    <div class="portfolio-placeholder">
+                        <h3>Streets Ahead</h3>
+                        <p>An apartment scoring system based off points of interest</p>
+                        <div class="placeholder-spinner"></div>
+                    </div>
                     <img src="img/portfolio/streetsahead/streets.jpg" alt="Streets Ahead — An apartment scoring system based off points of interest" loading="lazy">
                     <div class="portfolio-overlay">
                         <h3>Streets Ahead</h3>
@@ -267,6 +273,11 @@
             
             <div class="portfolio-item reveal" style="--delay: 0.1s">
                 <a href="#matcha" class="portfolio-link" data-modal="matcha">
+                    <div class="portfolio-placeholder">
+                        <h3>Matcha</h3>
+                        <p>A personal budgeting website</p>
+                        <div class="placeholder-spinner"></div>
+                    </div>
                     <img src="img/portfolio/matcha/matcha.jpg" alt="Matcha — A personal budgeting website" loading="lazy">
                     <div class="portfolio-overlay">
                         <h3>Matcha</h3>
@@ -277,6 +288,11 @@
             
             <div class="portfolio-item reveal" style="--delay: 0.15s">
                 <a href="#smaug" class="portfolio-link" data-modal="smaug">
+                    <div class="portfolio-placeholder">
+                        <h3>Smaug</h3>
+                        <p>A customer invoice system</p>
+                        <div class="placeholder-spinner"></div>
+                    </div>
                     <img src="img/portfolio/smaug/smaug.png" alt="Smaug — A customer invoice system" loading="lazy">
                     <div class="portfolio-overlay">
                         <h3>Smaug</h3>
@@ -287,6 +303,11 @@
             
             <div class="portfolio-item reveal" style="--delay: 0.2s">
                 <a href="#facemorphing" class="portfolio-link" data-modal="facemorphing">
+                    <div class="portfolio-placeholder">
+                        <h3>Face Morphing</h3>
+                        <p>Seamlessly morph between faces</p>
+                        <div class="placeholder-spinner"></div>
+                    </div>
                     <img src="img/portfolio/facemorph/karp2fish.gif" alt="Face Morphing — Seamlessly morph between faces" loading="lazy">
                     <div class="portfolio-overlay">
                         <h3>Face Morphing</h3>
@@ -297,6 +318,11 @@
             
             <div class="portfolio-item reveal" style="--delay: 0.25s">
                 <a href="#seamcarving" class="portfolio-link" data-modal="seamcarving">
+                    <div class="portfolio-placeholder">
+                        <h3>Seam Carving</h3>
+                        <p>Content aware image resizing</p>
+                        <div class="placeholder-spinner"></div>
+                    </div>
                     <img src="img/portfolio/seamcarving/street-reds.gif" alt="Seam Carving — Content aware image resizing" loading="lazy">
                     <div class="portfolio-overlay">
                         <h3>Seam Carving</h3>
@@ -307,6 +333,11 @@
             
             <div class="portfolio-item reveal" style="--delay: 0.3s">
                 <a href="#ik" class="portfolio-link" data-modal="ik">
+                    <div class="portfolio-placeholder">
+                        <h3>Inverse Kinematics Solver</h3>
+                        <p>A virtual arm that uses IK</p>
+                        <div class="placeholder-spinner"></div>
+                    </div>
                     <img src="img/portfolio/ik/ik1.gif" alt="Inverse Kinematics Solver — A virtual arm that uses IK" loading="lazy">
                     <div class="portfolio-overlay">
                         <h3>Inverse Kinematics Solver</h3>
@@ -317,6 +348,11 @@
             
             <div class="portfolio-item reveal" style="--delay: 0.35s">
                 <a href="#bezier" class="portfolio-link" data-modal="bezier">
+                    <div class="portfolio-placeholder">
+                        <h3>Bezier Surfaces</h3>
+                        <p>Render objects using subdivision</p>
+                        <div class="placeholder-spinner"></div>
+                    </div>
                     <img src="img/portfolio/bez/image-12.png" alt="Bezier Surfaces — Render objects using subdivision" loading="lazy">
                     <div class="portfolio-overlay">
                         <h3>Bezier Surfaces</h3>
@@ -327,6 +363,11 @@
             
             <div class="portfolio-item reveal" style="--delay: 0.4s">
                 <a href="#raytracer" class="portfolio-link" data-modal="raytracer">
+                    <div class="portfolio-placeholder">
+                        <h3>Ray Tracer</h3>
+                        <p>Generate images of virtual objects</p>
+                        <div class="placeholder-spinner"></div>
+                    </div>
                     <img src="img/portfolio/raytracer/image-01.jpg" alt="Ray Tracer — Generate images of virtual objects" loading="lazy">
                     <div class="portfolio-overlay">
                         <h3>Ray Tracer</h3>
@@ -337,6 +378,11 @@
             
             <div class="portfolio-item reveal" style="--delay: 0.45s">
                 <a href="#yelp" class="portfolio-link" data-modal="yelp">
+                    <div class="portfolio-placeholder">
+                        <h3>Yelp Wannabe</h3>
+                        <p>Rank food purely on written reviews</p>
+                        <div class="placeholder-spinner"></div>
+                    </div>
                     <img src="img/portfolio/yelp/yelp.jpg" alt="Yelp Wannabe — Rank food purely on written reviews" loading="lazy">
                     <div class="portfolio-overlay">
                         <h3>Yelp Wannabe</h3>
@@ -347,6 +393,11 @@
             
             <div class="portfolio-item reveal" style="--delay: 0.5s">
                 <a href="#viewfinder" class="portfolio-link" data-modal="viewfinder">
+                    <div class="portfolio-placeholder">
+                        <h3>Viewfinder</h3>
+                        <p>See IG photos taken at any location</p>
+                        <div class="placeholder-spinner"></div>
+                    </div>
                     <img src="img/portfolio/viewfinder/viewfinder.png" alt="Viewfinder — See IG photos taken at any location" loading="lazy">
                     <div class="portfolio-overlay">
                         <h3>Viewfinder</h3>
@@ -365,11 +416,11 @@
         <div class="footer-links">
             <ul class="social-links">
                 
-                <li><a href="https://www.facebook.com/howardanguyen" aria-label="facebook"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="https://www.facebook.com/howardanguyen" aria-label="facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a></li>
                 
-                <li><a href="https://www.linkedin.com/in/howardanguyen" aria-label="linkedin"><i class="fa fa-linkedin"></i></a></li>
+                <li><a href="https://www.linkedin.com/in/howardanguyen" aria-label="linkedin"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a></li>
                 
-                <li><a href="https://github.com/phoxelua" aria-label="github"><i class="fa fa-github"></i></a></li>
+                <li><a href="https://github.com/phoxelua" aria-label="github"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg></a></li>
                 
             </ul>
         </div>
@@ -833,7 +884,7 @@
     <!-- Page Loader -->
 <script src="/js/loader.js"></script>
 <!-- Site JavaScript -->
-<script src="/js/agency.js"></script>
+<script src="/js/agency.js" defer></script>
 
 
     </body>

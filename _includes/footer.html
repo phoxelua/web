@@ -4,7 +4,7 @@
         <div class="footer-links">
             <ul class="social-links">
                 {% for network in site.social %}
-                <li><a href="{{ network.url }}" aria-label="{{ network.title }}"><i class="fa fa-{{ network.title }}"></i></a></li>
+                <li><a href="{{ network.url }}" aria-label="{{ network.title }}">{% include icons/{{ network.title }}.svg %}</a></li>
                 {% endfor %}
             </ul>
         </div>

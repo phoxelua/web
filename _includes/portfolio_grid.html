@@ -6,6 +6,11 @@
             {% for post in site.posts %}
             <div class="portfolio-item reveal" style="--delay: {{ forloop.index | times: 0.05 }}s">
                 <a href="#{{ post.modal-id }}" class="portfolio-link" data-modal="{{ post.modal-id }}">
+                    <div class="portfolio-placeholder">
+                        <h3>{{ post.title }}</h3>
+                        <p>{{ post.subtitle }}</p>
+                        <div class="placeholder-spinner"></div>
+                    </div>
                     <img src="img/portfolio/{{ post.thumbnail }}" alt="{{ post.title }} — {{ post.subtitle }}" loading="lazy">
                     <div class="portfolio-overlay">
                         <h3>{{ post.title }}</h3>
