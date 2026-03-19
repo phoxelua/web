@@ -3,7 +3,14 @@
     "allow": [
       "Bash(ls -lh /Users/hnguyen/Documents/code/web/js/*.js)",
       "Bash(sips:*)",
-      "Bash(ls:*)"
+      "Bash(ls:*)",
+      "Bash(find /Users/howardn/Code/web -not -path */site/* -not -path */.jekyll-cache/* -not -path */node_modules/* -not -path */.git/* -type d)",
+      "Bash(jekyll build:*)",
+      "Bash(gem exec:*)",
+      "Bash(source ~/.zshrc)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(curl -s http://localhost:4001/style.css)"
     ]
   }
 }
