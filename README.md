@@ -1,6 +1,6 @@
 # Howard Nguyen - Portfolio Website
 
-Personal portfolio website built with Jekyll, based on the [Agency Bootstrap theme](https://startbootstrap.com/templates/agency/).
+Personal portfolio website built with Jekyll.
 
 Live site: [howardanguyen.com](https://howardanguyen.com)
 
@@ -8,7 +8,6 @@ Live site: [howardanguyen.com](https://howardanguyen.com)
 
 - Ruby 2.5+ (check with `ruby -v`)
 - Jekyll 3.9+ (check with `jekyll -v`)
-- Python 3.x (for local testing)
 
 ## Installation
 
@@ -30,19 +29,25 @@ Live site: [howardanguyen.com](https://howardanguyen.com)
 .
 ├── _config.yml           # Site configuration
 ├── _includes/            # Reusable HTML components
-│   ├── header.html       # Hero section
+│   ├── nav.html          # Shared navigation (homepage + project pages)
+│   ├── header.html       # Nav + hero section
 │   ├── career.html       # Work timeline
 │   ├── portfolio_grid.html
-│   ├── modals.html       # Portfolio modals
-│   └── css/              # Styles
+│   ├── head.html         # SEO meta tags
+│   ├── footer.html
+│   └── css/agency.css    # Full stylesheet (inlined via Liquid)
 ├── _layouts/             # Page templates
-│   └── default.html      # Main layout
+│   ├── default.html      # Homepage layout
+│   └── project.html      # Project page layout
 ├── _posts/               # Portfolio projects (Markdown)
 ├── _plugins/             # Jekyll plugins (hex_to_rgb)
 ├── img/                  # Images
 │   ├── career/           # Company logos
 │   └── portfolio/        # Project images
-├── js/                   # JavaScript files
+├── js/                   # JavaScript (agency.js, loader.js)
+├── career/index.html     # Redirect → /#career
+├── portfolio/index.html  # Redirect → /#portfolio
+├── 404.html              # Custom 404 page
 └── site/                 # Build output (gh-pages)
 ```
 
@@ -65,54 +70,12 @@ jekyll build --watch
 Start the Jekyll development server:
 
 ```bash
-jekyll serve
+jekyll serve --port 4000
 ```
 
 Then open: `http://localhost:4000`
 
-> **Note:** Localhost loads everything instantly from disk and isn't representative of real-world performance. See Testing section below for proper performance testing.
-
-## Testing Performance
-
-### Test with Network Throttling (Recommended)
-
-1. **Start Jekyll server:**
-   ```bash
-   jekyll serve
-   ```
-
-2. **Open Chrome DevTools:**
-   - Navigate to `http://localhost:4000`
-   - Press `F12` or `Cmd+Option+I`
-   - Go to **Network** tab
-   - Click dropdown that says **"No throttling"**
-   - Select **"Fast 3G"** or **"Slow 3G"**
-   - Check **"Disable cache"** checkbox
-   - Hard refresh: `Cmd+Shift+R` (Mac) or `Ctrl+Shift+F5` (Windows)
-
-3. **What to observe:**
-   - Loading screen should appear instantly
-   - Header background color shows immediately
-   - Header image loads progressively
-   - Fonts load without blocking
-   - Portfolio images lazy-load when scrolling
-
-### Test on Real GitHub Pages
-
-Most accurate test - deploy to GitHub Pages:
-
-```bash
-git add .
-git commit -m "Update site"
-git push origin gh-pages
-```
-
-Wait ~1 minute, then visit: https://howardanguyen.com
-
-Test on different devices/networks:
-- Desktop (WiFi)
-- Mobile (4G/5G)
-- Mobile (3G - throttled)
+> **Note:** Localhost loads everything instantly from disk and isn't representative of real-world performance. Use Chrome DevTools Network throttling for realistic testing.
 
 ## Content Management
 
@@ -120,17 +83,16 @@ Test on different devices/networks:
 
 1. Create new file in `_posts/` with format: `YYYY-MM-DD-project-name.markdown`
 
-2. Add frontmatter:
+2. Add front matter:
    ```yaml
    ---
    title: Project Name
    subtitle: Short description
-   layout: default
-   modal-id: unique-id
+   layout: project
    project-date: Month Year
-   technologies: [Tech1, Tech2, Tech3]
+   technologies: [Tech1, Tech2]
    topics: [Topic1, Topic2]
-   description: Detailed description
+   description: Detailed description for SEO and page header
    date: YYYY-MM-DD
    thumbnail: folder/image.jpg
    teaser:
@@ -139,15 +101,15 @@ Test on different devices/networks:
    gallery:
      - src: folder/image1.jpg
        alt: Description
-   teaser-col: 12
-   gallery-col: 6
    ---
-   Full project description in Markdown...
+   Full project description in Markdown/HTML...
    ```
 
 3. Add images to `img/portfolio/project-name/`
 
 4. Rebuild: `jekyll build`
+
+The project will appear in the portfolio grid and get its own page at `/portfolio/project-name/`.
 
 ### Update Career Timeline
 
@@ -161,80 +123,12 @@ Edit `_config.yml`:
 - Color scheme (`color.primary`, `color.secondary`)
 - Google Analytics tracking ID
 
-## Performance Optimizations
-
-This site includes several performance optimizations:
-
-- ✅ **Optimized header image**: 182KB JPEG (was 1.7MB PNG)
-- ✅ **Lazy loading**: Portfolio images load on-demand
-- ✅ **CDN libraries**: jQuery & Bootstrap from CDN
-- ✅ **Font optimization**: Combined requests, non-blocking load
-- ✅ **Loading screen**: Smooth UX while assets load
-- ✅ **Preload hints**: Critical resources prioritized
-- ✅ **Video optimization**: `preload="none"` for modal videos
-
-## SEO Optimizations
-
-This site is optimized for search engines with:
-
-### Technical SEO
-- ✅ **Sitemap.xml**: Auto-generated sitemap for search engines
-- ✅ **Robots.txt**: Proper crawler instructions
-- ✅ **Canonical URLs**: Prevents duplicate content issues
-- ✅ **Structured Data**: JSON-LD schema markup for rich results
-- ✅ **Mobile-friendly**: Responsive design with proper viewport meta
-
-### Meta Tags
-- ✅ **SEO-optimized titles**: Descriptive page titles with keywords
-- ✅ **Meta descriptions**: Compelling descriptions for search results
-- ✅ **Meta keywords**: Relevant keywords for indexing
-- ✅ **Open Graph tags**: Optimized social media sharing (Facebook, LinkedIn)
-- ✅ **Twitter Cards**: Rich previews on Twitter
-
-### Content SEO
-- ✅ **Semantic HTML**: Proper heading hierarchy (h1, h2, h3)
-- ✅ **Alt text on images**: Descriptive alt tags for accessibility & SEO
-- ✅ **Fast load times**: Performance optimizations help SEO rankings
-- ✅ **HTTPS**: Secure connection (GitHub Pages default)
-
-### Submit to Search Engines
-
-After deploying, submit your sitemap to search engines:
-
-**Google Search Console:**
-1. Go to [Google Search Console](https://search.google.com/search-console)
-2. Add property: `https://howardanguyen.com`
-3. Submit sitemap: `https://howardanguyen.com/sitemap.xml`
-
-**Bing Webmaster Tools:**
-1. Go to [Bing Webmaster Tools](https://www.bing.com/webmasters)
-2. Add site: `https://howardanguyen.com`
-3. Submit sitemap: `https://howardanguyen.com/sitemap.xml`
-
-### SEO Best Practices
-
-To maintain good SEO rankings:
-- ✅ Keep content updated and relevant
-- ✅ Use descriptive project titles and descriptions
-- ✅ Add alt text to all new images
-- ✅ Maintain fast load times
-- ✅ Build backlinks (share on LinkedIn, GitHub, etc.)
-- ✅ Monitor with Google Analytics and Search Console
-
 ## Deployment
 
 Site is hosted on **GitHub Pages** from the `gh-pages` branch.
 
-### Deploy to GitHub Pages
-
 ```bash
-# Make sure you're on gh-pages branch
-git branch
-
-# Build site
 jekyll build
-
-# Commit and push
 git add .
 git commit -m "Deploy updates"
 git push origin gh-pages
@@ -244,27 +138,11 @@ Site will update at https://howardanguyen.com in ~1 minute.
 
 ## Troubleshooting
 
-**Jekyll build fails:**
-```bash
-# Check Ruby version
-ruby -v
-
-# Reinstall Jekyll
-gem install jekyll bundler
-```
-
 **Changes not showing:**
 - Make sure you ran `jekyll build`
 - Hard refresh browser: `Cmd+Shift+R`
 - Check `site/` directory was updated
 
 **Images not loading:**
-- Verify image paths are relative: `img/portfolio/...`
+- Use absolute paths: `/img/portfolio/...`
 - Check file names match (case-sensitive)
-- Ensure images are copied to `site/img/`
-
-## Resources
-
-- [Jekyll Documentation](https://jekyllrb.com/)
-- [Original Agency Theme](https://startbootstrap.com/templates/agency/)
-- [GitHub Pages Docs](https://docs.github.com/en/pages)
