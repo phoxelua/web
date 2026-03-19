@@ -735,6 +735,22 @@ img[loading="lazy"] {
         padding: calc(var(--nav-height) + 40px) 24px 40px;
     }
 
+    .hero-greeting {
+        margin-bottom: 12px;
+    }
+
+    .hero-subtitle {
+        margin-bottom: 24px;
+    }
+
+    .hero-about {
+        margin-bottom: 28px;
+    }
+
+    .hero-about p {
+        margin-bottom: 8px;
+    }
+
     .project-page {
         padding-top: calc(var(--nav-height) + 24px);
     }
@@ -752,5 +768,35 @@ img[loading="lazy"] {
         flex-direction: column;
         gap: 16px;
         text-align: center;
+    }
+}
+
+@media (max-width: 768px) and (max-height: 700px) {
+    .hero-content {
+        padding: calc(var(--nav-height) + 24px) 24px 24px;
+    }
+
+    .hero-greeting {
+        margin-bottom: 8px;
+        font-size: 16px;
+    }
+
+    .hero-title {
+        font-size: 32px;
+        margin-bottom: 10px;
+    }
+
+    .hero-subtitle {
+        margin-bottom: 16px;
+        font-size: 15px;
+    }
+
+    .hero-about {
+        margin-bottom: 20px;
+    }
+
+    .hero-about p {
+        font-size: 14px;
+        margin-bottom: 6px;
     }
 }
