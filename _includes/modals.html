@@ -15,7 +15,7 @@
         {% if post.teaser.size > 0 %}
         <div class="modal-media-grid">
             {% for media in post.teaser %}
-            <img src="img/portfolio/{{ media.src }}" alt="{% if media.alt %}{{ media.alt }}{% else %}{{ post.title }}{% endif %}" loading="lazy">
+            <img data-src="img/portfolio/{{ media.src }}" alt="{% if media.alt %}{{ media.alt }}{% else %}{{ post.title }}{% endif %}">
             {% endfor %}
         </div>
         {% endif %}
@@ -33,10 +33,10 @@
             {% for media in post.gallery %}
                 {% if media.src contains '.mp4' %}
                 <video loop muted autoplay playsinline preload="none">
-                    <source src="img/portfolio/{{ media.src }}" type="video/mp4">
+                    <source data-src="img/portfolio/{{ media.src }}" type="video/mp4">
                 </video>
                 {% else %}
-                <img src="img/portfolio/{{ media.src }}" alt="{% if media.alt %}{{ media.alt }}{% else %}{{ post.title }}{% endif %}" loading="lazy">
+                <img data-src="img/portfolio/{{ media.src }}" alt="{% if media.alt %}{{ media.alt }}{% else %}{{ post.title }}{% endif %}">
                 {% endif %}
             {% endfor %}
         </div>

@@ -67,20 +67,29 @@
     navItems.forEach(function(link) {
         var id = link.getAttribute('data-section');
         var section = document.getElementById(id);
-        if (section) sections.push({ id: id, el: section, link: link });
+        if (section) sections.push({ id: id, el: section, link: link, top: section.offsetTop });
     });
 
+    function cacheSectionOffsets() {
+        for (var i = 0; i < sections.length; i++) {
+            sections[i].top = sections[i].el.offsetTop;
+        }
+    }
+
+    var lastActive = null;
     function updateScrollspy() {
         var scrollY = window.scrollY + 120;
         var active = null;
         for (var i = sections.length - 1; i >= 0; i--) {
-            if (scrollY >= sections[i].el.offsetTop) {
+            if (scrollY >= sections[i].top) {
                 active = sections[i];
                 break;
             }
         }
+        if (active === lastActive) return;
         navItems.forEach(function(link) { link.classList.remove('active'); });
         if (active) active.link.classList.add('active');
+        lastActive = active;
     }
 
     var scrollTimer;
@@ -88,6 +97,7 @@
         if (scrollTimer) cancelAnimationFrame(scrollTimer);
         scrollTimer = requestAnimationFrame(updateScrollspy);
     }, { passive: true });
+    window.addEventListener('resize', cacheSectionOffsets);
     updateScrollspy();
 
     // ——— Scroll reveal (Intersection Observer) ———
@@ -127,6 +137,16 @@
     // ——— Modal system ———
     function openModal(modal) {
         if (!modal) return;
+        // Lazy-load modal images and video sources on first open
+        modal.querySelectorAll('img[data-src]').forEach(function(img) {
+            img.src = img.getAttribute('data-src');
+            img.removeAttribute('data-src');
+        });
+        modal.querySelectorAll('source[data-src]').forEach(function(src) {
+            src.src = src.getAttribute('data-src');
+            src.removeAttribute('data-src');
+            src.parentElement.load();
+        });
         modal.classList.add('active');
         document.body.classList.add('modal-open');
         window.location.hash = modal.id;

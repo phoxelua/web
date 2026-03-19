@@ -38,8 +38,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="dns-prefetch" href="https://www.google-analytics.com">
 
-    <!-- Fonts: Inter -->
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    <!-- Fonts: Inter (display=swap renders text immediately with system font) -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
 
     <!-- Inline CSS (eliminates stylesheet request) -->
@@ -541,7 +540,7 @@ section {
     border-radius: var(--radius);
     background: var(--bg-surface);
     border: 1px solid var(--border);
-    transition: all var(--transition);
+    transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
     cursor: pointer;
 }
 
@@ -1389,7 +1388,7 @@ body.modal-open {
         <div class="modal-media-grid">
             
                 
-                <img src="img/portfolio/smaug/web.png" alt="web.png" loading="lazy">
+                <img data-src="img/portfolio/smaug/web.png" alt="web.png">
                 
             
         </div>
@@ -1412,17 +1411,17 @@ body.modal-open {
         
         <div class="modal-media-grid">
             
-            <img src="img/portfolio/facemorph/avg_chinese.jpg" alt="avg_chinese.jpg" loading="lazy">
+            <img data-src="img/portfolio/facemorph/avg_chinese.jpg" alt="avg_chinese.jpg">
             
-            <img src="img/portfolio/facemorph/2-warp.jpg" alt="2-warp.jpg" loading="lazy">
+            <img data-src="img/portfolio/facemorph/2-warp.jpg" alt="2-warp.jpg">
             
-            <img src="img/portfolio/facemorph/4-warp.jpg" alt="4-warp.jpg" loading="lazy">
+            <img data-src="img/portfolio/facemorph/4-warp.jpg" alt="4-warp.jpg">
             
-            <img src="img/portfolio/facemorph/6-warp.jpg" alt="6-warp.jpg" loading="lazy">
+            <img data-src="img/portfolio/facemorph/6-warp.jpg" alt="6-warp.jpg">
             
-            <img src="img/portfolio/facemorph/8-warp.jpg" alt="8-warp.jpg" loading="lazy">
+            <img data-src="img/portfolio/facemorph/8-warp.jpg" alt="8-warp.jpg">
             
-            <img src="img/portfolio/facemorph/avg_eng.jpg" alt="avg_eng.jpg" loading="lazy">
+            <img data-src="img/portfolio/facemorph/avg_eng.jpg" alt="avg_eng.jpg">
             
         </div>
         
@@ -1448,19 +1447,19 @@ The results of face morphing are shown below. If you'd like to know more the ful
         <div class="modal-media-grid">
             
                 
-                <img src="img/portfolio/facemorph/heath2joker.gif" alt="heath2joker.gif" loading="lazy">
+                <img data-src="img/portfolio/facemorph/heath2joker.gif" alt="heath2joker.gif">
                 
             
                 
-                <img src="img/portfolio/facemorph/karp2fish.gif" alt="karp2fish.gif" loading="lazy">
+                <img data-src="img/portfolio/facemorph/karp2fish.gif" alt="karp2fish.gif">
                 
             
                 
-                <img src="img/portfolio/facemorph/efros2snoop.gif" alt="efros2snoop.gif" loading="lazy">
+                <img data-src="img/portfolio/facemorph/efros2snoop.gif" alt="efros2snoop.gif">
                 
             
                 
-                <img src="img/portfolio/facemorph/ava2howard.gif" alt="ava2howard.gif" loading="lazy">
+                <img data-src="img/portfolio/facemorph/ava2howard.gif" alt="ava2howard.gif">
                 
             
         </div>
@@ -1483,13 +1482,13 @@ The results of face morphing are shown below. If you'd like to know more the ful
         
         <div class="modal-media-grid">
             
-            <img src="img/portfolio/seamcarving/dp-tea-100.jpg" alt="dp-tea-100.jpg" loading="lazy">
+            <img data-src="img/portfolio/seamcarving/dp-tea-100.jpg" alt="dp-tea-100.jpg">
             
-            <img src="img/portfolio/seamcarving/enlarged-lanterns-100.jpg" alt="enlarged-lanterns-100.jpg" loading="lazy">
+            <img data-src="img/portfolio/seamcarving/enlarged-lanterns-100.jpg" alt="enlarged-lanterns-100.jpg">
             
-            <img src="img/portfolio/seamcarving/enlarged-puppy-100.jpg" alt="enlarged-puppy-100.jpg" loading="lazy">
+            <img data-src="img/portfolio/seamcarving/enlarged-puppy-100.jpg" alt="enlarged-puppy-100.jpg">
             
-            <img src="img/portfolio/seamcarving/tree-gm-100.jpg" alt="tree-gm-100.jpg" loading="lazy">
+            <img data-src="img/portfolio/seamcarving/tree-gm-100.jpg" alt="tree-gm-100.jpg">
             
         </div>
         
@@ -1508,19 +1507,19 @@ Interestingly, we can extrapolate this idea even further. The idea of low and hi
         <div class="modal-media-grid">
             
                 
-                <img src="img/portfolio/seamcarving/land-250.jpg" alt="land-250.jpg" loading="lazy">
+                <img data-src="img/portfolio/seamcarving/land-250.jpg" alt="land-250.jpg">
                 
             
                 
-                <img src="img/portfolio/seamcarving/newyear-300.jpg" alt="newyear-300.jpg" loading="lazy">
+                <img data-src="img/portfolio/seamcarving/newyear-300.jpg" alt="newyear-300.jpg">
                 
             
                 
-                <img src="img/portfolio/seamcarving/concert-200.jpg" alt="concert-200.jpg" loading="lazy">
+                <img data-src="img/portfolio/seamcarving/concert-200.jpg" alt="concert-200.jpg">
                 
             
                 
-                <img src="img/portfolio/seamcarving/butterfly-200.jpg" alt="butterfly-200.jpg" loading="lazy">
+                <img data-src="img/portfolio/seamcarving/butterfly-200.jpg" alt="butterfly-200.jpg">
                 
             
         </div>
@@ -1555,13 +1554,13 @@ Interestingly, we can extrapolate this idea even further. The idea of low and hi
             
                 
                 <video loop muted autoplay playsinline preload="none">
-                    <source src="img/portfolio/ik/demo1.mp4" type="video/mp4">
+                    <source data-src="img/portfolio/ik/demo1.mp4" type="video/mp4">
                 </video>
                 
             
                 
                 <video loop muted autoplay playsinline preload="none">
-                    <source src="img/portfolio/ik/demo2.mp4" type="video/mp4">
+                    <source data-src="img/portfolio/ik/demo2.mp4" type="video/mp4">
                 </video>
                 
             
@@ -1585,13 +1584,13 @@ Interestingly, we can extrapolate this idea even further. The idea of low and hi
         
         <div class="modal-media-grid">
             
-            <img src="img/portfolio/bez/image-00.png" alt="image-00.png" loading="lazy">
+            <img data-src="img/portfolio/bez/image-00.png" alt="image-00.png">
             
-            <img src="img/portfolio/bez/image-12.png" alt="image-12.png" loading="lazy">
+            <img data-src="img/portfolio/bez/image-12.png" alt="image-12.png">
             
-            <img src="img/portfolio/bez/image-04.png" alt="image-04.png" loading="lazy">
+            <img data-src="img/portfolio/bez/image-04.png" alt="image-04.png">
             
-            <img src="img/portfolio/bez/image-02.png" alt="image-02.png" loading="lazy">
+            <img data-src="img/portfolio/bez/image-02.png" alt="image-02.png">
             
         </div>
         
@@ -1614,15 +1613,15 @@ The challenging part was making these surfaces look smooth and continuous. If we
         <div class="modal-media-grid">
             
                 
-                <img src="img/portfolio/bez/image-09.png" alt="image-09.png" loading="lazy">
+                <img data-src="img/portfolio/bez/image-09.png" alt="image-09.png">
                 
             
                 
-                <img src="img/portfolio/bez/image-10.png" alt="image-10.png" loading="lazy">
+                <img data-src="img/portfolio/bez/image-10.png" alt="image-10.png">
                 
             
                 
-                <img src="img/portfolio/bez/image-11.png" alt="image-11.png" loading="lazy">
+                <img data-src="img/portfolio/bez/image-11.png" alt="image-11.png">
                 
             
         </div>
@@ -1645,13 +1644,13 @@ The challenging part was making these surfaces look smooth and continuous. If we
         
         <div class="modal-media-grid">
             
-            <img src="img/portfolio/raytracer/image-02.jpg" alt="image-02.jpg" loading="lazy">
+            <img data-src="img/portfolio/raytracer/image-02.jpg" alt="image-02.jpg">
             
-            <img src="img/portfolio/raytracer/image-07.jpg" alt="image-07.jpg" loading="lazy">
+            <img data-src="img/portfolio/raytracer/image-07.jpg" alt="image-07.jpg">
             
-            <img src="img/portfolio/raytracer/image-03.jpg" alt="image-03.jpg" loading="lazy">
+            <img data-src="img/portfolio/raytracer/image-03.jpg" alt="image-03.jpg">
             
-            <img src="img/portfolio/raytracer/image-06.jpg" alt="image-06.jpg" loading="lazy">
+            <img data-src="img/portfolio/raytracer/image-06.jpg" alt="image-06.jpg">
             
         </div>
         
@@ -1673,19 +1672,19 @@ The challenging part was making these surfaces look smooth and continuous. If we
         <div class="modal-media-grid">
             
                 
-                <img src="img/portfolio/raytracer/image-05.jpg" alt="image-05.jpg" loading="lazy">
+                <img data-src="img/portfolio/raytracer/image-05.jpg" alt="image-05.jpg">
                 
             
                 
-                <img src="img/portfolio/raytracer/image-08.jpg" alt="image-08.jpg" loading="lazy">
+                <img data-src="img/portfolio/raytracer/image-08.jpg" alt="image-08.jpg">
                 
             
                 
-                <img src="img/portfolio/raytracer/image-09.jpg" alt="image-09.jpg" loading="lazy">
+                <img data-src="img/portfolio/raytracer/image-09.jpg" alt="image-09.jpg">
                 
             
                 
-                <img src="img/portfolio/raytracer/image-10.jpg" alt="image-10.jpg" loading="lazy">
+                <img data-src="img/portfolio/raytracer/image-10.jpg" alt="image-10.jpg">
                 
             
         </div>
@@ -1753,7 +1752,7 @@ At this point, I was really lazy so I decided to use Python NLTK for sentiment a
         <div class="modal-media-grid">
             
                 
-                <img src="img/portfolio/viewfinder/sample.png" alt="sample.png" loading="lazy">
+                <img data-src="img/portfolio/viewfinder/sample.png" alt="sample.png">
                 
             
         </div>

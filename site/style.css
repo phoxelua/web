@@ -496,7 +496,7 @@ section {
     border-radius: var(--radius);
     background: var(--bg-surface);
     border: 1px solid var(--border);
-    transition: all var(--transition);
+    transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
     cursor: pointer;
 }
 
