@@ -10,7 +10,12 @@
       "Bash(source ~/.zshrc)",
       "Bash(git add:*)",
       "Bash(git commit:*)",
-      "Bash(curl -s http://localhost:4001/style.css)"
+      "Bash(curl -s http://localhost:4001/style.css)",
+      "Bash(git:*)",
+      "Bash(grep -l agency.css /Users/howardn/Code/web/_*)",
+      "Bash(identify /Users/howardn/Code/web/img/header-bg.jpg)",
+      "Bash(python3:*)",
+      "Bash(grep:*)"
     ]
   }
 }
