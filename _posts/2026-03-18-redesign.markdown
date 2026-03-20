@@ -1,0 +1,41 @@
+---
+title: Portfolio Redesign
+subtitle: Rebuilding a decade-old site with Claude
+layout: project
+project-date: March 2026
+technologies: [Jekyll, CSS Custom Properties, CSS Grid, Vanilla JS, Claude]
+topics: [Web development, design systems, AI-assisted development]
+description: Rebuilt my portfolio from a Bootstrap 3 / jQuery stack to a modern vanilla CSS and JS architecture- entirely through pair programming with Claude.
+date: 2026-03-18
+thumbnail: redesign/old-hero.png
+teaser:
+- src: redesign/old-hero.png
+  alt: Old Bootstrap site hero with yellow overlay
+- src: redesign/old-career.png
+  alt: Old career timeline with centered layout and large logos
+gallery:
+- src: redesign/old-portfolio.png
+  alt: Old portfolio grid with modal-based project viewer
+- src: redesign/old-mobile.png
+  alt: Old site mobile view
+---
+
+This entire redesign- from Bootstrap 3 and jQuery to vanilla CSS and JS- was done by pair programming with Claude. The old site had been untouched for eight years.
+
+### What Claude did well
+
+Claude was effective at large structural changes: ripping out Bootstrap, replacing Font Awesome with inline SVGs, converting modal overlays to dedicated project pages, and setting up CSS custom properties for theming. It wrote the entire new stylesheet, JS, and layout system in a single pass. SEO additions (structured data, Open Graph, sitemap) were handled quickly and correctly.
+
+### What needed steering
+
+Claude had a tendency to over-engineer. Simple tasks like taking screenshots turned into multi-step CDP/websocket pipelines when a static image would have worked. It also added unnecessary complexity- like a `letter-spacing` property tied to a font size bump that got reverted in the next pass. When told to simplify font sizes, it did a clean job consolidating five tiers down to two, but it took explicit direction to get there.
+
+### Page load
+
+The old site loaded Bootstrap CSS (122KB), Font Awesome (100KB+ of fonts and CSS), jQuery, jQuery Easing, Bootstrap JS, classie.js, and cbpAnimatedHeader.js- all sequentially. The new site loads two JS files, both deferred, and inlines the CSS. Removing dependencies cut more page weight than any optimization could have added back.
+
+### What we learned
+
+Claude is best used as a high-throughput executor with a human setting direction. It's fast at translating intent into code but will wander if given open-ended tasks. The most productive pattern was: describe the goal concretely, let Claude implement, review the output, and course-correct. The least productive pattern was letting it figure out tooling on its own.
+
+The full source is on <a href="https://github.com/phoxelua/web/tree/gh-pages">GitHub</a>.
