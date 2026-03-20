@@ -15,7 +15,10 @@
       "Bash(grep -l agency.css /Users/howardn/Code/web/_*)",
       "Bash(identify /Users/howardn/Code/web/img/header-bg.jpg)",
       "Bash(python3:*)",
-      "Bash(grep:*)"
+      "Bash(grep:*)",
+      "Bash(for f:*)",
+      "Bash(do echo:*)",
+      "Bash(done)"
     ]
   }
 }
