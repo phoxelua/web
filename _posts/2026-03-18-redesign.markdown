@@ -7,16 +7,16 @@ technologies: [Jekyll, CSS Custom Properties, CSS Grid, Vanilla JS, Claude]
 topics: [Web development, design systems, AI-assisted development]
 description: Rebuilt my portfolio from a Bootstrap 3 / jQuery stack to a modern vanilla CSS and JS architecture- entirely through pair programming with Claude.
 date: 2026-03-18
-thumbnail: redesign/old-hero.png
+thumbnail: redesign/old-hero.jpg
 teaser:
-- src: redesign/old-hero.png
+- src: redesign/old-hero.jpg
   alt: Old Bootstrap site hero with yellow overlay
-- src: redesign/old-career.png
+- src: redesign/old-career.jpg
   alt: Old career timeline with centered layout and large logos
 gallery:
-- src: redesign/old-portfolio.png
+- src: redesign/old-portfolio.jpg
   alt: Old portfolio grid with modal-based project viewer
-- src: redesign/old-mobile.png
+- src: redesign/old-mobile.jpg
   alt: Old site mobile view
 ---
 

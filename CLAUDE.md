@@ -13,8 +13,8 @@ The compiled site lives in `/site/`. Deployment is pushing to `gh-pages`.
 
 ## Build
 
-- `jekyll build` — builds to `/site/`
-- `jekyll serve --port 4000` — local dev server
+- `JEKYLL_ENV=production jekyll build` — builds to `/site/` (must use production or URLs become localhost)
+- `jekyll serve --port 4000` — local dev server (localhost URLs are expected here)
 - Always rebuild and commit `site/` alongside source changes
 
 ## Architecture Notes
@@ -54,11 +54,17 @@ Modern portfolio site. No jQuery or Bootstrap — vanilla JS + CSS custom proper
 - About section: use dashes attached to left word (`foo- bar` not `foo — bar`)
 - Career dates: use spaced dashes (`2021 - Present`)
 
+## Images
+
+- Always compress images before committing — run `/compress-images` after adding new images
+- Use JPEG for photos/screenshots, PNG only for graphics that need transparency
+- Portfolio thumbnails are displayed at 4:3 aspect ratio via CSS `aspect-ratio`
+
 ## Adding a New Portfolio Project
 
 1. Create `_posts/YYYY-MM-DD-slug.markdown` with front matter:
    ```yaml
    title, subtitle, layout: project, project-date, technologies, topics, description, date, thumbnail, teaser, gallery
    ```
-2. Add images to `img/portfolio/<slug>/`
+2. Add images to `img/portfolio/<slug>/` (compress first — see Images section above)
 3. Rebuild: `jekyll build`
