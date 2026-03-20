@@ -13,8 +13,8 @@ The compiled site lives in `/site/`. Deployment is pushing to `gh-pages`.
 
 ## Build
 
-- `jekyll build` — builds to `/site/`
-- `jekyll serve --port 4000` — local dev server
+- `JEKYLL_ENV=production jekyll build` — builds to `/site/` (must use production or URLs become localhost)
+- `jekyll serve --port 4000` — local dev server (localhost URLs are expected here)
 - Always rebuild and commit `site/` alongside source changes
 
 ## Architecture Notes

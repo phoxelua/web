@@ -1,37 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-<script>
-(function(){if(location.hash)document.documentElement.style.scrollBehavior='auto';})();
-</script>
 
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Howard Nguyen - Software Engineer | AI/ML Infrastructure</title>
+    <title>FOMO | Howard Nguyen</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="howard's personal portfolio">
-    <meta name="keywords" content="howard, nguyen, howard nguyen, hao, computer science, programming, Berkeley, Cal, Instagram, Facebook, Meta, ML, AI, Pinterest, LLM, GenAI">
+    <meta name="description" content="A cron-driven pipeline that scrapes events from 9+ sources, scores them with a local LLM, and writes the best ones to Google Calendar.">
+    <meta name="keywords" content="Python, Ollama, Playwright, Google Calendar API, Spotify API, AI/ML, web scraping, automation, howard, nguyen, howard nguyen, hao, computer science, programming, Berkeley, Cal, Instagram, Facebook, Meta, ML, AI, Pinterest, LLM, GenAI">
     <meta name="author" content="Howard Nguyen">
     <meta name="theme-color" content="#0a0a0a">
-    <link rel="canonical" href="https://howardanguyen.com/">
+    <link rel="canonical" href="https://howardanguyen.com/portfolio/fomo/">
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico?v=2">
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2">
 
     <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://howardanguyen.com/">
-    <meta property="og:title" content="Howard Nguyen - Software Engineer">
-    <meta property="og:description" content="howard's personal portfolio">
-    <meta property="og:image" content="https://howardanguyen.com/img/header-bg.jpg">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://howardanguyen.com/portfolio/fomo/">
+    <meta property="og:title" content="FOMO | Howard Nguyen">
+    <meta property="og:description" content="A cron-driven pipeline that scrapes events from 9+ sources, scores them with a local LLM, and writes the best ones to Google Calendar.">
+    <meta property="og:image" content="https://howardanguyen.com/img/portfolio/fomo/cli-output.jpg">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://howardanguyen.com/">
-    <meta property="twitter:title" content="Howard Nguyen - Software Engineer">
-    <meta property="twitter:description" content="howard's personal portfolio">
-    <meta property="twitter:image" content="https://howardanguyen.com/img/header-bg.jpg">
+    <meta property="twitter:url" content="https://howardanguyen.com/portfolio/fomo/">
+    <meta property="twitter:title" content="FOMO | Howard Nguyen">
+    <meta property="twitter:description" content="A cron-driven pipeline that scrapes events from 9+ sources, scores them with a local LLM, and writes the best ones to Google Calendar.">
+    <meta property="twitter:image" content="https://howardanguyen.com/img/portfolio/fomo/cli-output.jpg">
 
     <!-- Preconnect -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,8 +36,6 @@
     <link rel="dns-prefetch" href="https://www.google-analytics.com">
 
     <!-- Preload hero background -->
-    
-    <link rel="preload" as="image" href="/img/header-bg.jpg">
     
 
     <!-- Fonts: Inter (display=swap renders text immediately with system font) -->
@@ -861,325 +856,107 @@ img[loading="lazy"] {
 
     <body id="page-top">
 
-    <!-- Structured Data (JSON-LD) for SEO -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Howard Nguyen",
-      "url": "https://howardanguyen.com",
-      "email": "howardanguyen@gmail.com",
-      "jobTitle": "Senior Software Engineer",
-      "description": "howard's personal portfolio",
-      "alumniOf": {
-        "@type": "Organization",
-        "name": "UC Berkeley"
-      },
-      "worksFor": {
-        "@type": "Organization",
-        "name": "Pinterest"
-      },
-      "sameAs": [
-        "https://www.facebook.com/howardanguyen","https://www.linkedin.com/in/howardanguyen","https://github.com/phoxelua"
-      ]
+      "@type": "CreativeWork",
+      "name": "FOMO",
+      "description": "A cron-driven pipeline that scrapes events from 9+ sources, scores them with a local LLM, and writes the best ones to Google Calendar.",
+      "url": "https://howardanguyen.com/portfolio/fomo/",
+      "image": "https://howardanguyen.com/img/portfolio/fomo/cli-output.jpg",
+      "dateCreated": "2026-03-19",
+      "keywords": "Python, Ollama, Playwright, Google Calendar API, Spotify API, AI/ML, web scraping, automation",
+      "author": {
+        "@type": "Person",
+        "name": "Howard Nguyen",
+        "url": "https://howardanguyen.com"
+      }
     }
     </script>
-
-    <!-- Loading Screen -->
-    <div id="page-loader">
-        <div class="spinner"></div>
-    </div>
 
     <!-- Navigation -->
 <nav id="main-nav">
     <div class="nav-container">
         
-        <a href="#page-top" class="nav-brand">#!/howard/nguyen</a>
+        <a href="/" class="nav-brand">#!/howard/nguyen</a>
         
         <button class="nav-toggle" aria-label="Toggle menu">
             <span></span><span></span>
         </button>
         <div class="nav-links">
             
-            <a href="#career" data-section="career">Career</a>
-            <a href="#portfolio" data-section="portfolio">Portfolio</a>
+            <a href="/#career">Career</a>
+            <a href="/#portfolio">Portfolio</a>
             
         </div>
     </div>
 </nav>
 
 
-<!-- Hero -->
-<header id="hero">
-    <div class="hero-content">
-        <p class="hero-greeting reveal">Hey, I'm Howard.</p>
-        <h1 class="hero-title reveal" style="--delay: 0.1s">Software Engineer</h1>
-        <p class="hero-subtitle reveal" style="--delay: 0.2s">10+ years scaling distributed systems and AI/ML infrastructure</p>
-        <div class="hero-about reveal" style="--delay: 0.3s">
-            <p>I've worked on all sorts of topics including web development, optical character recognition (OCR), graphics, ray tracing, feature streaming, real-time inference, and serving GenAI/LLM models- for both startups and large companies.</p>
-            <p>Outside of this nerdy stuff, I enjoy traveling, boxing, basketball, and dog walking- though I have a cat :)</p>
-            <p>Feel free to reach out- maybe we can build something together!</p>
-        </div>
-        <div class="hero-actions reveal" style="--delay: 0.4s">
-            <ul class="social-links">
+    <main class="project-page">
+        <div class="project-container">
+            <a href="/#portfolio" class="project-back">&larr; Portfolio</a>
+            <h1 class="project-title">FOMO</h1>
+            <p class="project-description">A cron-driven pipeline that scrapes events from 9+ sources, scores them with a local LLM, and writes the best ones to Google Calendar.</p>
+            <div class="project-meta">
+                <span class="project-meta-item"><strong>Date:</strong> March 2026</span>
+                <span class="project-meta-item"><strong>Tech:</strong> Python, Ollama, Playwright, Google Calendar API, Spotify API</span>
+                <span class="project-meta-item"><strong>Topics:</strong> AI/ML, web scraping, automation</span>
+            </div>
+
+            
+
+            
+            
+            <div class="project-details">
+                <h3>Details</h3>
+                <p>FOMO scrapes events from 9+ sources, scores each one with a local LLM, and writes the ones worth attending directly to Google Calendar. It runs on cron with no server.</p>
+
+<h3 id="how-it-works">How it works</h3>
+
+<ol>
+  <li>Scrape 9+ event sources in parallel (DoTheBay, Fandango, FunCheap, Lectures on Tap, etc.)</li>
+  <li>Filter out past events</li>
+  <li>Auto-pass movies on your watchlist and artists from your Spotify top 200</li>
+  <li>Score everything else 0-10 with a local LLM based on your preferences</li>
+  <li>Drop anything below the FOMO threshold (e.g., 9.2)</li>
+  <li>Write survivors to Google Calendar with score, reason, emoji, and source links</li>
+</ol>
+
+<p>Events are deduplicated by fingerprint hash so re-runs don’t create duplicates. Failed scrapers fall back to cached results so one broken source doesn’t kill the whole run.</p>
+
+<h3 id="why-a-local-3b-model">Why a local 3B model</h3>
+
+<p>Because I’m cheap. Also because it works- the task is classification, not generation. Given an event and a user profile, output a number and a short reason. A 3B model on Apple Silicon handles that fine at ~19 tok/s with no API costs or rate limits.</p>
+
+<p>The real work is in the prompt, not the model. It includes my full preference profile- specific cuisines, artists, genres, hard dislikes, and a blacklist. Score anchors tell the model that 9+ means “would drop everything” and fewer than 0.5% of events should qualify. Without that calibration the model scored everything 6-8 and the filter was useless. With it, the pipeline surfaced events I’d never have found on my own- like Repair Cafe SF and Lectures on Tap- while nailing obvious fits like Lord of the Rings screenings at Alamo Drafthouse. No fine-tuning required.</p>
+
+<p>The source is on <a href="https://github.com/phoxelua/fomo">GitHub</a>.</p>
+
+            </div>
+            
+
+            
+            <h3 class="project-gallery-heading">Gallery</h3>
+            <div class="project-media-grid">
                 
-                <li><a href="https://www.facebook.com/howardanguyen" aria-label="facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a></li>
+                    
+                    <img src="/img/portfolio/fomo/calendar.jpg" alt="Google Calendar populated with FOMO-scored events" loading="lazy">
+                    
                 
-                <li><a href="https://www.linkedin.com/in/howardanguyen" aria-label="linkedin"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a></li>
+                    
+                    <img src="/img/portfolio/fomo/event-detail.jpg" alt="Event detail showing FOMO score and reason" loading="lazy">
+                    
                 
-                <li><a href="https://github.com/phoxelua" aria-label="github"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg></a></li>
+                    
+                    <img src="/img/portfolio/fomo/movie-passthrough.jpg" alt="Movie event with cinema passthrough scoring" loading="lazy">
+                    
                 
-                <li><a href="Howard-Nguyen-Resume.pdf" class="btn-resume">Resume</a></li>
-            </ul>
-        </div>
-    </div>
-</header>
-
-    <main>
-    <!-- Career Section -->
-<section id="career">
-    <div class="section-container">
-        <h2 class="section-heading reveal">Career</h2>
-        <div class="timeline">
-            <div class="timeline-item reveal">
-                <div class="timeline-dot"></div>
-                <div class="timeline-date">2021 - Present</div>
-                <div class="timeline-content">
-                    <div class="timeline-header">
-                        <a href="https://www.pinterest.com">
-                            <img src="/img/career/pinterest.png" alt="Pinterest logo" class="timeline-logo" width="36" height="36" loading="lazy">
-                            <h3>Pinterest</h3>
-                        </a>
-                    </div>
-                    <div class="timeline-role">Senior Software Engineer, AI/ML Serving</div>
-                    <p>Architected the company's paved path for ML inference and GenAI on Kubernetes. Pioneered a CRD with automated CICD, topology-based deployment, and distributed GPU model partitioning - enabling the launch of the largest model in Pinterest history.</p>
-                </div>
-            </div>
-
-            <div class="timeline-item reveal">
-                <div class="timeline-dot"></div>
-                <div class="timeline-date">2018 - 2021</div>
-                <div class="timeline-content">
-                    <div class="timeline-header">
-                        <a href="https://www.instagram.com">
-                            <img src="/img/career/instagram.jpeg" alt="Meta (Instagram) logo" class="timeline-logo" width="36" height="36" loading="lazy">
-                            <h3>Meta (Instagram)</h3>
-                        </a>
-                    </div>
-                    <div class="timeline-role">Senior Software Engineer, ML Platform</div>
-                    <p>Scaled real-time feature framework and model serving at Instagram ML Platform. Built cost attribution via distributed tracing and data lineage mapping.</p>
-                </div>
-            </div>
-
-            <div class="timeline-item reveal">
-                <div class="timeline-dot"></div>
-                <div class="timeline-date">2017 - 2018</div>
-                <div class="timeline-content">
-                    <div class="timeline-header">
-                        <a href="https://www.modsy.com">
-                            <img src="/img/career/modsy.png" alt="Modsy logo" class="timeline-logo" width="36" height="36" loading="lazy">
-                            <h3>Modsy</h3>
-                        </a>
-                    </div>
-                    <div class="timeline-role">Lead Back-end Engineer</div>
-                    <p>Architected and scaled a custom 3D render pipeline (3X throughput). Built an order management system with automated refunding, saving customer success 20 hours/week.</p>
-                </div>
-            </div>
-
-            <div class="timeline-item reveal">
-                <div class="timeline-dot"></div>
-                <div class="timeline-date">2015 - 2017</div>
-                <div class="timeline-content">
-                    <div class="timeline-header">
-                        <a href="https://www.captricity.com">
-                            <img src="/img/career/captricity.jpg" alt="Captricity logo" class="timeline-logo" width="36" height="36" loading="lazy">
-                            <h3>Captricity</h3>
-                        </a>
-                    </div>
-                    <div class="timeline-role">Full Stack Engineer</div>
-                    <p>Built the core job processing pipeline serving Amazon HITs. Optimized prioritization based on SLA, effort, and pricing. Created a regex-like model for processing documents with optional, repeating, and missing pages.</p>
-                </div>
-            </div>
-
-            <div class="timeline-item reveal">
-                <div class="timeline-dot"></div>
-                <div class="timeline-date">2011 - 2015</div>
-                <div class="timeline-content">
-                    <div class="timeline-header">
-                        <a href="https://www.berkeley.edu">
-                            <img src="/img/career/cal.png" alt="UC Berkeley logo" class="timeline-logo" width="36" height="36" loading="lazy">
-                            <h3>UC Berkeley</h3>
-                        </a>
-                    </div>
-                    <div class="timeline-role">B.S. Electrical Engineering & Computer Science</div>
-                    <p>Algorithms, Graphics, Databases, Computational Photography, Artificial Intelligence, and Machine Learning.</p>
-                </div>
-            </div>
-
-            <div class="timeline-item reveal">
-                <div class="timeline-dot"></div>
-                <div class="timeline-date">Summer 2014</div>
-                <div class="timeline-content">
-                    <div class="timeline-header">
-                        <a href="https://www.crunchbase.com/organization/natero">
-                            <img src="/img/career/natero.jpg" alt="Natero logo" class="timeline-logo" width="36" height="36" loading="lazy">
-                            <h3>Natero</h3>
-                        </a>
-                    </div>
-                    <div class="timeline-role">Software Intern</div>
-                    <p>Implemented cohort analysis by chaining Hadoop MapReduce jobs. Built a JSON precompiler for auto-generating configuration components for custom MR jobs.</p>
-                </div>
-            </div>
-
-            <div class="timeline-item reveal">
-                <div class="timeline-dot"></div>
-                <div class="timeline-date">Summer 2013</div>
-                <div class="timeline-content">
-                    <div class="timeline-header">
-                        <a href="https://angel.co/flbt">
-                            <img src="/img/career/flowbit.png" alt="Flowbit logo" class="timeline-logo" width="36" height="36" loading="lazy">
-                            <h3>Flowbit</h3>
-                        </a>
-                    </div>
-                    <div class="timeline-role">Software & Hardware Intern</div>
-                    <p>Designed and tested an Arduino-based prototype for remotely monitoring water usage in Third World countries.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-    <!-- Portfolio Section -->
-<section id="portfolio">
-    <div class="section-container">
-        <h2 class="section-heading reveal">Portfolio</h2>
-        <div class="portfolio-grid">
-            
-            <div class="portfolio-item reveal" style="--delay: 0.05s">
-                <a href="/portfolio/fomo/" class="portfolio-link">
-                    <img src="/img/portfolio/fomo/cli-output.jpg" alt="FOMO — AI-curated event discovery for your calendar" width="400" height="300" loading="lazy">
-                    <div class="portfolio-overlay">
-                        <h3>FOMO</h3>
-                        <p>AI-curated event discovery for your calendar</p>
-                    </div>
-                </a>
-            </div>
-            
-            <div class="portfolio-item reveal" style="--delay: 0.1s">
-                <a href="/portfolio/redesign/" class="portfolio-link">
-                    <img src="/img/portfolio/redesign/old-hero.jpg" alt="Portfolio Redesign — Rebuilding a decade-old site with Claude" width="400" height="300" loading="lazy">
-                    <div class="portfolio-overlay">
-                        <h3>Portfolio Redesign</h3>
-                        <p>Rebuilding a decade-old site with Claude</p>
-                    </div>
-                </a>
-            </div>
-            
-            <div class="portfolio-item reveal" style="--delay: 0.15s">
-                <a href="/portfolio/streetsahead/" class="portfolio-link">
-                    <img src="/img/portfolio/streetsahead/streets.jpg" alt="Streets Ahead — An apartment scoring system based off points of interest" width="400" height="300" loading="lazy">
-                    <div class="portfolio-overlay">
-                        <h3>Streets Ahead</h3>
-                        <p>An apartment scoring system based off points of interest</p>
-                    </div>
-                </a>
-            </div>
-            
-            <div class="portfolio-item reveal" style="--delay: 0.2s">
-                <a href="/portfolio/matcha/" class="portfolio-link">
-                    <img src="/img/portfolio/matcha/matcha.jpg" alt="Matcha — A personal budgeting website" width="400" height="300" loading="lazy">
-                    <div class="portfolio-overlay">
-                        <h3>Matcha</h3>
-                        <p>A personal budgeting website</p>
-                    </div>
-                </a>
-            </div>
-            
-            <div class="portfolio-item reveal" style="--delay: 0.25s">
-                <a href="/portfolio/smaug/" class="portfolio-link">
-                    <img src="/img/portfolio/smaug/smaug.png" alt="Smaug — A customer invoice system" width="400" height="300" loading="lazy">
-                    <div class="portfolio-overlay">
-                        <h3>Smaug</h3>
-                        <p>A customer invoice system</p>
-                    </div>
-                </a>
-            </div>
-            
-            <div class="portfolio-item reveal" style="--delay: 0.3s">
-                <a href="/portfolio/facemorph/" class="portfolio-link">
-                    <img src="/img/portfolio/facemorph/karp2fish.gif" alt="Face Morphing — Seamlessly morph between faces" width="400" height="300" loading="lazy">
-                    <div class="portfolio-overlay">
-                        <h3>Face Morphing</h3>
-                        <p>Seamlessly morph between faces</p>
-                    </div>
-                </a>
-            </div>
-            
-            <div class="portfolio-item reveal" style="--delay: 0.35s">
-                <a href="/portfolio/seamcarving/" class="portfolio-link">
-                    <img src="/img/portfolio/seamcarving/street-reds.gif" alt="Seam Carving — Content aware image resizing" width="400" height="300" loading="lazy">
-                    <div class="portfolio-overlay">
-                        <h3>Seam Carving</h3>
-                        <p>Content aware image resizing</p>
-                    </div>
-                </a>
-            </div>
-            
-            <div class="portfolio-item reveal" style="--delay: 0.4s">
-                <a href="/portfolio/ik/" class="portfolio-link">
-                    <img src="/img/portfolio/ik/ik1.gif" alt="Inverse Kinematics Solver — A virtual arm that uses IK" width="400" height="300" loading="lazy">
-                    <div class="portfolio-overlay">
-                        <h3>Inverse Kinematics Solver</h3>
-                        <p>A virtual arm that uses IK</p>
-                    </div>
-                </a>
-            </div>
-            
-            <div class="portfolio-item reveal" style="--delay: 0.45s">
-                <a href="/portfolio/bezier/" class="portfolio-link">
-                    <img src="/img/portfolio/bez/image-12.png" alt="Bezier Surfaces — Render objects using subdivision" width="400" height="300" loading="lazy">
-                    <div class="portfolio-overlay">
-                        <h3>Bezier Surfaces</h3>
-                        <p>Render objects using subdivision</p>
-                    </div>
-                </a>
-            </div>
-            
-            <div class="portfolio-item reveal" style="--delay: 0.5s">
-                <a href="/portfolio/raytracer/" class="portfolio-link">
-                    <img src="/img/portfolio/raytracer/image-01.jpg" alt="Ray Tracer — Generate images of virtual objects" width="400" height="300" loading="lazy">
-                    <div class="portfolio-overlay">
-                        <h3>Ray Tracer</h3>
-                        <p>Generate images of virtual objects</p>
-                    </div>
-                </a>
-            </div>
-            
-            <div class="portfolio-item reveal" style="--delay: 0.55s">
-                <a href="/portfolio/yelp/" class="portfolio-link">
-                    <img src="/img/portfolio/yelp/yelp.jpg" alt="Yelp Wannabe — Rank food purely on written reviews" width="400" height="300" loading="lazy">
-                    <div class="portfolio-overlay">
-                        <h3>Yelp Wannabe</h3>
-                        <p>Rank food purely on written reviews</p>
-                    </div>
-                </a>
-            </div>
-            
-            <div class="portfolio-item reveal" style="--delay: 0.6s">
-                <a href="/portfolio/viewfinder/" class="portfolio-link">
-                    <img src="/img/portfolio/viewfinder/viewfinder.png" alt="Viewfinder — See IG photos taken at any location" width="400" height="300" loading="lazy">
-                    <div class="portfolio-overlay">
-                        <h3>Viewfinder</h3>
-                        <p>See IG photos taken at any location</p>
-                    </div>
-                </a>
             </div>
             
         </div>
-    </div>
-</section>
-
     </main>
+
     <footer>
     <div class="footer-content">
         <span class="footer-copyright">Copyright &copy; Howard Nguyen 2026</span>
