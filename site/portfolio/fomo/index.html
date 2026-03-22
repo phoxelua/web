@@ -910,28 +910,28 @@ img[loading="lazy"] {
             
             <div class="project-details">
                 <h3>Details</h3>
-                <p>FOMO scrapes events from 9+ sources, scores each one with a local LLM, and writes the ones worth attending directly to Google Calendar. It runs on cron with no server.</p>
+                <p>I kept missing good events in SF because I never checked the right site at the right time. FOMO fixes that- it scrapes 9+ sources, has a local LLM score each event, and drops the best ones straight into my Google Calendar. Runs on cron, no server.</p>
 
-<h3 id="how-it-works">How it works</h3>
+<h3 id="the-pipeline">The pipeline</h3>
 
 <ol>
   <li>Scrape 9+ event sources in parallel (DoTheBay, Fandango, FunCheap, Lectures on Tap, etc.)</li>
   <li>Filter out past events</li>
-  <li>Auto-pass movies on your watchlist and artists from your Spotify top 200</li>
-  <li>Score everything else 0-10 with a local LLM based on your preferences</li>
+  <li>Auto-pass movies on my watchlist and artists from my Spotify top 200</li>
+  <li>Score everything else 0-10 with a local LLM against my preference profile</li>
   <li>Drop anything below the FOMO threshold (e.g., 9.2)</li>
   <li>Write survivors to Google Calendar with score, reason, emoji, and source links</li>
 </ol>
 
-<p>Events are deduplicated by fingerprint hash so re-runs don’t create duplicates. Failed scrapers fall back to cached results so one broken source doesn’t kill the whole run.</p>
+<p>Events get fingerprinted so re-runs don’t create duplicates. If a scraper fails, it falls back to cached results- one broken source doesn’t kill the run.</p>
 
-<h3 id="why-a-local-3b-model">Why a local 3B model</h3>
+<h3 id="why-a-3b-model-on-my-laptop">Why a 3B model on my laptop</h3>
 
-<p>Because I’m cheap. Also because it works- the task is classification, not generation. Given an event and a user profile, output a number and a short reason. A 3B model on Apple Silicon handles that fine at ~19 tok/s with no API costs or rate limits.</p>
+<p>Because I’m cheap. But a 3B model on Apple Silicon handles this fine at ~19 tok/s- the task is just scoring an event against a user profile and spitting out a number and a sentence. No API costs, no rate limits.</p>
 
-<p>The real work is in the prompt, not the model. It includes my full preference profile- specific cuisines, artists, genres, hard dislikes, and a blacklist. Score anchors tell the model that 9+ means “would drop everything” and fewer than 0.5% of events should qualify. Without that calibration the model scored everything 6-8 and the filter was useless. With it, the pipeline surfaced events I’d never have found on my own- like Repair Cafe SF and Lectures on Tap- while nailing obvious fits like Lord of the Rings screenings at Alamo Drafthouse. No fine-tuning required.</p>
+<p>The hard part was prompt calibration. My prompt includes specific cuisines I like, artists, genres, hard dislikes, and a blacklist. I had to add score anchors telling the model that 9+ means “would drop everything” and that fewer than 0.5% of events should qualify. Before that, everything scored 6-8 and the filter was useless. After calibration it started surfacing things I’d never have found on my own- Repair Cafe SF, Lectures on Tap- while still catching obvious fits like Lord of the Rings at Alamo Drafthouse. No fine-tuning needed.</p>
 
-<p>The source is on <a href="https://github.com/phoxelua/fomo">GitHub</a>.</p>
+<p>Source on <a href="https://github.com/phoxelua/fomo">GitHub</a>.</p>
 
             </div>
             

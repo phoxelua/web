@@ -20,22 +20,22 @@ gallery:
   alt: Old site mobile view
 ---
 
-This entire redesign- from Bootstrap 3 and jQuery to vanilla CSS and JS- was done by pair programming with Claude. The old site had been untouched for eight years.
+I hadn't touched my portfolio site in eight years. It was still running Bootstrap 3, jQuery, Font Awesome, and a bunch of plugins I barely remembered adding. I rebuilt it from scratch by pair programming with Claude- vanilla CSS and JS, no frameworks.
 
-### What Claude did well
+### Where Claude shined
 
-Claude was effective at large structural changes: ripping out Bootstrap, replacing Font Awesome with inline SVGs, converting modal overlays to dedicated project pages, and setting up CSS custom properties for theming. It wrote the entire new stylesheet, JS, and layout system in a single pass. SEO additions (structured data, Open Graph, sitemap) were handled quickly and correctly.
+Large structural changes went fast. Ripping out Bootstrap, replacing Font Awesome with inline SVGs, converting modal overlays to dedicated project pages, setting up CSS custom properties for theming- Claude wrote the entire new stylesheet, JS, and layout system in one pass. SEO stuff (structured data, Open Graph, sitemap) was quick and correct.
 
-### What needed steering
+### Where I had to step in
 
-Claude had a tendency to over-engineer. Simple tasks like taking screenshots turned into multi-step CDP/websocket pipelines when a static image would have worked. It also added unnecessary complexity- like a `letter-spacing` property tied to a font size bump that got reverted in the next pass. When told to simplify font sizes, it did a clean job consolidating five tiers down to two, but it took explicit direction to get there.
+Claude over-engineers when you let it. I asked it to take some screenshots and it built a multi-step CDP/websocket pipeline when a static image would've been fine. It also snuck in a `letter-spacing` property tied to a font size bump that got reverted the next pass. It did a clean job consolidating five font size tiers down to two, but only after I told it to.
 
 ### Page load
 
-The old site loaded Bootstrap CSS (122KB), Font Awesome (100KB+ of fonts and CSS), jQuery, jQuery Easing, Bootstrap JS, classie.js, and cbpAnimatedHeader.js- all sequentially. The new site loads two JS files, both deferred, and inlines the CSS. Removing dependencies cut more page weight than any optimization could have added back.
+The old site loaded Bootstrap CSS (122KB), Font Awesome (100KB+ of fonts and CSS), jQuery, jQuery Easing, Bootstrap JS, classie.js, and cbpAnimatedHeader.js- all sequentially. The new site loads two JS files, both deferred, and inlines the CSS. Just removing dependencies cut more page weight than any optimization could've added back.
 
-### What we learned
+### Takeaway
 
-Claude is best used as a high-throughput executor with a human setting direction. It's fast at translating intent into code but will wander if given open-ended tasks. The most productive pattern was: describe the goal concretely, let Claude implement, review the output, and course-correct. The least productive pattern was letting it figure out tooling on its own.
+The most productive pattern was: describe the goal concretely, let Claude implement, review, and course-correct. The least productive was giving it open-ended tasks and letting it figure out tooling on its own- that's where it wandered.
 
-The full source is on <a href="https://github.com/phoxelua/web/tree/gh-pages">GitHub</a>.
+Full source on <a href="https://github.com/phoxelua/web/tree/gh-pages">GitHub</a>.
