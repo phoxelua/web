@@ -135,6 +135,42 @@
         })();
     }
 
+    // ——— Text scramble on hero title ———
+    var scrambleEl = document.querySelector('[data-scramble]');
+    if (scrambleEl && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        var finalText = scrambleEl.textContent;
+        var chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%&*';
+        var duration = 800;
+        var startDelay = 300;
+        scrambleEl.textContent = '';
+        setTimeout(function() {
+            var startTime = null;
+            function scrambleFrame(ts) {
+                if (!startTime) startTime = ts;
+                var elapsed = ts - startTime;
+                var progress = Math.min(elapsed / duration, 1);
+                var resolved = Math.floor(progress * finalText.length);
+                var result = '';
+                for (var i = 0; i < finalText.length; i++) {
+                    if (finalText[i] === ' ') {
+                        result += ' ';
+                    } else if (i < resolved) {
+                        result += finalText[i];
+                    } else {
+                        result += chars[Math.floor(Math.random() * chars.length)];
+                    }
+                }
+                scrambleEl.textContent = result;
+                if (progress < 1) {
+                    requestAnimationFrame(scrambleFrame);
+                } else {
+                    scrambleEl.textContent = finalText;
+                }
+            }
+            requestAnimationFrame(scrambleFrame);
+        }, startDelay);
+    }
+
     // ——— 3D tilt on portfolio cards (desktop only) ———
     if (window.matchMedia('(pointer: fine)').matches) {
         document.querySelectorAll('[data-tilt]').forEach(function(card) {
