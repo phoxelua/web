@@ -115,10 +115,12 @@
     if (scrambleEl && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
         var finalText = scrambleEl.textContent;
         var chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%&*';
-        var duration = 800;
-        var startDelay = 300;
+        var duration = 1000;
+        var startDelay = 200;
+        scrambleEl.style.opacity = '0';
         scrambleEl.textContent = '';
         setTimeout(function() {
+            scrambleEl.style.opacity = '1';
             var startTime = null;
             function scrambleFrame(ts) {
                 if (!startTime) startTime = ts;
