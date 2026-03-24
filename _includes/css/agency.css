@@ -396,6 +396,18 @@ section {
     color: var(--text);
 }
 
+/* Clip-path reveal for section headings */
+.section-heading.reveal {
+    clip-path: inset(0 100% 0 0);
+    transform: none;
+    transition: clip-path 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.section-heading.reveal.visible {
+    clip-path: inset(0 0% 0 0);
+}
+
 /* ——— Career Timeline ——— */
 .timeline {
     position: relative;
@@ -740,6 +752,17 @@ footer {
 .reveal.visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+    .section-heading.reveal {
+        clip-path: none;
+    }
 }
 
 /* ——— Selection ——— */
