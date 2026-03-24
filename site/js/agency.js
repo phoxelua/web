@@ -117,10 +117,11 @@
         var chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%&*';
         var duration = 1000;
         var startDelay = 200;
-        scrambleEl.style.opacity = '0';
+        // Disable gradient text during scramble — mobile Safari can't render
+        // background-clip:text with rapidly changing textContent
+        scrambleEl.classList.add('scrambling');
         scrambleEl.textContent = '';
         setTimeout(function() {
-            scrambleEl.style.opacity = '1';
             var startTime = null;
             function scrambleFrame(ts) {
                 if (!startTime) startTime = ts;
@@ -142,6 +143,7 @@
                     requestAnimationFrame(scrambleFrame);
                 } else {
                     scrambleEl.textContent = finalText;
+                    scrambleEl.classList.remove('scrambling');
                 }
             }
             requestAnimationFrame(scrambleFrame);
