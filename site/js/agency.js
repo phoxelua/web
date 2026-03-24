@@ -102,7 +102,7 @@
                 requestAnimationFrame(function() {
                     var scrollY = window.scrollY;
                     if (scrollY < heroH) {
-                        heroBg.style.transform = 'translateY(' + (scrollY * 0.35) + 'px)';
+                        heroBg.style.transform = 'translateY(' + (scrollY * 0.5) + 'px)';
                     }
                     parallaxTick = false;
                 });
