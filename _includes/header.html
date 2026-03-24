@@ -3,15 +3,15 @@
 <!-- Hero -->
 <header id="hero">
     <div class="hero-content">
-        <p class="hero-greeting reveal">Hey, I'm Howard.</p>
-        <h1 class="hero-title reveal" style="--delay: 0.1s">Software Engineer</h1>
-        <p class="hero-subtitle reveal" style="--delay: 0.2s">10+ years scaling distributed systems and AI/ML infrastructure</p>
-        <div class="hero-about reveal" style="--delay: 0.3s">
+        <p class="hero-greeting hero-reveal">Hey, I'm Howard.</p>
+        <h1 class="hero-title hero-reveal" style="--hero-delay: 0.15s">Software Engineer</h1>
+        <p class="hero-subtitle hero-reveal" style="--hero-delay: 0.3s">10+ years scaling distributed systems and AI/ML infrastructure</p>
+        <div class="hero-about hero-reveal" style="--hero-delay: 0.45s">
             <p>I've worked on all sorts of topics including web development, optical character recognition (OCR), graphics, ray tracing, feature streaming, real-time inference, and serving GenAI/LLM models- for both startups and large companies.</p>
             <p>Outside of this nerdy stuff, I enjoy traveling, boxing, basketball, and dog walking- though I have a cat :)</p>
             <p>Feel free to reach out- maybe we can build something together!</p>
         </div>
-        <div class="hero-actions reveal" style="--delay: 0.4s">
+        <div class="hero-actions hero-reveal" style="--hero-delay: 0.6s">
             <ul class="social-links">
                 {% for network in site.social %}
                 <li><a href="{{ network.url }}" aria-label="{{ network.title }}">{% include icons/{{ network.title }}.svg %}</a></li>
