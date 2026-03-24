@@ -10,6 +10,13 @@
                     <div class="portfolio-overlay">
                         <h3>{{ post.title }}</h3>
                         <p>{{ post.subtitle }}</p>
+                        {% if post.technologies %}
+                        <div class="portfolio-tags">
+                            {% for tech in post.technologies limit:4 %}
+                            <span class="portfolio-tag">{{ tech }}</span>
+                            {% endfor %}
+                        </div>
+                        {% endif %}
                     </div>
                 </a>
             </div>
