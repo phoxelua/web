@@ -135,6 +135,28 @@
         })();
     }
 
+    // ——— 3D tilt on portfolio cards (desktop only) ———
+    if (window.matchMedia('(pointer: fine)').matches) {
+        document.querySelectorAll('[data-tilt]').forEach(function(card) {
+            var glare = card.querySelector('.portfolio-glare');
+            card.addEventListener('mousemove', function(e) {
+                var rect = card.getBoundingClientRect();
+                var x = (e.clientX - rect.left) / rect.width;
+                var y = (e.clientY - rect.top) / rect.height;
+                var rotateX = (0.5 - y) * 12;
+                var rotateY = (x - 0.5) * 12;
+                card.style.transform = 'rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) scale(1.02)';
+                if (glare) {
+                    glare.style.setProperty('--glare-x', (x * 100) + '%');
+                    glare.style.setProperty('--glare-y', (y * 100) + '%');
+                }
+            });
+            card.addEventListener('mouseleave', function() {
+                card.style.transform = '';
+            });
+        });
+    }
+
     // ——— Magnetic hover on social icons (desktop only) ———
     if (window.matchMedia('(pointer: fine)').matches) {
         document.querySelectorAll('.social-links li a').forEach(function(el) {
