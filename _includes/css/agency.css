@@ -288,8 +288,11 @@ img {
     font-weight: 700;
     letter-spacing: -0.04em;
     margin-bottom: 16px;
-    color: var(--text);
     line-height: 1.05;
+    background: linear-gradient(135deg, var(--text) 0%, var(--accent) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .hero-subtitle {
@@ -394,6 +397,9 @@ section {
     letter-spacing: -0.03em;
     margin-bottom: 48px;
     color: var(--text);
+    display: inline-block;
+    padding-bottom: 8px;
+    border-bottom: 3px solid var(--accent);
 }
 
 /* Clip-path reveal for section headings */
