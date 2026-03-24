@@ -298,6 +298,29 @@ img {
     width: 100%;
 }
 
+/* Hero entrance animation */
+.hero-reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    animation: heroReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation-delay: var(--hero-delay, 0s);
+}
+
+@keyframes heroReveal {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero-reveal {
+        animation: none;
+        opacity: 1;
+        transform: none;
+    }
+}
+
 .hero-greeting {
     font-size: 18px;
     color: var(--accent-text);
@@ -310,8 +333,11 @@ img {
     font-weight: 700;
     letter-spacing: -0.04em;
     margin-bottom: 16px;
-    color: var(--text);
     line-height: 1.05;
+    background: linear-gradient(135deg, var(--text) 0%, var(--accent) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .hero-subtitle {
@@ -384,6 +410,30 @@ img {
 /* ——— Sections ——— */
 section {
     padding: 32px 0 64px;
+    position: relative;
+}
+
+#career::before,
+#portfolio::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+
+#career::before {
+    background: radial-gradient(ellipse 60% 50% at 10% 50%, rgba(var(--accent-rgb), 0.04) 0%, transparent 70%);
+}
+
+#portfolio::before {
+    background: radial-gradient(ellipse 60% 50% at 90% 30%, rgba(var(--accent-rgb), 0.04) 0%, transparent 70%);
+}
+
+#career > .section-container,
+#portfolio > .section-container {
+    position: relative;
+    z-index: 1;
 }
 
 .section-heading {
@@ -392,6 +442,21 @@ section {
     letter-spacing: -0.03em;
     margin-bottom: 48px;
     color: var(--text);
+    display: inline-block;
+    padding-bottom: 8px;
+    border-bottom: 3px solid var(--accent);
+}
+
+/* Clip-path reveal for section headings */
+.section-heading.reveal {
+    clip-path: inset(0 100% 0 0);
+    transform: none;
+    transition: clip-path 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.section-heading.reveal.visible {
+    clip-path: inset(0 0% 0 0);
 }
 
 /* ——— Career Timeline ——— */
@@ -413,11 +478,28 @@ section {
 
 .timeline-item {
     position: relative;
-    padding-bottom: 48px;
+    padding-bottom: 24px;
 }
 
 .timeline-item:last-child {
     padding-bottom: 0;
+}
+
+.timeline-content {
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px;
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+                border-color 0.3s ease,
+                box-shadow 0.4s ease;
+}
+
+.timeline-content:hover {
+    transform: translateY(-3px);
+    border-color: rgba(var(--accent-rgb), 0.3);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3),
+                0 0 20px rgba(var(--accent-rgb), 0.05);
 }
 
 .timeline-dot {
@@ -496,14 +578,17 @@ section {
     border-radius: var(--radius);
     background: var(--bg-surface);
     border: 1px solid var(--border);
-    transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+                border-color 0.3s ease,
+                box-shadow 0.4s ease;
     cursor: pointer;
 }
 
 .portfolio-item:hover {
-    transform: translateY(-4px);
-    border-color: var(--border-strong);
-    box-shadow: 0 16px 48px var(--portfolio-shadow);
+    transform: translateY(-8px);
+    border-color: rgba(var(--accent-rgb), 0.4);
+    box-shadow: 0 20px 60px var(--portfolio-shadow),
+                0 0 30px rgba(var(--accent-rgb), 0.08);
 }
 
 .portfolio-link {
@@ -515,11 +600,11 @@ section {
     width: 100%;
     aspect-ratio: 4/3;
     object-fit: cover;
-    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .portfolio-item:hover img {
-    transform: scale(1.05);
+    transform: scale(1.08);
 }
 
 .portfolio-overlay {
@@ -532,11 +617,29 @@ section {
     justify-content: flex-end;
     padding: 20px;
     opacity: 0;
-    transition: opacity var(--transition);
+    transition: opacity 0.3s ease;
+}
+
+.portfolio-overlay h3,
+.portfolio-overlay p {
+    transform: translateY(10px);
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+                opacity 0.3s ease;
+    opacity: 0;
 }
 
 .portfolio-item:hover .portfolio-overlay {
     opacity: 1;
+}
+
+.portfolio-item:hover .portfolio-overlay h3,
+.portfolio-item:hover .portfolio-overlay p {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.portfolio-item:hover .portfolio-overlay p {
+    transition-delay: 0.05s;
 }
 
 .portfolio-overlay h3 {
@@ -548,6 +651,34 @@ section {
 
 .portfolio-overlay p {
     color: rgba(255, 255, 255, 0.8);
+}
+
+.portfolio-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 10px;
+    transform: translateY(10px);
+    opacity: 0;
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+                opacity 0.3s ease;
+}
+
+.portfolio-item:hover .portfolio-tags {
+    transform: translateY(0);
+    opacity: 1;
+    transition-delay: 0.1s;
+}
+
+.portfolio-tag {
+    font-size: 11px;
+    font-weight: 500;
+    padding: 3px 8px;
+    border-radius: 4px;
+    background: rgba(var(--accent-rgb), 0.2);
+    color: var(--accent);
+    border: 1px solid rgba(var(--accent-rgb), 0.3);
+    letter-spacing: 0.01em;
 }
 
 @media (max-width: 768px) {
@@ -692,14 +823,25 @@ footer {
 /* ——— Scroll Reveal ——— */
 .reveal {
     opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1),
-                transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateY(30px);
+    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .reveal.visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+    .section-heading.reveal {
+        clip-path: none;
+    }
 }
 
 /* ——— Selection ——— */
