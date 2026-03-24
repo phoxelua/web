@@ -90,6 +90,26 @@
     window.addEventListener('resize', cacheSectionOffsets);
     updateScrollspy();
 
+    // ——— Hero parallax ———
+    var heroBg = document.getElementById('hero-bg');
+    var hero = document.getElementById('hero');
+    if (heroBg && hero && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        var heroH = hero.offsetHeight;
+        var parallaxTick = false;
+        window.addEventListener('scroll', function() {
+            if (!parallaxTick) {
+                parallaxTick = true;
+                requestAnimationFrame(function() {
+                    var scrollY = window.scrollY;
+                    if (scrollY < heroH) {
+                        heroBg.style.transform = 'translateY(' + (scrollY * 0.35) + 'px)';
+                    }
+                    parallaxTick = false;
+                });
+            }
+        }, { passive: true });
+    }
+
     // ——— Cursor glow (desktop only) ———
     var glow = document.getElementById('cursor-glow');
     if (glow && window.matchMedia('(pointer: fine)').matches) {

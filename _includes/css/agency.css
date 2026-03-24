@@ -250,9 +250,15 @@ img {
     position: relative;
     overflow: hidden;
     background-color: var(--hero-fallback);
+}
+
+.hero-bg {
+    position: absolute;
+    inset: -20% 0;
     background-image: url(../img/header-bg.jpg);
     background-position: center;
     background-size: cover;
+    will-change: transform;
 }
 
 #hero::before {
@@ -260,11 +266,12 @@ img {
     position: absolute;
     inset: 0;
     background: linear-gradient(to bottom, var(--hero-overlay-start), var(--hero-overlay-end));
+    z-index: 1;
 }
 
 .hero-content {
     position: relative;
-    z-index: 1;
+    z-index: 2;
     max-width: var(--max-width);
     margin: 0 auto;
     padding: calc(var(--nav-height) + 80px) 24px 80px;
