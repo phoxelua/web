@@ -339,6 +339,30 @@ img {
 /* ——— Sections ——— */
 section {
     padding: 32px 0 64px;
+    position: relative;
+}
+
+#career::before,
+#portfolio::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+
+#career::before {
+    background: radial-gradient(ellipse 60% 50% at 10% 50%, rgba(var(--accent-rgb), 0.04) 0%, transparent 70%);
+}
+
+#portfolio::before {
+    background: radial-gradient(ellipse 60% 50% at 90% 30%, rgba(var(--accent-rgb), 0.04) 0%, transparent 70%);
+}
+
+#career > .section-container,
+#portfolio > .section-container {
+    position: relative;
+    z-index: 1;
 }
 
 .section-heading {
