@@ -48,23 +48,7 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
-/* ——— Cursor Glow ——— */
-.cursor-glow {
-    position: fixed;
-    width: 600px;
-    height: 600px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(var(--accent-rgb), 0.07) 0%, transparent 70%);
-    pointer-events: none;
-    z-index: 0;
-    transform: translate(-50%, -50%);
-    transition: opacity 0.3s ease;
-    opacity: 0;
-}
 
-.cursor-glow.active {
-    opacity: 1;
-}
 
 /* Typography */
 h1, h2, h3, h4, h5, h6 {

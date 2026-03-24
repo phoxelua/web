@@ -110,31 +110,6 @@
         }, { passive: true });
     }
 
-    // ——— Cursor glow (desktop only) ———
-    var glow = document.getElementById('cursor-glow');
-    if (glow && window.matchMedia('(pointer: fine)').matches) {
-        var glowX = 0, glowY = 0, curX = 0, curY = 0, glowActive = false;
-        document.addEventListener('mousemove', function(e) {
-            curX = e.clientX;
-            curY = e.clientY;
-            if (!glowActive) {
-                glowActive = true;
-                glow.classList.add('active');
-            }
-        });
-        document.addEventListener('mouseleave', function() {
-            glowActive = false;
-            glow.classList.remove('active');
-        });
-        (function animateGlow() {
-            glowX += (curX - glowX) * 0.15;
-            glowY += (curY - glowY) * 0.15;
-            glow.style.left = glowX + 'px';
-            glow.style.top = glowY + 'px';
-            requestAnimationFrame(animateGlow);
-        })();
-    }
-
     // ——— Text scramble on hero title ———
     var scrambleEl = document.querySelector('[data-scramble]');
     if (scrambleEl && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
