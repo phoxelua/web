@@ -4,7 +4,7 @@
         <h2 class="section-heading reveal">Portfolio</h2>
         <div class="portfolio-grid">
             {% for post in site.posts %}
-            <div class="portfolio-item reveal" style="--delay: {{ forloop.index | times: 0.05 }}s">
+            <div class="portfolio-item reveal" style="--delay: {{ forloop.index | times: 0.1 }}s">
                 <a href="{{ post.url }}" class="portfolio-link">
                     <img src="/img/portfolio/{{ post.thumbnail }}" alt="{{ post.title }} — {{ post.subtitle }}" width="400" height="300" loading="lazy">
                     <div class="portfolio-overlay">
