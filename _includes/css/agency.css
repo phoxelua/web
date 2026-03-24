@@ -369,7 +369,10 @@ img {
     background: var(--bg-surface-hover);
     border-color: var(--accent);
     color: var(--accent-text);
-    transform: translateY(-2px);
+}
+
+.social-links li a {
+    transition: background var(--transition), border-color var(--transition), color var(--transition), transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .social-links li a.btn-resume {

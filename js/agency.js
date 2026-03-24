@@ -135,6 +135,21 @@
         })();
     }
 
+    // ——— Magnetic hover on social icons (desktop only) ———
+    if (window.matchMedia('(pointer: fine)').matches) {
+        document.querySelectorAll('.social-links li a').forEach(function(el) {
+            el.addEventListener('mousemove', function(e) {
+                var rect = el.getBoundingClientRect();
+                var x = e.clientX - rect.left - rect.width / 2;
+                var y = e.clientY - rect.top - rect.height / 2;
+                el.style.transform = 'translate(' + (x * 0.3) + 'px, ' + (y * 0.3) + 'px)';
+            });
+            el.addEventListener('mouseleave', function() {
+                el.style.transform = '';
+            });
+        });
+    }
+
     // ——— Scroll reveal (Intersection Observer) ———
     var reveals = document.querySelectorAll('.reveal');
     if ('IntersectionObserver' in window) {
