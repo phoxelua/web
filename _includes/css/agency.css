@@ -301,18 +301,14 @@ img {
     letter-spacing: -0.04em;
     margin-bottom: 16px;
     line-height: 1.05;
+    color: var(--text);
+}
+
+.hero-title.gradient-text {
     background: linear-gradient(135deg, var(--text) 0%, var(--accent) 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-}
-
-.hero-title.scrambling {
-    background: none;
-    -webkit-background-clip: unset;
-    background-clip: unset;
-    -webkit-text-fill-color: var(--text);
-    color: var(--text);
 }
 
 .hero-subtitle {
@@ -482,10 +478,11 @@ section {
     }
 }
 
-.timeline-content:active {
-    border-color: rgba(var(--accent-rgb), 0.3);
+.timeline-content.in-view {
+    border-color: rgba(var(--accent-rgb), 0.4);
+    background: rgba(var(--accent-rgb), 0.04);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2),
-                0 0 12px rgba(var(--accent-rgb), 0.05);
+                0 0 16px rgba(var(--accent-rgb), 0.08);
 }
 
 .timeline-dot {

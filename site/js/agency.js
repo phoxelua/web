@@ -111,15 +111,20 @@
     }
 
     // ——— Text scramble on hero title ———
+    // Title starts as solid color (no gradient). Scramble runs with plain
+    // color so textContent changes render reliably on all platforms including
+    // iOS Safari. Gradient class is added only after the final text is set.
     var scrambleEl = document.querySelector('[data-scramble]');
-    if (scrambleEl && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    if (scrambleEl) {
         var finalText = scrambleEl.textContent;
-        var chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%&*';
+        var chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%&*';
         var duration = 1000;
         var startDelay = 200;
-        // Disable gradient text during scramble — mobile Safari can't render
-        // background-clip:text with rapidly changing textContent
-        scrambleEl.classList.add('scrambling');
+        // Lock dimensions and prevent reflow during scramble
+        var rect = scrambleEl.getBoundingClientRect();
+        scrambleEl.style.height = rect.height + 'px';
+        scrambleEl.style.overflow = 'hidden';
+        scrambleEl.style.whiteSpace = 'nowrap';
         scrambleEl.textContent = '';
         setTimeout(function() {
             var startTime = null;
@@ -143,7 +148,10 @@
                     requestAnimationFrame(scrambleFrame);
                 } else {
                     scrambleEl.textContent = finalText;
-                    scrambleEl.classList.remove('scrambling');
+                    scrambleEl.style.height = '';
+                    scrambleEl.style.overflow = '';
+                    scrambleEl.style.whiteSpace = '';
+                    scrambleEl.classList.add('gradient-text');
                 }
             }
             requestAnimationFrame(scrambleFrame);
@@ -184,6 +192,21 @@
             el.addEventListener('mouseleave', function() {
                 el.style.transform = '';
             });
+        });
+    }
+
+    // ——— Career card glow on scroll into view (mobile) ———
+    if (!window.matchMedia('(hover: hover)').matches && 'IntersectionObserver' in window) {
+        var cardObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in-view');
+                    cardObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+        document.querySelectorAll('.timeline-content').forEach(function(card) {
+            cardObserver.observe(card);
         });
     }
 
