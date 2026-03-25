@@ -19,7 +19,8 @@
       "Bash(for f:*)",
       "Bash(do echo:*)",
       "Bash(done)",
-      "Bash(JEKYLL_ENV=production jekyll build)"
+      "Bash(JEKYLL_ENV=production jekyll build)",
+      "Bash(jekyll serve:*)"
     ]
   }
 }
