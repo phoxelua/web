@@ -77,6 +77,22 @@ Then open: `http://localhost:4000`
 
 > **Note:** Localhost loads everything instantly from disk and isn't representative of real-world performance. Use Chrome DevTools Network throttling for realistic testing.
 
+### Test on Mobile (Real Device)
+
+A desktop browser resized small does NOT match a real phone — media queries like `hover`, `pointer`, and `prefers-reduced-motion` differ, and iOS Safari has unique rendering bugs.
+
+```bash
+# Bind to all interfaces so your phone can connect
+jekyll serve --host 0.0.0.0 --port 4567
+
+# Find your local IP
+ipconfig getifaddr en0
+```
+
+Open `http://<your-ip>:4567` on your phone (same WiFi network).
+
+See CLAUDE.md for a debug overlay snippet and iOS Safari pitfalls.
+
 ## Content Management
 
 ### Add New Portfolio Project
@@ -146,3 +162,9 @@ Site will update at https://howardanguyen.com in ~1 minute.
 **Images not loading:**
 - Use absolute paths: `/img/portfolio/...`
 - Check file names match (case-sensitive)
+
+**Animations not working on iPhone:**
+- Check if Reduce Motion is enabled: Settings > Accessibility > Motion > Reduce Motion
+- `:hover` CSS doesn't fire on touch — use `@media (hover: hover)` to gate desktop-only hover effects
+- `:active` doesn't fire on iOS without a `touchstart` listener — use JS class toggling
+- `background-clip: text` breaks with dynamic `textContent` on iOS Safari — apply gradient only after content is final

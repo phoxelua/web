@@ -27,7 +27,7 @@ Modern portfolio site. No jQuery or Bootstrap — vanilla JS + CSS custom proper
 - `_includes/css/agency.css` — full stylesheet; uses **Liquid variables** for accent colors from `_config.yml` and **CSS custom properties** for theming
 - `_plugins/hex_to_rgb.rb` — Jekyll filter converting hex → RGB for `rgba()` usage in CSS
 - `_includes/head.html` — SEO/meta tags (Open Graph, Twitter Cards, per-page descriptions/images)
-- `js/agency.js` — vanilla JS: smooth scroll, scrollspy, IntersectionObserver scroll reveals, mobile nav
+- `js/agency.js` — vanilla JS: smooth scroll, scrollspy, IntersectionObserver scroll reveals, mobile nav, hero parallax, text scramble, 3D card tilt, magnetic hover, mobile touch feedback
 - `js/loader.js` — page load spinner fade-out
 
 ## Key Files for Common Changes
@@ -39,6 +39,40 @@ Modern portfolio site. No jQuery or Bootstrap — vanilla JS + CSS custom proper
 - **Navigation**: `_includes/nav.html` — shared nav used by both layouts
 - **Section redirects**: `career/index.html` and `portfolio/index.html` — meta-refresh redirects to `/#career` and `/#portfolio`
 - **Custom domain**: `CNAME` file
+
+## Mobile Testing
+
+Desktop browser resized to a small window is NOT the same as a real phone. Key differences:
+- `pointer: fine` (desktop) vs `pointer: coarse` (mobile) — gates mouse-only effects
+- `hover: hover` (desktop) vs `hover: none` (mobile) — `:hover` CSS never fires on touch
+- `prefers-reduced-motion: reduce` — many iPhones have this ON by default (Settings > Accessibility > Motion > Reduce Motion)
+- iOS Safari has rendering bugs with `background-clip: text` + dynamic `textContent` changes
+- CSS `:active` doesn't fire on iOS without a `touchstart` listener on the element
+
+### Testing on a real phone
+
+Start jekyll bound to all interfaces so your phone can reach it:
+```bash
+jekyll serve --host 0.0.0.0 --port 4567
+```
+Then open `http://<your-local-ip>:4567` on the phone (same WiFi). Find your IP with `ipconfig getifaddr en0`.
+
+### Debug overlay
+
+When something doesn't work on mobile, add a temporary debug bar to `agency.js` to check media queries and element state:
+```js
+var dbg = document.createElement('div');
+dbg.style.cssText = 'position:fixed;bottom:0;left:0;right:0;background:red;color:white;padding:12px;z-index:99999;font-size:14px;';
+dbg.textContent = 'hover:' + matchMedia('(hover:hover)').matches + ' motion:' + matchMedia('(prefers-reduced-motion:reduce)').matches;
+document.body.appendChild(dbg);
+```
+
+## iOS Safari Pitfalls
+
+- **`background-clip: text` + dynamic content**: Don't change `textContent` on elements using `-webkit-text-fill-color: transparent`. Apply gradient text class only after content is finalized.
+- **`:hover` on touch**: Use `@media (hover: hover)` to gate hover-only effects. For mobile, use IntersectionObserver (glow on scroll-into-view) or JS touch events.
+- **`:active` on iOS**: Doesn't work without a `touchstart` listener. Use JS class toggling instead.
+- **`prefers-reduced-motion`**: Many iOS users have this enabled. Parallax and scroll animations should respect it, but non-vestibular effects (text changes, color transitions) can safely ignore it.
 
 ## CSS Conventions
 
