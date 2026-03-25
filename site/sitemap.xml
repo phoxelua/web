@@ -1,91 +1,91 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>http://localhost:4000/</loc>
-        <lastmod>2026-03-24T17:46:07-07:00</lastmod>
+        <loc>http://0.0.0.0:4567/</loc>
+        <lastmod>2026-03-24T18:34:59-07:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>1.0</priority>
     </url>
     
     <url>
-        <loc>http://localhost:4000/portfolio/fomo/</loc>
+        <loc>http://0.0.0.0:4567/portfolio/fomo/</loc>
         <lastmod>2026-03-19T00:00:00-07:00</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>http://localhost:4000/portfolio/redesign/</loc>
+        <loc>http://0.0.0.0:4567/portfolio/redesign/</loc>
         <lastmod>2026-03-18T00:00:00-07:00</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>http://localhost:4000/portfolio/streetsahead/</loc>
+        <loc>http://0.0.0.0:4567/portfolio/streetsahead/</loc>
         <lastmod>2016-08-09T00:00:00-07:00</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>http://localhost:4000/portfolio/matcha/</loc>
+        <loc>http://0.0.0.0:4567/portfolio/matcha/</loc>
         <lastmod>2016-08-09T00:00:00-07:00</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>http://localhost:4000/portfolio/smaug/</loc>
+        <loc>http://0.0.0.0:4567/portfolio/smaug/</loc>
         <lastmod>2014-12-30T00:00:00-08:00</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>http://localhost:4000/portfolio/facemorph/</loc>
+        <loc>http://0.0.0.0:4567/portfolio/facemorph/</loc>
         <lastmod>2014-10-03T00:00:00-07:00</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>http://localhost:4000/portfolio/seamcarving/</loc>
+        <loc>http://0.0.0.0:4567/portfolio/seamcarving/</loc>
         <lastmod>2014-09-26T00:00:00-07:00</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>http://localhost:4000/portfolio/ik/</loc>
+        <loc>http://0.0.0.0:4567/portfolio/ik/</loc>
         <lastmod>2014-04-20T00:00:00-07:00</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>http://localhost:4000/portfolio/bezier/</loc>
+        <loc>http://0.0.0.0:4567/portfolio/bezier/</loc>
         <lastmod>2014-03-11T00:00:00-07:00</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>http://localhost:4000/portfolio/raytracer/</loc>
+        <loc>http://0.0.0.0:4567/portfolio/raytracer/</loc>
         <lastmod>2014-02-11T00:00:00-08:00</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>http://localhost:4000/portfolio/yelp/</loc>
+        <loc>http://0.0.0.0:4567/portfolio/yelp/</loc>
         <lastmod>2013-04-14T00:00:00-07:00</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>http://localhost:4000/portfolio/viewfinder/</loc>
+        <loc>http://0.0.0.0:4567/portfolio/viewfinder/</loc>
         <lastmod>2013-03-01T00:00:00-08:00</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.8</priority>

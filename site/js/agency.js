@@ -195,19 +195,38 @@
         });
     }
 
-    // ——— Career card glow on scroll into view (mobile) ———
-    if (!window.matchMedia('(hover: hover)').matches && 'IntersectionObserver' in window) {
-        var cardObserver = new IntersectionObserver(function(entries) {
-            entries.forEach(function(entry) {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('in-view');
-                    cardObserver.unobserve(entry.target);
+    // ——— Career card glow on scroll into view ———
+    if ('IntersectionObserver' in window) {
+        var allCards = document.querySelectorAll('.timeline-content');
+        var activeCard = null;
+        var cardTick = false;
+        function updateActiveCard() {
+            var viewCenter = window.innerHeight / 2;
+            var closest = null;
+            var closestDist = Infinity;
+            allCards.forEach(function(card) {
+                var rect = card.getBoundingClientRect();
+                var cardCenter = rect.top + rect.height / 2;
+                var dist = Math.abs(cardCenter - viewCenter);
+                if (dist < closestDist) {
+                    closestDist = dist;
+                    closest = card;
                 }
             });
-        }, { threshold: 0.5 });
-        document.querySelectorAll('.timeline-content').forEach(function(card) {
-            cardObserver.observe(card);
-        });
+            if (closest !== activeCard) {
+                if (activeCard) activeCard.classList.remove('in-view');
+                if (closest) closest.classList.add('in-view');
+                activeCard = closest;
+            }
+            cardTick = false;
+        }
+        window.addEventListener('scroll', function() {
+            if (!cardTick) {
+                cardTick = true;
+                requestAnimationFrame(updateActiveCard);
+            }
+        }, { passive: true });
+        updateActiveCard();
     }
 
     // ——— Scroll reveal (Intersection Observer) ———
