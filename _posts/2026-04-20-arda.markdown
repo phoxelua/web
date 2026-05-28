@@ -1,0 +1,40 @@
+---
+title: Arda
+subtitle: A self-hosted homelab on a mini PC
+layout: project
+project-date: April 2026
+technologies: [Docker, Caddy, Jellyfin, AdGuard Home, Tailscale]
+topics: [self-hosting, homelab, networking]
+description: A self-hosted homelab running media, photos, monitoring, and DNS on a Debian mini PC — no subscriptions, no cloud.
+date: 2026-04-20
+thumbnail: arda/homepage.jpg
+gallery:
+- src: arda/homepage.jpg
+  alt: Homepage dashboard showing all running services
+- src: arda/beszel.jpg
+  alt: Beszel host and container metrics for hobbit
+- src: arda/uptime-kuma.jpg
+  alt: Uptime Kuma monitoring all services
+- src: arda/dozzle.jpg
+  alt: Dozzle container log viewer
+- src: arda/architecture.svg
+  alt: Arda homelab architecture diagram
+---
+
+I got tired of paying for streaming services I barely used and cloud photo storage I didn't trust. Arda is a self-hosted homelab that replaces them with services I own and control- running on a single mini PC in my apartment.
+
+### The machine
+
+Debian 13, Ryzen 5 5500U, 32GB RAM, 477GB NVMe for OS and containers, 932GB external HDD for media. Low power draw, fanless enough for an apartment, and plenty of headroom for everything I've thrown at it so far.
+
+### How it's wired
+
+Caddy is the only ingress point. Every service joins a shared Docker `proxy` network and exposes nothing to the host — Caddy reverse-proxies them all over HTTPS using an internal CA. AdGuard Home handles LAN DNS with a `*.lan` wildcard rewrite, so any new service I add resolves automatically without touching the router. Tailscale handles remote access for Jellyfin without opening any ports to the internet.
+
+The guiding principle for every decision: if it requires a subscription, a third-party account, or manual intervention to keep running, it doesn't belong here.
+
+### Services
+
+Jellyfin for media streaming, Immich for photos, AdGuard Home for DNS-level ad blocking, Homepage as a dashboard, Uptime Kuma for monitoring, Beszel for host metrics, and Dozzle for container logs.
+
+Source on <a href="https://github.com/phoxelua/arda">GitHub</a>.
