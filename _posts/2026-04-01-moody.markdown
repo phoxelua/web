@@ -1,0 +1,30 @@
+---
+title: Moody
+subtitle: A 30-second daily mood journal that lives on your phone
+layout: project
+project-date: April 2026
+technologies: [Vanilla JS, PWA, Google Sheets API, Open-Meteo API]
+topics: [health, mobile, journaling]
+description: A PWA mood journal with push notifications and Google Sheets sync. No app store, no server.
+date: 2026-04-01
+thumbnail: moody/home.jpg
+gallery:
+- src: moody/home.jpg
+  alt: Moody home screen check-in form
+- src: moody/checkin.jpg
+  alt: Moody check-in with mood and activity chips
+---
+
+Every mood tracking app I tried was either too heavy or had no data portability. I wanted something that lived on my home screen, took 30 seconds, and put the data somewhere I could actually use it.
+
+### How it works
+
+Push notification at night. Tap it, rate happiness/sleep/eating, pick emotions and activities, add a note. The entry syncs to a Google Sheet- one row per day. On desktop I can pivot, chart, or export with no friction. The sheet is the database.
+
+Weather and location are captured automatically. Some chips auto-select based on day of week and whether I'm traveling.
+
+### Why PWA
+
+I wanted it on my iPhone home screen without going through the App Store. A PWA served from GitHub Pages does exactly that- add to home screen via Safari, full-screen launch, push notifications, offline caching via service worker. No backend, no hosting costs, no review process.
+
+Source on <a href="https://github.com/phoxelua/moody">GitHub</a>.
