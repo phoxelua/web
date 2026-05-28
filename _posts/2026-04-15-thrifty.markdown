@@ -1,0 +1,42 @@
+---
+title: Thrifty
+subtitle: A local-only personal finance tracker
+layout: project
+project-date: April 2026
+technologies: [Python, FastAPI, React, TypeScript, SQLite, Recharts]
+topics: [finance, data visualization, privacy]
+description: A local-only finance tracker that syncs bank, brokerage, and credit card accounts to track net worth, spending, and portfolio allocation.
+date: 2026-04-15
+thumbnail: thrifty/net-worth-chart.jpg
+gallery:
+- src: thrifty/net-worth-chart.jpg
+  alt: Net worth over time by account
+- src: thrifty/cash-flow-breakdown.jpg
+  alt: Cash flow breakdown with income and spending categories
+- src: thrifty/spending-treemap.jpg
+  alt: Spending treemap by category
+- src: thrifty/insights-sankey.jpg
+  alt: Cash runway projection and Sankey chart
+- src: thrifty/transactions.jpg
+  alt: Transaction table with categorization
+- src: thrifty/spending-calendar.jpg
+  alt: Spending calendar heatmap
+---
+
+Thrifty is the successor to <a href="/portfolio/matcha/">Matcha</a>, a budgeting app I built in 2016. Matcha used Plaid, which kept breaking as banks tightened API access, and stored everything in a cloud database. The core lesson: own your data pipeline and keep the data local.
+
+Every number in the screenshots is fake *(Numbers are illustrative.)*
+
+### What it tracks
+
+Three views: net worth over time, cash flow breakdown, and portfolio allocation. Cash flow has the most depth- spending by category, a waterfall chart of income vs. expenses, a spending calendar, a Sankey chart, and a treemap. Transactions are categorized via a deterministic rules file.
+
+Data syncs from SimpleFIN Bridge (banks and credit cards), SnapTrade (brokerages and retirement accounts), and a Bilt Chrome extension for the Bilt card. Amazon orders get their own treatment- a Chrome extension scrapes the payments page, matches each transaction to its order items, and imports them with line-item detail so "Amazon.com" becomes the actual things I bought.
+
+Amazon item categorization uses a local embedding model (qwen3-embedding:0.6b via Ollama) as a centroid classifier- it embeds known labeled items to build per-category centroids, then classifies new items by nearest cosine distance. No API costs, runs offline.
+
+### Stack
+
+Python/FastAPI backend with SQLite, React 19 + TypeScript frontend. All the finance math lives in an isolated `finance/` module with 50 unit and property-based tests- kept separate from the charts so the logic is testable without rendering anything.
+
+Source on <a href="https://github.com/phoxelua/thrifty">GitHub</a>.
